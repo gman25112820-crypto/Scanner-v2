@@ -1,0 +1,2 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+SPY,mean_reversion,short,2026-03-06,2026-03-09,670.5487060546875,684.1411250518016,1.799,win

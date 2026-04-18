@@ -1,0 +1,3 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+EURUSD=X,macd_rsi,short,2026-02-06,2026-02-09,1.177786946296692,1.2248984241485597,-6.891,loss
+EURUSD=X,macd_rsi,short,2026-02-19,2026-02-20,1.1788839101791382,1.2260392665863038,5.124,win

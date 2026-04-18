@@ -1,0 +1,8 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+BTC-USD,adx_trend,long,2025-11-24,2025-12-03,88270.5625,91801.38500000001,0.508,win
+BTC-USD,adx_trend,long,2026-01-02,2026-01-05,89944.6953125,93542.483125,0.61,win
+BTC-USD,adx_trend,short,2026-02-04,2026-02-05,73019.703125,75940.49125,-0.242,loss
+BTC-USD,adx_trend,short,2026-02-27,2026-02-28,65881.796875,68517.06875,-0.426,loss
+BTC-USD,adx_trend,short,2026-03-07,2026-03-08,67272.59375,69963.4975,0.393,win
+BTC-USD,adx_trend,long,2026-03-13,2026-03-16,70968.265625,73806.99625,0.589,win
+BTC-USD,adx_trend,long,2026-03-23,2026-04-13,70914.859375,73751.45375,0.524,win

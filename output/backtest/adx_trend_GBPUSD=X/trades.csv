@@ -1,0 +1,4 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+GBPUSD=X,adx_trend,short,2026-01-08,2026-01-09,1.3459312915802002,1.3997685432434082,-3.689,loss
+GBPUSD=X,adx_trend,long,2026-02-04,2026-02-06,1.3697504997253418,1.3579051653544107,-1.001,loss
+GBPUSD=X,adx_trend,short,2026-03-11,2026-03-12,1.3419036865234375,1.395579833984375,-4.085,loss

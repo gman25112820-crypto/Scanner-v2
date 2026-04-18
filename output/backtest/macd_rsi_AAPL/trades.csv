@@ -1,0 +1,4 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+AAPL,macd_rsi,short,2026-02-12,2026-02-13,261.7300109863281,272.19921142578124,-1.072,loss
+AAPL,macd_rsi,short,2026-02-27,2026-03-02,264.17999267578125,274.7471923828125,1.048,win
+AAPL,macd_rsi,short,2026-03-03,2026-03-04,263.75,274.3,1.081,win

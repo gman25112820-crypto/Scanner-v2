@@ -1,0 +1,5 @@
+strategy,decision,score,kelly_fraction,avg_r,win_rate,sharpe,sortino,mc_median,mc_worst_5pct,mc_prob_neg,mc_worst_dd,weight,risk,trades,risk_per_trade_pct
+adx_trend,REJECT,0,0.0,-0.532,0.298,-7.28,-9.86,-59.39,-78.56,1.0,96.02,0.0,0.0,114,0.0
+macd_rsi,DEPLOY,8,0.108,0.36,0.65,2.42,2.85,21.12,-8.64,0.126,49.9,0.4444444444444445,1.0,60,4.8
+mean_reversion,DEPLOY,10,0.25,1.544,0.909,29.04,0.0,16.69,11.06,0.0,3.15,0.5555555555555556,1.0,11,13.89
+orb,REJECT,0,0.0,-0.556,0.222,-10.57,-3.962655122099056e+16,-118.59,-137.61,1.0,149.03,0.0,0.0,225,0.0

@@ -1,0 +1,5 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+GOOGL,macd_rsi,short,2025-12-31,2026-01-02,312.7798156738281,325.29100830078124,-2.392,loss
+GOOGL,macd_rsi,short,2026-03-12,2026-03-13,303.54998779296875,315.69198730468753,-1.742,loss
+GOOGL,macd_rsi,short,2026-03-20,2026-03-23,301.0,313.04,-1.417,loss
+GOOGL,macd_rsi,short,2026-04-06,2026-04-07,299.989990234375,311.98958984375,0.976,win

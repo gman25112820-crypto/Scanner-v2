@@ -1,0 +1,3 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+TSLA,macd_rsi,short,2026-02-10,2026-02-11,425.2099914550781,442.21839111328126,0.733,win
+TSLA,macd_rsi,short,2026-03-12,2026-03-13,395.010009765625,410.81041015625,1.048,win

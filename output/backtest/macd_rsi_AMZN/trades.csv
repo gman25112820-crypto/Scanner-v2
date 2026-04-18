@@ -1,0 +1,3 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+AMZN,macd_rsi,short,2025-12-31,2026-01-02,230.82000732421875,240.0528076171875,-2.997,loss
+AMZN,macd_rsi,short,2026-03-17,2026-03-18,215.1999969482422,223.8079968261719,1.448,win

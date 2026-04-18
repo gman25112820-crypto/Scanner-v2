@@ -1,0 +1,2 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+GLD,macd_rsi,short,2025-12-31,2026-01-02,396.30999755859375,412.16239746093754,1.4,win

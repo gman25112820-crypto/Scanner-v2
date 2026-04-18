@@ -1,0 +1,3 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+AMD,macd_rsi,short,2026-03-12,2026-03-13,197.7400054931641,205.64960571289066,-1.04,loss
+AMD,macd_rsi,short,2026-03-20,2026-03-23,201.3300018310547,209.38320190429687,0.791,win

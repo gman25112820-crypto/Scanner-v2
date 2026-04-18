@@ -1,0 +1,30 @@
+# Scanner Watchlist
+# Add symbols here, one per line. Lines starting with # are ignored.
+
+# US Stocks
+AAPL
+MSFT
+NVDA
+TSLA
+AMZN
+META
+GOOGL
+AMD
+COIN
+
+# ETFs
+SPY
+QQQ
+GLD
+
+# Crypto
+BTC-USD
+ETH-USD
+
+# Futures
+GC=F
+CL=F
+
+# Forex
+EURUSD=X
+GBPUSD=X
