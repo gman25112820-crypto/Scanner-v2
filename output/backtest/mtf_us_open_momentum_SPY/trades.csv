@@ -1,0 +1,8 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+SPY,mtf_us_open_momentum,short,2025-12-10,2025-12-11,683.6771850585938,675.469909732079,-1.001,loss
+SPY,mtf_us_open_momentum,short,2025-12-22,2025-12-23,682.96484375,674.4621638213144,-1.001,loss
+SPY,mtf_us_open_momentum,short,2025-12-24,2025-12-26,688.4996948242188,681.0309594594822,-1.001,loss
+SPY,mtf_us_open_momentum,short,2026-01-13,2026-01-14,691.8804931640625,686.4267120693719,-1.001,loss
+SPY,mtf_us_open_momentum,short,2026-01-26,2026-01-27,690.84326171875,683.474747943309,-1.001,loss
+SPY,mtf_us_open_momentum,short,2026-01-28,2026-01-29,693.5259399414062,686.8435567039633,-1.001,loss
+SPY,mtf_us_open_momentum,short,2026-03-26,2026-04-06,645.0900268554688,656.6261626717225,0.999,win

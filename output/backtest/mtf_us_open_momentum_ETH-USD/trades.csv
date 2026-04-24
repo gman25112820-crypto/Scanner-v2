@@ -1,0 +1,8 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+ETH-USD,mtf_us_open_momentum,short,2025-12-03,2025-12-04,3191.57177734375,3008.8931396997414,-1.001,loss
+ETH-USD,mtf_us_open_momentum,short,2025-12-09,2025-12-10,3321.114990234375,3113.4471366186904,-1.001,loss
+ETH-USD,mtf_us_open_momentum,short,2026-01-13,2026-01-14,3322.095458984375,3180.0773757215757,-1.001,loss
+ETH-USD,mtf_us_open_momentum,short,2026-01-30,2026-02-01,2702.375244140625,2358.0868095121077,1.999,win
+ETH-USD,mtf_us_open_momentum,short,2026-02-23,2026-02-25,1855.5028076171875,1979.7171214357581,0.999,win
+ETH-USD,mtf_us_open_momentum,short,2026-04-07,2026-04-08,2241.806640625,2118.1349251941447,-1.001,loss
+ETH-USD,mtf_us_open_momentum,short,2026-04-11,2026-04-12,2285.39013671875,2169.4430773598233,-1.001,loss

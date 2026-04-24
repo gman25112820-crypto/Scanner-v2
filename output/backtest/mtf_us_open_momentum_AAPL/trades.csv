@@ -1,0 +1,3 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+AAPL,mtf_us_open_momentum,short,2026-01-16,2026-02-02,255.29112243652344,260.04785803682506,0.999,win
+AAPL,mtf_us_open_momentum,short,2026-03-30,2026-03-31,246.6300048828125,253.05779782712295,0.999,win

@@ -1,0 +1,5 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+NVDA,mtf_momentum_binary,short,2026-02-09,2026-02-10,190.0297088623047,178.00917051475545,-1.001,loss
+NVDA,mtf_momentum_binary,short,2026-02-11,2026-02-12,190.0397186279297,179.6512445011674,-1.001,loss
+NVDA,mtf_momentum_binary,short,2026-02-23,2026-02-24,191.5396423339844,183.85823385179242,-1.001,loss
+NVDA,mtf_momentum_binary,short,2026-03-13,2026-04-10,180.25,185.66879364686613,0.999,win

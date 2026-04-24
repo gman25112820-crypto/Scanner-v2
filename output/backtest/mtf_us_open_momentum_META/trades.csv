@@ -1,0 +1,4 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+META,mtf_us_open_momentum,short,2026-01-13,2026-01-22,630.5501708984375,645.5220246957001,0.999,win
+META,mtf_us_open_momentum,short,2026-01-29,2026-01-30,737.6784057617188,708.1114186565926,-1.001,loss
+META,mtf_us_open_momentum,short,2026-03-26,2026-03-31,547.5399780273438,570.4671048905,0.999,win

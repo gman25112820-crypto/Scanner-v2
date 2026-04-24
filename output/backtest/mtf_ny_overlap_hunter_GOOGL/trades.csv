@@ -1,0 +1,3 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+GOOGL,mtf_ny_overlap_hunter,short,2026-01-20,2026-01-21,321.77349853515625,313.96898096999803,-1.001,loss
+GOOGL,mtf_ny_overlap_hunter,short,2026-03-31,2026-04-08,287.5599975585937,308.0599975585937,0.999,win

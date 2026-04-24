@@ -1,0 +1,7 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+SPY,mtf_trend_continuation_v2,short,2025-12-16,2025-12-17,675.0264282226562,666.512252256626,-1.001,loss
+SPY,mtf_trend_continuation_v2,short,2025-12-31,2026-01-06,680.062744140625,688.6937453636111,0.999,win
+SPY,mtf_trend_continuation_v2,short,2026-01-08,2026-01-09,687.632080078125,681.7845634880831,-1.001,loss
+SPY,mtf_trend_continuation_v2,short,2026-01-14,2026-01-15,688.479736328125,682.6382338088123,-1.001,loss
+SPY,mtf_trend_continuation_v2,short,2026-01-29,2026-01-30,692.1497192382812,682.1177634190027,-1.001,loss
+SPY,mtf_trend_continuation_v2,short,2026-03-11,2026-04-13,674.4879760742188,683.5878028512243,0.999,win

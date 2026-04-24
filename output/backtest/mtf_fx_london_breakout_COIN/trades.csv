@@ -1,0 +1,5 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+COIN,mtf_fx_london_breakout,short,2025-12-30,2026-01-05,231.6000061035156,239.88999938964844,0.999,win
+COIN,mtf_fx_london_breakout,short,2026-02-05,2026-02-25,146.1199951171875,176.75,-1.001,loss
+COIN,mtf_fx_london_breakout,short,2026-02-27,2026-03-04,175.85000610351562,186.38999938964844,0.999,win
+COIN,mtf_fx_london_breakout,long,2026-03-17,2026-03-20,210.22999572753903,198.6199951171875,-1.001,loss

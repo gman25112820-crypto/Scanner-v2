@@ -354,10 +354,10 @@ if generated_at:
 
 st.sidebar.markdown("---")
 st.sidebar.write("**Detected files**")
-st.sidebar.write(f"Allocator CSV: {'✅' if STRATEGY_ALLOCATION_CSV.exists() else '❌'}")
-st.sidebar.write(f"Allocator JSON: {'✅' if STRATEGY_ALLOCATION_JSON.exists() else '❌'}")
-st.sidebar.write(f"Backtest folder: {'✅' if BACKTEST_DIR.exists() else '❌'}")
-st.sidebar.write(f"Journal folder: {'✅' if JOURNAL_DIR.exists() else '❌'}")
+st.sidebar.write(f"Allocator CSV: {'[OK]' if STRATEGY_ALLOCATION_CSV.exists() else '[ERROR]'}")
+st.sidebar.write(f"Allocator JSON: {'[OK]' if STRATEGY_ALLOCATION_JSON.exists() else '[ERROR]'}")
+st.sidebar.write(f"Backtest folder: {'[OK]' if BACKTEST_DIR.exists() else '[ERROR]'}")
+st.sidebar.write(f"Journal folder: {'[OK]' if JOURNAL_DIR.exists() else '[ERROR]'}")
 
 
 # ============================================================

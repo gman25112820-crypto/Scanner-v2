@@ -1,0 +1,5 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+ETH-USD,mtf_ny_overlap_hunter,short,2026-01-21,2026-01-22,2978.901123046875,2925.54345703125,-1.001,loss
+ETH-USD,mtf_ny_overlap_hunter,short,2026-03-22,2026-03-23,2053.04833984375,2062.659423828125,0.999,win
+ETH-USD,mtf_ny_overlap_hunter,short,2026-03-26,2026-03-30,2059.578369140625,2023.2718505859373,-1.001,loss
+ETH-USD,mtf_ny_overlap_hunter,short,2026-04-12,2026-04-13,2192.201171875,2022.6453857421875,-1.001,loss

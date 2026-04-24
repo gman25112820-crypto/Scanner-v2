@@ -1,0 +1,5 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+TSLA,mtf_us_open_momentum,short,2025-12-12,2025-12-15,458.9599914550781,440.63024447064794,-1.001,loss
+TSLA,mtf_us_open_momentum,short,2025-12-16,2025-12-18,489.8800048828125,468.8421397823891,-1.001,loss
+TSLA,mtf_us_open_momentum,short,2026-01-20,2026-01-22,419.25,435.3887863960661,0.999,win
+TSLA,mtf_us_open_momentum,short,2026-03-27,2026-04-01,361.8299865722656,376.7519497875253,0.999,win

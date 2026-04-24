@@ -1,0 +1,3 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+TSLA,mtf_trend_continuation,short,2025-11-24,2025-11-25,417.7799987792969,372.931045254794,-1.001,loss
+TSLA,mtf_trend_continuation,short,2026-03-11,2026-03-12,407.8200073242188,390.45466179125236,-1.001,loss

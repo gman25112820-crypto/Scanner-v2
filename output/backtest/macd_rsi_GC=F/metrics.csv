@@ -1,11 +1,8 @@
-,0
-trades,2.0
-win_rate,0.5
-avg_r,0.718
-total_r,1.436
+metric,value
 sharpe,6.859174477541336
 sortino,0.0
-max_drawdown,0.4570000000000001
-avg_win,1.893
-avg_loss,-0.457
+winrate,0.5
+drawdown,0.4570000000000001
+trades,2.0
 profit_factor,4.142231947483588
+avg_pnl,0.718

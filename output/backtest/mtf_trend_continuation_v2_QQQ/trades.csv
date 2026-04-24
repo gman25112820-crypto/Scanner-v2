@@ -1,0 +1,7 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+QQQ,mtf_trend_continuation_v2,short,2025-12-12,2025-12-15,612.0587158203125,601.7638062930777,-1.001,loss
+QQQ,mtf_trend_continuation_v2,short,2026-01-02,2026-01-09,612.347900390625,624.0374037742223,0.999,win
+QQQ,mtf_trend_continuation_v2,short,2026-01-15,2026-01-16,620.9970092773438,613.4713637273536,-1.001,loss
+QQQ,mtf_trend_continuation_v2,short,2026-01-21,2026-01-27,615.50390625,628.0022299467548,0.999,win
+QQQ,mtf_trend_continuation_v2,short,2026-01-29,2026-01-30,628.6373291015625,614.1087135676931,-1.001,loss
+QQQ,mtf_trend_continuation_v2,short,2026-03-11,2026-04-13,606.9247436523438,614.7948677717487,0.999,win

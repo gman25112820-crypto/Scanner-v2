@@ -1,0 +1,5 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+QQQ,mtf_ny_overlap_hunter,short,2026-01-09,2026-01-12,625.86083984375,609.381669736326,-1.001,loss
+QQQ,mtf_ny_overlap_hunter,short,2026-01-13,2026-01-14,625.4513549804688,609.381669736326,-1.001,loss
+QQQ,mtf_ny_overlap_hunter,short,2026-01-22,2026-01-27,619.978271484375,629.206628407055,0.999,win
+QQQ,mtf_ny_overlap_hunter,short,2026-01-29,2026-01-30,628.6373291015625,606.2855126563834,-1.001,loss

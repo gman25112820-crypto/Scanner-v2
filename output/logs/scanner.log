@@ -652,3 +652,1443 @@
 0       adx_trend   REJECT      0  0.000000                0.00
 3             orb   REJECT      0  0.000000                0.00
 07:39:24  INFO     scanner.engine  Allocation complete. Results in output/allocator/
+08:27:33  INFO     scanner.engine  Scanner engine initialised
+08:27:33  INFO     scanner.engine  Running allocator...
+08:27:33  INFO     scanner.allocator  
+         strategy decision  score    weight  risk_per_trade_pct
+2  mean_reversion   DEPLOY     10  0.555556               13.89
+1        macd_rsi   DEPLOY      8  0.444444                4.80
+0       adx_trend   REJECT      0  0.000000                0.00
+3             orb   REJECT      0  0.000000                0.00
+08:27:33  INFO     scanner.engine  Allocation complete. Results in output/allocator/
+15:54:01  INFO     scanner.engine  Scanner engine initialised
+15:54:01  INFO     scanner.engine  Running scanner...
+15:54:01  INFO     scanner.engine    SIGNAL  breakout | AMZN | short | 250.56
+15:54:01  INFO     scanner.engine    SIGNAL  breakout | AMD | short | 278.39
+15:54:01  INFO     scanner.engine    SIGNAL  breakout | BTC-USD | short | 77148.74
+15:54:02  INFO     scanner.engine    SIGNAL  orb | AAPL | short | 270.23
+15:54:02  INFO     scanner.engine    SIGNAL  orb | MSFT | short | 422.79
+15:54:02  INFO     scanner.engine    SIGNAL  orb | NVDA | short | 201.68
+15:54:02  INFO     scanner.engine    SIGNAL  orb | TSLA | short | 400.62
+15:54:02  INFO     scanner.engine    SIGNAL  orb | AMZN | short | 250.56
+15:54:02  INFO     scanner.engine    SIGNAL  orb | META | short | 688.55
+15:54:02  INFO     scanner.engine    SIGNAL  orb | GOOGL | short | 341.68
+15:54:02  INFO     scanner.engine    SIGNAL  orb | AMD | short | 278.39
+15:54:02  INFO     scanner.engine    SIGNAL  orb | COIN | short | 206.33
+15:54:02  INFO     scanner.engine    SIGNAL  orb | SPY | short | 710.14
+15:54:02  INFO     scanner.engine    SIGNAL  orb | QQQ | short | 648.85
+15:54:02  INFO     scanner.engine    SIGNAL  orb | GLD | short | 445.93
+15:54:02  INFO     scanner.engine    SIGNAL  orb | GC=F | short | 4857.60
+15:54:02  INFO     scanner.engine    SIGNAL  orb | CL=F | short | 83.85
+15:54:02  INFO     scanner.engine    SIGNAL  orb | EURUSD=X | short | 1.18
+15:54:02  INFO     scanner.engine    SIGNAL  orb | GBPUSD=X | short | 1.35
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | AAPL | short | 270.23
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | MSFT | short | 422.79
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | NVDA | short | 201.68
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | TSLA | short | 400.62
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | AMZN | short | 250.56
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | META | short | 688.55
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GOOGL | short | 341.68
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | AMD | short | 278.39
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | COIN | short | 206.33
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | SPY | short | 710.14
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | QQQ | short | 648.85
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GLD | short | 445.93
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GC=F | short | 4857.60
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | CL=F | short | 83.85
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | EURUSD=X | short | 1.18
+15:54:03  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GBPUSD=X | short | 1.35
+15:54:04  INFO     scanner.engine  Scanner complete. 35 signal(s) found.
+15:54:04  INFO     scanner.engine  Running backtests...
+15:54:04  INFO     scanner.backtester    adx_trend/AAPL: trades=10 wr=10.0% avg_r=-0.97 sharpe=-17.52
+15:54:04  INFO     scanner.backtester    adx_trend/MSFT: trades=10 wr=20.0% avg_r=-0.52 sharpe=-11.36
+15:54:04  INFO     scanner.backtester    adx_trend/NVDA: trades=8 wr=37.5% avg_r=-0.26 sharpe=-5.77
+15:54:04  INFO     scanner.backtester    adx_trend/TSLA: trades=5 wr=20.0% avg_r=-0.50 sharpe=-14.35
+15:54:04  INFO     scanner.backtester    adx_trend/AMZN: trades=8 wr=12.5% avg_r=-0.66 sharpe=-16.95
+15:54:04  INFO     scanner.backtester    adx_trend/META: trades=5 wr=20.0% avg_r=-0.41 sharpe=-9.91
+15:54:04  INFO     scanner.backtester    adx_trend/GOOGL: trades=4 wr=50.0% avg_r=0.26 sharpe=3.21
+15:54:04  INFO     scanner.backtester    adx_trend/AMD: trades=4 wr=0.0% avg_r=-0.52 sharpe=-24.38
+15:54:04  INFO     scanner.backtester    adx_trend/COIN: trades=7 wr=14.3% avg_r=-0.45 sharpe=-14.77
+15:54:04  INFO     scanner.backtester    adx_trend/SPY: trades=6 wr=0.0% avg_r=-1.77 sharpe=-24.07
+15:54:04  INFO     scanner.backtester    adx_trend/QQQ: trades=8 wr=25.0% avg_r=-0.90 sharpe=-10.08
+15:54:04  INFO     scanner.backtester    adx_trend/GLD: trades=6 wr=50.0% avg_r=0.11 sharpe=1.48
+15:54:05  INFO     scanner.backtester    adx_trend/BTC-USD: trades=7 wr=71.4% avg_r=0.28 sharpe=10.36
+15:54:05  INFO     scanner.backtester    adx_trend/ETH-USD: trades=8 wr=62.5% avg_r=0.10 sharpe=2.83
+15:54:05  INFO     scanner.backtester    adx_trend/GC=F: trades=5 wr=80.0% avg_r=0.61 sharpe=8.37
+15:54:05  INFO     scanner.backtester    adx_trend/CL=F: trades=5 wr=40.0% avg_r=-0.41 sharpe=-10.00
+15:54:05  INFO     scanner.backtester    adx_trend/EURUSD=X: trades=5 wr=20.0% avg_r=-1.48 sharpe=-9.19
+15:54:05  INFO     scanner.backtester    adx_trend/GBPUSD=X: trades=3 wr=0.0% avg_r=-2.92 sharpe=-27.67
+15:54:05  WARNING  scanner.backtester  No trades: breakout / AAPL
+15:54:05  WARNING  scanner.backtester  No trades: breakout / MSFT
+15:54:05  WARNING  scanner.backtester  No trades: breakout / NVDA
+15:54:05  WARNING  scanner.backtester  No trades: breakout / TSLA
+15:54:05  WARNING  scanner.backtester  No trades: breakout / AMZN
+15:54:05  WARNING  scanner.backtester  No trades: breakout / META
+15:54:05  WARNING  scanner.backtester  No trades: breakout / GOOGL
+15:54:05  WARNING  scanner.backtester  No trades: breakout / AMD
+15:54:05  WARNING  scanner.backtester  No trades: breakout / COIN
+15:54:05  WARNING  scanner.backtester  No trades: breakout / SPY
+15:54:05  WARNING  scanner.backtester  No trades: breakout / QQQ
+15:54:05  WARNING  scanner.backtester  No trades: breakout / GLD
+15:54:05  WARNING  scanner.backtester  No trades: breakout / BTC-USD
+15:54:05  WARNING  scanner.backtester  No trades: breakout / ETH-USD
+15:54:05  WARNING  scanner.backtester  No trades: breakout / GC=F
+15:54:05  WARNING  scanner.backtester  No trades: breakout / CL=F
+15:54:05  WARNING  scanner.backtester  No trades: breakout / EURUSD=X
+15:54:05  WARNING  scanner.backtester  No trades: breakout / GBPUSD=X
+15:54:05  INFO     scanner.backtester    macd_rsi/AAPL: trades=3 wr=66.7% avg_r=0.35 sharpe=4.53
+15:54:05  INFO     scanner.backtester    macd_rsi/MSFT: trades=5 wr=80.0% avg_r=1.04 sharpe=12.30
+15:54:05  INFO     scanner.backtester    macd_rsi/NVDA: trades=8 wr=50.0% avg_r=-0.01 sharpe=-0.23
+15:54:06  INFO     scanner.backtester    macd_rsi/TSLA: trades=2 wr=100.0% avg_r=0.89 sharpe=63.47
+15:54:06  INFO     scanner.backtester    macd_rsi/AMZN: trades=2 wr=50.0% avg_r=-0.77 sharpe=-3.91
+15:54:06  INFO     scanner.backtester    macd_rsi/META: trades=1 wr=0.0% avg_r=-1.97 sharpe=0.00
+15:54:06  INFO     scanner.backtester    macd_rsi/GOOGL: trades=4 wr=25.0% avg_r=-1.14 sharpe=-12.35
+15:54:06  INFO     scanner.backtester    macd_rsi/AMD: trades=2 wr=50.0% avg_r=-0.12 sharpe=-1.53
+15:54:06  INFO     scanner.backtester    macd_rsi/COIN: trades=5 wr=40.0% avg_r=-0.17 sharpe=-3.96
+15:54:06  INFO     scanner.backtester    macd_rsi/SPY: trades=5 wr=100.0% avg_r=2.33 sharpe=31.48
+15:54:06  INFO     scanner.backtester    macd_rsi/QQQ: trades=4 wr=75.0% avg_r=1.77 sharpe=14.99
+15:54:06  INFO     scanner.backtester    macd_rsi/GLD: trades=1 wr=100.0% avg_r=1.40 sharpe=0.00
+15:54:06  INFO     scanner.backtester    macd_rsi/BTC-USD: trades=2 wr=100.0% avg_r=0.86 sharpe=69.16
+15:54:06  INFO     scanner.backtester    macd_rsi/ETH-USD: trades=2 wr=100.0% avg_r=0.76 sharpe=36.09
+15:54:06  INFO     scanner.backtester    macd_rsi/GC=F: trades=2 wr=50.0% avg_r=0.72 sharpe=6.86
+15:54:06  INFO     scanner.backtester    macd_rsi/CL=F: trades=4 wr=100.0% avg_r=0.98 sharpe=71.41
+15:54:06  INFO     scanner.backtester    macd_rsi/EURUSD=X: trades=2 wr=50.0% avg_r=-0.88 sharpe=-1.65
+15:54:06  INFO     scanner.backtester    macd_rsi/GBPUSD=X: trades=6 wr=50.0% avg_r=-0.68 sharpe=-2.06
+15:54:06  WARNING  scanner.backtester  No trades: mean_reversion / AAPL
+15:54:06  INFO     scanner.backtester    mean_reversion/MSFT: trades=1 wr=100.0% avg_r=1.80 sharpe=0.00
+15:54:06  WARNING  scanner.backtester  No trades: mean_reversion / NVDA
+15:54:06  INFO     scanner.backtester    mean_reversion/TSLA: trades=2 wr=100.0% avg_r=1.80 sharpe=0.00
+15:54:06  WARNING  scanner.backtester  No trades: mean_reversion / AMZN
+15:54:06  WARNING  scanner.backtester  No trades: mean_reversion / META
+15:54:06  WARNING  scanner.backtester  No trades: mean_reversion / GOOGL
+15:54:06  WARNING  scanner.backtester  No trades: mean_reversion / AMD
+15:54:06  INFO     scanner.backtester    mean_reversion/COIN: trades=2 wr=100.0% avg_r=1.80 sharpe=0.00
+15:54:06  INFO     scanner.backtester    mean_reversion/SPY: trades=1 wr=100.0% avg_r=1.80 sharpe=0.00
+15:54:07  WARNING  scanner.backtester  No trades: mean_reversion / QQQ
+15:54:07  WARNING  scanner.backtester  No trades: mean_reversion / GLD
+15:54:07  INFO     scanner.backtester    mean_reversion/BTC-USD: trades=2 wr=100.0% avg_r=1.80 sharpe=0.00
+15:54:07  INFO     scanner.backtester    mean_reversion/ETH-USD: trades=2 wr=50.0% avg_r=0.40 sharpe=3.20
+15:54:07  WARNING  scanner.backtester  No trades: mean_reversion / GC=F
+15:54:07  WARNING  scanner.backtester  No trades: mean_reversion / CL=F
+15:54:07  INFO     scanner.backtester    mean_reversion/EURUSD=X: trades=1 wr=100.0% avg_r=1.80 sharpe=0.00
+15:54:07  WARNING  scanner.backtester  No trades: mean_reversion / GBPUSD=X
+15:54:07  INFO     scanner.backtester    orb/AAPL: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+15:54:07  INFO     scanner.backtester    orb/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:07  INFO     scanner.backtester    orb/NVDA: trades=11 wr=54.5% avg_r=0.09 sharpe=1.37
+15:54:07  INFO     scanner.backtester    orb/TSLA: trades=8 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:07  INFO     scanner.backtester    orb/AMZN: trades=7 wr=28.6% avg_r=-0.43 sharpe=-6.99
+15:54:07  INFO     scanner.backtester    orb/META: trades=7 wr=14.3% avg_r=-0.72 sharpe=-15.02
+15:54:07  INFO     scanner.backtester    orb/GOOGL: trades=9 wr=33.3% avg_r=-0.33 sharpe=-5.31
+15:54:07  INFO     scanner.backtester    orb/AMD: trades=11 wr=27.3% avg_r=-0.46 sharpe=-7.74
+15:54:07  INFO     scanner.backtester    orb/COIN: trades=6 wr=50.0% avg_r=-0.00 sharpe=-0.01
+15:54:07  INFO     scanner.backtester    orb/SPY: trades=14 wr=35.7% avg_r=-0.29 sharpe=-4.58
+15:54:07  INFO     scanner.backtester    orb/QQQ: trades=13 wr=15.4% avg_r=-0.69 sharpe=-14.65
+15:54:07  INFO     scanner.backtester    orb/GLD: trades=24 wr=33.3% avg_r=-0.33 sharpe=-5.37
+15:54:07  INFO     scanner.backtester    orb/BTC-USD: trades=11 wr=18.2% avg_r=-0.64 sharpe=-12.51
+15:54:07  INFO     scanner.backtester    orb/ETH-USD: trades=12 wr=25.0% avg_r=-0.50 sharpe=-8.79
+15:54:08  INFO     scanner.backtester    orb/GC=F: trades=19 wr=26.3% avg_r=-0.47 sharpe=-8.33
+15:54:08  INFO     scanner.backtester    orb/CL=F: trades=18 wr=27.8% avg_r=-0.44 sharpe=-7.63
+15:54:08  INFO     scanner.backtester    orb/EURUSD=X: trades=25 wr=8.0% avg_r=-0.84 sharpe=-24.11
+15:54:08  INFO     scanner.backtester    orb/GBPUSD=X: trades=19 wr=0.0% avg_r=-1.00 sharpe=-69655204960274176.00
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / AAPL
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / MSFT
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / NVDA
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / TSLA
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / AMZN
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / META
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / GOOGL
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / AMD
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / COIN
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / SPY
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / QQQ
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / GLD
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / BTC-USD
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / ETH-USD
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / GC=F
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / CL=F
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / EURUSD=X
+15:54:08  WARNING  scanner.backtester  No trades: pullback_trend / GBPUSD=X
+15:54:08  WARNING  scanner.backtester  No trades: rsi2_adx / AAPL
+15:54:08  WARNING  scanner.backtester  No trades: rsi2_adx / MSFT
+15:54:08  WARNING  scanner.backtester  No trades: rsi2_adx / NVDA
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / TSLA
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / AMZN
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / META
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / GOOGL
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / AMD
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / COIN
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / SPY
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / QQQ
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / GLD
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / BTC-USD
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / ETH-USD
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / GC=F
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / CL=F
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / EURUSD=X
+15:54:09  WARNING  scanner.backtester  No trades: rsi2_adx / GBPUSD=X
+15:54:09  WARNING  scanner.backtester  No trades: mtf_asia_fade / AAPL
+15:54:09  WARNING  scanner.backtester  No trades: mtf_asia_fade / MSFT
+15:54:09  WARNING  scanner.backtester  No trades: mtf_asia_fade / NVDA
+15:54:09  WARNING  scanner.backtester  No trades: mtf_asia_fade / TSLA
+15:54:09  WARNING  scanner.backtester  No trades: mtf_asia_fade / AMZN
+15:54:09  WARNING  scanner.backtester  No trades: mtf_asia_fade / META
+15:54:09  WARNING  scanner.backtester  No trades: mtf_asia_fade / GOOGL
+15:54:10  WARNING  scanner.backtester  No trades: mtf_asia_fade / AMD
+15:54:10  WARNING  scanner.backtester  No trades: mtf_asia_fade / COIN
+15:54:10  WARNING  scanner.backtester  No trades: mtf_asia_fade / SPY
+15:54:10  WARNING  scanner.backtester  No trades: mtf_asia_fade / QQQ
+15:54:10  WARNING  scanner.backtester  No trades: mtf_asia_fade / GLD
+15:54:10  WARNING  scanner.backtester  No trades: mtf_asia_fade / BTC-USD
+15:54:10  WARNING  scanner.backtester  No trades: mtf_asia_fade / ETH-USD
+15:54:10  WARNING  scanner.backtester  No trades: mtf_asia_fade / GC=F
+15:54:10  WARNING  scanner.backtester  No trades: mtf_asia_fade / CL=F
+15:54:10  WARNING  scanner.backtester  No trades: mtf_asia_fade / EURUSD=X
+15:54:10  WARNING  scanner.backtester  No trades: mtf_asia_fade / GBPUSD=X
+15:54:10  INFO     scanner.backtester    mtf_momentum_binary/AAPL: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+15:54:10  WARNING  scanner.backtester  No trades: mtf_momentum_binary / MSFT
+15:54:10  INFO     scanner.backtester    mtf_momentum_binary/NVDA: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+15:54:10  WARNING  scanner.backtester  No trades: mtf_momentum_binary / TSLA
+15:54:11  WARNING  scanner.backtester  No trades: mtf_momentum_binary / AMZN
+15:54:11  INFO     scanner.backtester    mtf_momentum_binary/META: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+15:54:11  INFO     scanner.backtester    mtf_momentum_binary/GOOGL: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+15:54:11  INFO     scanner.backtester    mtf_momentum_binary/AMD: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+15:54:11  INFO     scanner.backtester    mtf_momentum_binary/COIN: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+15:54:11  INFO     scanner.backtester    mtf_momentum_binary/SPY: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:11  WARNING  scanner.backtester  No trades: mtf_momentum_binary / QQQ
+15:54:11  WARNING  scanner.backtester  No trades: mtf_momentum_binary / GLD
+15:54:11  WARNING  scanner.backtester  No trades: mtf_momentum_binary / BTC-USD
+15:54:11  WARNING  scanner.backtester  No trades: mtf_momentum_binary / ETH-USD
+15:54:11  WARNING  scanner.backtester  No trades: mtf_momentum_binary / GC=F
+15:54:11  WARNING  scanner.backtester  No trades: mtf_momentum_binary / CL=F
+15:54:11  WARNING  scanner.backtester  No trades: mtf_momentum_binary / EURUSD=X
+15:54:11  WARNING  scanner.backtester  No trades: mtf_momentum_binary / GBPUSD=X
+15:54:11  INFO     scanner.backtester    mtf_ny_overlap_hunter/AAPL: trades=2 wr=100.0% avg_r=1.00 sharpe=0.00
+15:54:11  INFO     scanner.backtester    mtf_ny_overlap_hunter/MSFT: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/NVDA: trades=4 wr=75.0% avg_r=0.50 sharpe=7.92
+15:54:12  WARNING  scanner.backtester  No trades: mtf_ny_overlap_hunter / TSLA
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/AMZN: trades=5 wr=40.0% avg_r=-0.20 sharpe=-2.91
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/META: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/GOOGL: trades=2 wr=50.0% avg_r=-0.00 sharpe=-0.01
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/AMD: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/COIN: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/SPY: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/QQQ: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/GLD: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/BTC-USD: trades=5 wr=20.0% avg_r=-0.60 sharpe=-10.67
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/ETH-USD: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/GC=F: trades=3 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/CL=F: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/EURUSD=X: trades=4 wr=50.0% avg_r=-0.00 sharpe=-0.01
+15:54:12  INFO     scanner.backtester    mtf_ny_overlap_hunter/GBPUSD=X: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/AAPL: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/NVDA: trades=11 wr=54.5% avg_r=0.09 sharpe=1.37
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/TSLA: trades=8 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/AMZN: trades=8 wr=25.0% avg_r=-0.50 sharpe=-8.59
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/META: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/GOOGL: trades=9 wr=33.3% avg_r=-0.33 sharpe=-5.31
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/AMD: trades=11 wr=27.3% avg_r=-0.46 sharpe=-7.74
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/COIN: trades=6 wr=50.0% avg_r=-0.00 sharpe=-0.01
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/SPY: trades=14 wr=35.7% avg_r=-0.29 sharpe=-4.58
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/QQQ: trades=13 wr=15.4% avg_r=-0.69 sharpe=-14.65
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/GLD: trades=24 wr=29.2% avg_r=-0.42 sharpe=-7.14
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/BTC-USD: trades=11 wr=18.2% avg_r=-0.64 sharpe=-12.51
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/ETH-USD: trades=12 wr=25.0% avg_r=-0.50 sharpe=-8.79
+15:54:13  INFO     scanner.backtester    mtf_session_sniper/GC=F: trades=19 wr=26.3% avg_r=-0.47 sharpe=-8.33
+15:54:14  INFO     scanner.backtester    mtf_session_sniper/CL=F: trades=19 wr=21.1% avg_r=-0.58 sharpe=-10.99
+15:54:14  INFO     scanner.backtester    mtf_session_sniper/EURUSD=X: trades=25 wr=8.0% avg_r=-0.84 sharpe=-24.11
+15:54:14  INFO     scanner.backtester    mtf_session_sniper/GBPUSD=X: trades=19 wr=0.0% avg_r=-1.00 sharpe=-69655204960274176.00
+15:54:14  INFO     scanner.backtester    mtf_trend_continuation/AAPL: trades=10 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:14  INFO     scanner.backtester    mtf_trend_continuation/MSFT: trades=12 wr=0.0% avg_r=-1.00 sharpe=-68517237078833224.00
+15:54:14  INFO     scanner.backtester    mtf_trend_continuation/NVDA: trades=16 wr=18.8% avg_r=-0.63 sharpe=-12.33
+15:54:14  INFO     scanner.backtester    mtf_trend_continuation/TSLA: trades=2 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:14  INFO     scanner.backtester    mtf_trend_continuation/AMZN: trades=17 wr=17.6% avg_r=-0.65 sharpe=-13.09
+15:54:14  INFO     scanner.backtester    mtf_trend_continuation/META: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+15:54:14  INFO     scanner.backtester    mtf_trend_continuation/GOOGL: trades=17 wr=5.9% avg_r=-0.88 sharpe=-28.91
+15:54:14  INFO     scanner.backtester    mtf_trend_continuation/AMD: trades=15 wr=20.0% avg_r=-0.60 sharpe=-11.52
+15:54:14  INFO     scanner.backtester    mtf_trend_continuation/COIN: trades=15 wr=20.0% avg_r=-0.60 sharpe=-11.52
+15:54:14  INFO     scanner.backtester    mtf_trend_continuation/SPY: trades=9 wr=22.2% avg_r=-0.56 sharpe=-10.02
+15:54:14  INFO     scanner.backtester    mtf_trend_continuation/QQQ: trades=11 wr=27.3% avg_r=-0.46 sharpe=-7.74
+15:54:14  INFO     scanner.backtester    mtf_trend_continuation/GLD: trades=15 wr=13.3% avg_r=-0.73 sharpe=-16.56
+15:54:15  INFO     scanner.backtester    mtf_trend_continuation/BTC-USD: trades=21 wr=4.8% avg_r=-0.91 sharpe=-32.95
+15:54:15  INFO     scanner.backtester    mtf_trend_continuation/ETH-USD: trades=23 wr=4.3% avg_r=-0.91 sharpe=-34.79
+15:54:15  INFO     scanner.backtester    mtf_trend_continuation/GC=F: trades=17 wr=0.0% avg_r=-1.00 sharpe=0.00
+15:54:15  INFO     scanner.backtester    mtf_trend_continuation/CL=F: trades=30 wr=3.3% avg_r=-0.93 sharpe=-40.62
+15:54:15  INFO     scanner.backtester    mtf_trend_continuation/EURUSD=X: trades=16 wr=25.0% avg_r=-0.50 sharpe=-8.89
+15:54:15  INFO     scanner.backtester    mtf_trend_continuation/GBPUSD=X: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+15:54:15  WARNING  scanner.backtester  No trades: mtf_volatility_coil / AAPL
+15:54:15  WARNING  scanner.backtester  No trades: mtf_volatility_coil / MSFT
+15:54:15  WARNING  scanner.backtester  No trades: mtf_volatility_coil / NVDA
+15:54:15  WARNING  scanner.backtester  No trades: mtf_volatility_coil / TSLA
+15:54:15  WARNING  scanner.backtester  No trades: mtf_volatility_coil / AMZN
+15:54:15  WARNING  scanner.backtester  No trades: mtf_volatility_coil / META
+15:54:15  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GOOGL
+15:54:15  WARNING  scanner.backtester  No trades: mtf_volatility_coil / AMD
+15:54:15  WARNING  scanner.backtester  No trades: mtf_volatility_coil / COIN
+15:54:16  WARNING  scanner.backtester  No trades: mtf_volatility_coil / SPY
+15:54:16  WARNING  scanner.backtester  No trades: mtf_volatility_coil / QQQ
+15:54:16  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GLD
+15:54:16  WARNING  scanner.backtester  No trades: mtf_volatility_coil / BTC-USD
+15:54:16  WARNING  scanner.backtester  No trades: mtf_volatility_coil / ETH-USD
+15:54:16  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GC=F
+15:54:16  WARNING  scanner.backtester  No trades: mtf_volatility_coil / CL=F
+15:54:16  WARNING  scanner.backtester  No trades: mtf_volatility_coil / EURUSD=X
+15:54:16  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GBPUSD=X
+15:54:16  INFO     scanner.engine  Backtests complete. Results in output/backtest/
+15:54:16  INFO     scanner.engine  Running allocator...
+15:54:17  INFO     scanner.allocator  
+                 strategy decision  score    weight  risk_per_trade_pct
+1                macd_rsi   DEPLOY      8  0.333333                3.60
+2          mean_reversion   DEPLOY     10  0.333333                8.33
+3     mtf_momentum_binary   DEPLOY      8  0.333333                3.33
+0               adx_trend   REJECT      0  0.000000                0.00
+4   mtf_ny_overlap_hunter   REJECT      0  0.000000                0.00
+5      mtf_session_sniper   REJECT      0  0.000000                0.00
+6  mtf_trend_continuation   REJECT      0  0.000000                0.00
+7                     orb   REJECT      0  0.000000                0.00
+15:54:17  INFO     scanner.engine  Allocation complete. Results in output/allocator/
+15:54:17  INFO     scanner.engine  Loading trade journal...
+15:54:17  INFO     scanner.journal  Journal is empty.
+16:07:11  INFO     scanner.engine  Scanner engine initialised
+16:07:11  INFO     scanner.engine  Running scanner...
+16:07:11  INFO     scanner.engine    SIGNAL  breakout | AMZN | short | 250.56
+16:07:11  INFO     scanner.engine    SIGNAL  breakout | AMD | short | 278.39
+16:07:11  INFO     scanner.engine    SIGNAL  breakout | BTC-USD | short | 77148.74
+16:07:12  INFO     scanner.engine    SIGNAL  orb | AAPL | short | 270.23
+16:07:12  INFO     scanner.engine    SIGNAL  orb | MSFT | short | 422.79
+16:07:12  INFO     scanner.engine    SIGNAL  orb | NVDA | short | 201.68
+16:07:12  INFO     scanner.engine    SIGNAL  orb | TSLA | short | 400.62
+16:07:12  INFO     scanner.engine    SIGNAL  orb | AMZN | short | 250.56
+16:07:12  INFO     scanner.engine    SIGNAL  orb | META | short | 688.55
+16:07:12  INFO     scanner.engine    SIGNAL  orb | GOOGL | short | 341.68
+16:07:12  INFO     scanner.engine    SIGNAL  orb | AMD | short | 278.39
+16:07:12  INFO     scanner.engine    SIGNAL  orb | COIN | short | 206.33
+16:07:12  INFO     scanner.engine    SIGNAL  orb | SPY | short | 710.14
+16:07:12  INFO     scanner.engine    SIGNAL  orb | QQQ | short | 648.85
+16:07:12  INFO     scanner.engine    SIGNAL  orb | GLD | short | 445.93
+16:07:12  INFO     scanner.engine    SIGNAL  orb | GC=F | short | 4857.60
+16:07:12  INFO     scanner.engine    SIGNAL  orb | CL=F | short | 83.85
+16:07:12  INFO     scanner.engine    SIGNAL  orb | EURUSD=X | short | 1.18
+16:07:12  INFO     scanner.engine    SIGNAL  orb | GBPUSD=X | short | 1.35
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | AAPL | short | 270.23
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | MSFT | short | 422.79
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | NVDA | short | 201.68
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | TSLA | short | 400.62
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | AMZN | short | 250.56
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | META | short | 688.55
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GOOGL | short | 341.68
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | AMD | short | 278.39
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | COIN | short | 206.33
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | SPY | short | 710.14
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | QQQ | short | 648.85
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GLD | short | 445.93
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GC=F | short | 4857.60
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | CL=F | short | 83.85
+16:07:13  INFO     scanner.engine    SIGNAL  mtf_session_sniper | EURUSD=X | short | 1.18
+16:07:14  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GBPUSD=X | short | 1.35
+16:07:14  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | AAPL | long | 270.23
+16:07:14  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | MSFT | short | 422.79
+16:07:14  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | NVDA | long | 201.68
+16:07:14  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | TSLA | short | 400.62
+16:07:14  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | AMZN | short | 250.56
+16:07:14  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | COIN | short | 206.33
+16:07:14  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | QQQ | short | 648.85
+16:07:14  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | GLD | short | 445.93
+16:07:14  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | GC=F | long | 4857.60
+16:07:14  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | CL=F | short | 83.85
+16:07:14  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | EURUSD=X | short | 1.18
+16:07:14  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | GBPUSD=X | short | 1.35
+16:07:15  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | NVDA | short | 201.68
+16:07:15  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | GOOGL | short | 341.68
+16:07:15  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | AMD | short | 278.39
+16:07:15  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | SPY | short | 710.14
+16:07:15  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | QQQ | short | 648.85
+16:07:15  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | EURUSD=X | short | 1.18
+16:07:15  INFO     scanner.engine  Scanner complete. 53 signal(s) found.
+16:07:15  INFO     scanner.engine  Running backtests...
+16:07:15  INFO     scanner.backtester    adx_trend/AAPL: trades=10 wr=10.0% avg_r=-0.97 sharpe=-17.52
+16:07:15  INFO     scanner.backtester    adx_trend/MSFT: trades=10 wr=20.0% avg_r=-0.52 sharpe=-11.36
+16:07:15  INFO     scanner.backtester    adx_trend/NVDA: trades=8 wr=37.5% avg_r=-0.26 sharpe=-5.77
+16:07:15  INFO     scanner.backtester    adx_trend/TSLA: trades=5 wr=20.0% avg_r=-0.50 sharpe=-14.35
+16:07:15  INFO     scanner.backtester    adx_trend/AMZN: trades=8 wr=12.5% avg_r=-0.66 sharpe=-16.95
+16:07:15  INFO     scanner.backtester    adx_trend/META: trades=5 wr=20.0% avg_r=-0.41 sharpe=-9.91
+16:07:15  INFO     scanner.backtester    adx_trend/GOOGL: trades=4 wr=50.0% avg_r=0.26 sharpe=3.21
+16:07:15  INFO     scanner.backtester    adx_trend/AMD: trades=4 wr=0.0% avg_r=-0.52 sharpe=-24.38
+16:07:15  INFO     scanner.backtester    adx_trend/COIN: trades=7 wr=14.3% avg_r=-0.45 sharpe=-14.77
+16:07:16  INFO     scanner.backtester    adx_trend/SPY: trades=6 wr=0.0% avg_r=-1.77 sharpe=-24.07
+16:07:16  INFO     scanner.backtester    adx_trend/QQQ: trades=8 wr=25.0% avg_r=-0.90 sharpe=-10.08
+16:07:16  INFO     scanner.backtester    adx_trend/GLD: trades=6 wr=50.0% avg_r=0.11 sharpe=1.48
+16:07:16  INFO     scanner.backtester    adx_trend/BTC-USD: trades=7 wr=71.4% avg_r=0.28 sharpe=10.36
+16:07:16  INFO     scanner.backtester    adx_trend/ETH-USD: trades=8 wr=62.5% avg_r=0.10 sharpe=2.83
+16:07:16  INFO     scanner.backtester    adx_trend/GC=F: trades=5 wr=80.0% avg_r=0.61 sharpe=8.37
+16:07:16  INFO     scanner.backtester    adx_trend/CL=F: trades=5 wr=40.0% avg_r=-0.41 sharpe=-10.00
+16:07:16  INFO     scanner.backtester    adx_trend/EURUSD=X: trades=5 wr=20.0% avg_r=-1.48 sharpe=-9.19
+16:07:16  INFO     scanner.backtester    adx_trend/GBPUSD=X: trades=3 wr=0.0% avg_r=-2.92 sharpe=-27.67
+16:07:16  WARNING  scanner.backtester  No trades: breakout / AAPL
+16:07:16  WARNING  scanner.backtester  No trades: breakout / MSFT
+16:07:16  WARNING  scanner.backtester  No trades: breakout / NVDA
+16:07:16  WARNING  scanner.backtester  No trades: breakout / TSLA
+16:07:16  WARNING  scanner.backtester  No trades: breakout / AMZN
+16:07:16  WARNING  scanner.backtester  No trades: breakout / META
+16:07:16  WARNING  scanner.backtester  No trades: breakout / GOOGL
+16:07:16  WARNING  scanner.backtester  No trades: breakout / AMD
+16:07:16  WARNING  scanner.backtester  No trades: breakout / COIN
+16:07:16  WARNING  scanner.backtester  No trades: breakout / SPY
+16:07:16  WARNING  scanner.backtester  No trades: breakout / QQQ
+16:07:16  WARNING  scanner.backtester  No trades: breakout / GLD
+16:07:16  WARNING  scanner.backtester  No trades: breakout / BTC-USD
+16:07:16  WARNING  scanner.backtester  No trades: breakout / ETH-USD
+16:07:16  WARNING  scanner.backtester  No trades: breakout / GC=F
+16:07:16  WARNING  scanner.backtester  No trades: breakout / CL=F
+16:07:16  WARNING  scanner.backtester  No trades: breakout / EURUSD=X
+16:07:17  WARNING  scanner.backtester  No trades: breakout / GBPUSD=X
+16:07:17  INFO     scanner.backtester    macd_rsi/AAPL: trades=3 wr=66.7% avg_r=0.35 sharpe=4.53
+16:07:17  INFO     scanner.backtester    macd_rsi/MSFT: trades=5 wr=80.0% avg_r=1.04 sharpe=12.30
+16:07:17  INFO     scanner.backtester    macd_rsi/NVDA: trades=8 wr=50.0% avg_r=-0.01 sharpe=-0.23
+16:07:17  INFO     scanner.backtester    macd_rsi/TSLA: trades=2 wr=100.0% avg_r=0.89 sharpe=63.47
+16:07:17  INFO     scanner.backtester    macd_rsi/AMZN: trades=2 wr=50.0% avg_r=-0.77 sharpe=-3.91
+16:07:17  INFO     scanner.backtester    macd_rsi/META: trades=1 wr=0.0% avg_r=-1.97 sharpe=0.00
+16:07:17  INFO     scanner.backtester    macd_rsi/GOOGL: trades=4 wr=25.0% avg_r=-1.14 sharpe=-12.35
+16:07:17  INFO     scanner.backtester    macd_rsi/AMD: trades=2 wr=50.0% avg_r=-0.12 sharpe=-1.53
+16:07:17  INFO     scanner.backtester    macd_rsi/COIN: trades=5 wr=40.0% avg_r=-0.17 sharpe=-3.96
+16:07:17  INFO     scanner.backtester    macd_rsi/SPY: trades=5 wr=100.0% avg_r=2.33 sharpe=31.48
+16:07:17  INFO     scanner.backtester    macd_rsi/QQQ: trades=4 wr=75.0% avg_r=1.77 sharpe=14.99
+16:07:17  INFO     scanner.backtester    macd_rsi/GLD: trades=1 wr=100.0% avg_r=1.40 sharpe=0.00
+16:07:17  INFO     scanner.backtester    macd_rsi/BTC-USD: trades=2 wr=100.0% avg_r=0.86 sharpe=69.16
+16:07:17  INFO     scanner.backtester    macd_rsi/ETH-USD: trades=2 wr=100.0% avg_r=0.76 sharpe=36.09
+16:07:17  INFO     scanner.backtester    macd_rsi/GC=F: trades=2 wr=50.0% avg_r=0.72 sharpe=6.86
+16:07:17  INFO     scanner.backtester    macd_rsi/CL=F: trades=4 wr=100.0% avg_r=0.98 sharpe=71.41
+16:07:17  INFO     scanner.backtester    macd_rsi/EURUSD=X: trades=2 wr=50.0% avg_r=-0.88 sharpe=-1.65
+16:07:17  INFO     scanner.backtester    macd_rsi/GBPUSD=X: trades=6 wr=50.0% avg_r=-0.68 sharpe=-2.06
+16:07:17  WARNING  scanner.backtester  No trades: mean_reversion / AAPL
+16:07:17  INFO     scanner.backtester    mean_reversion/MSFT: trades=1 wr=100.0% avg_r=1.80 sharpe=0.00
+16:07:17  WARNING  scanner.backtester  No trades: mean_reversion / NVDA
+16:07:17  INFO     scanner.backtester    mean_reversion/TSLA: trades=2 wr=100.0% avg_r=1.80 sharpe=0.00
+16:07:17  WARNING  scanner.backtester  No trades: mean_reversion / AMZN
+16:07:17  WARNING  scanner.backtester  No trades: mean_reversion / META
+16:07:18  WARNING  scanner.backtester  No trades: mean_reversion / GOOGL
+16:07:18  WARNING  scanner.backtester  No trades: mean_reversion / AMD
+16:07:18  INFO     scanner.backtester    mean_reversion/COIN: trades=2 wr=100.0% avg_r=1.80 sharpe=0.00
+16:07:18  INFO     scanner.backtester    mean_reversion/SPY: trades=1 wr=100.0% avg_r=1.80 sharpe=0.00
+16:07:18  WARNING  scanner.backtester  No trades: mean_reversion / QQQ
+16:07:18  WARNING  scanner.backtester  No trades: mean_reversion / GLD
+16:07:18  INFO     scanner.backtester    mean_reversion/BTC-USD: trades=2 wr=100.0% avg_r=1.80 sharpe=0.00
+16:07:18  INFO     scanner.backtester    mean_reversion/ETH-USD: trades=2 wr=50.0% avg_r=0.40 sharpe=3.20
+16:07:18  WARNING  scanner.backtester  No trades: mean_reversion / GC=F
+16:07:18  WARNING  scanner.backtester  No trades: mean_reversion / CL=F
+16:07:18  INFO     scanner.backtester    mean_reversion/EURUSD=X: trades=1 wr=100.0% avg_r=1.80 sharpe=0.00
+16:07:18  WARNING  scanner.backtester  No trades: mean_reversion / GBPUSD=X
+16:07:18  INFO     scanner.backtester    orb/AAPL: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+16:07:18  INFO     scanner.backtester    orb/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:18  INFO     scanner.backtester    orb/NVDA: trades=11 wr=54.5% avg_r=0.09 sharpe=1.37
+16:07:18  INFO     scanner.backtester    orb/TSLA: trades=8 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:18  INFO     scanner.backtester    orb/AMZN: trades=7 wr=28.6% avg_r=-0.43 sharpe=-6.99
+16:07:18  INFO     scanner.backtester    orb/META: trades=7 wr=14.3% avg_r=-0.72 sharpe=-15.02
+16:07:18  INFO     scanner.backtester    orb/GOOGL: trades=9 wr=33.3% avg_r=-0.33 sharpe=-5.31
+16:07:18  INFO     scanner.backtester    orb/AMD: trades=11 wr=27.3% avg_r=-0.46 sharpe=-7.74
+16:07:18  INFO     scanner.backtester    orb/COIN: trades=6 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:07:18  INFO     scanner.backtester    orb/SPY: trades=14 wr=35.7% avg_r=-0.29 sharpe=-4.58
+16:07:18  INFO     scanner.backtester    orb/QQQ: trades=13 wr=15.4% avg_r=-0.69 sharpe=-14.65
+16:07:18  INFO     scanner.backtester    orb/GLD: trades=24 wr=33.3% avg_r=-0.33 sharpe=-5.37
+16:07:18  INFO     scanner.backtester    orb/BTC-USD: trades=11 wr=18.2% avg_r=-0.64 sharpe=-12.51
+16:07:19  INFO     scanner.backtester    orb/ETH-USD: trades=12 wr=25.0% avg_r=-0.50 sharpe=-8.79
+16:07:19  INFO     scanner.backtester    orb/GC=F: trades=19 wr=26.3% avg_r=-0.47 sharpe=-8.33
+16:07:19  INFO     scanner.backtester    orb/CL=F: trades=18 wr=27.8% avg_r=-0.44 sharpe=-7.63
+16:07:19  INFO     scanner.backtester    orb/EURUSD=X: trades=25 wr=8.0% avg_r=-0.84 sharpe=-24.11
+16:07:19  INFO     scanner.backtester    orb/GBPUSD=X: trades=19 wr=0.0% avg_r=-1.00 sharpe=-69655204960274176.00
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / AAPL
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / MSFT
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / NVDA
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / TSLA
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / AMZN
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / META
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / GOOGL
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / AMD
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / COIN
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / SPY
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / QQQ
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / GLD
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / BTC-USD
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / ETH-USD
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / GC=F
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / CL=F
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / EURUSD=X
+16:07:19  WARNING  scanner.backtester  No trades: pullback_trend / GBPUSD=X
+16:07:19  WARNING  scanner.backtester  No trades: rsi2_adx / AAPL
+16:07:19  WARNING  scanner.backtester  No trades: rsi2_adx / MSFT
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / NVDA
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / TSLA
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / AMZN
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / META
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / GOOGL
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / AMD
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / COIN
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / SPY
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / QQQ
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / GLD
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / BTC-USD
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / ETH-USD
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / GC=F
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / CL=F
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / EURUSD=X
+16:07:20  WARNING  scanner.backtester  No trades: rsi2_adx / GBPUSD=X
+16:07:20  WARNING  scanner.backtester  No trades: mtf_asia_fade / AAPL
+16:07:20  WARNING  scanner.backtester  No trades: mtf_asia_fade / MSFT
+16:07:20  WARNING  scanner.backtester  No trades: mtf_asia_fade / NVDA
+16:07:20  WARNING  scanner.backtester  No trades: mtf_asia_fade / TSLA
+16:07:20  WARNING  scanner.backtester  No trades: mtf_asia_fade / AMZN
+16:07:21  WARNING  scanner.backtester  No trades: mtf_asia_fade / META
+16:07:21  WARNING  scanner.backtester  No trades: mtf_asia_fade / GOOGL
+16:07:21  WARNING  scanner.backtester  No trades: mtf_asia_fade / AMD
+16:07:21  WARNING  scanner.backtester  No trades: mtf_asia_fade / COIN
+16:07:21  WARNING  scanner.backtester  No trades: mtf_asia_fade / SPY
+16:07:21  WARNING  scanner.backtester  No trades: mtf_asia_fade / QQQ
+16:07:21  WARNING  scanner.backtester  No trades: mtf_asia_fade / GLD
+16:07:21  WARNING  scanner.backtester  No trades: mtf_asia_fade / BTC-USD
+16:07:21  WARNING  scanner.backtester  No trades: mtf_asia_fade / ETH-USD
+16:07:21  WARNING  scanner.backtester  No trades: mtf_asia_fade / GC=F
+16:07:21  WARNING  scanner.backtester  No trades: mtf_asia_fade / CL=F
+16:07:21  WARNING  scanner.backtester  No trades: mtf_asia_fade / EURUSD=X
+16:07:21  WARNING  scanner.backtester  No trades: mtf_asia_fade / GBPUSD=X
+16:07:21  INFO     scanner.backtester    mtf_momentum_binary/AAPL: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:07:21  WARNING  scanner.backtester  No trades: mtf_momentum_binary / MSFT
+16:07:21  INFO     scanner.backtester    mtf_momentum_binary/NVDA: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+16:07:21  WARNING  scanner.backtester  No trades: mtf_momentum_binary / TSLA
+16:07:22  WARNING  scanner.backtester  No trades: mtf_momentum_binary / AMZN
+16:07:22  INFO     scanner.backtester    mtf_momentum_binary/META: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:07:22  INFO     scanner.backtester    mtf_momentum_binary/GOOGL: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:07:22  INFO     scanner.backtester    mtf_momentum_binary/AMD: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:07:22  INFO     scanner.backtester    mtf_momentum_binary/COIN: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:07:22  INFO     scanner.backtester    mtf_momentum_binary/SPY: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:22  WARNING  scanner.backtester  No trades: mtf_momentum_binary / QQQ
+16:07:22  WARNING  scanner.backtester  No trades: mtf_momentum_binary / GLD
+16:07:22  WARNING  scanner.backtester  No trades: mtf_momentum_binary / BTC-USD
+16:07:22  WARNING  scanner.backtester  No trades: mtf_momentum_binary / ETH-USD
+16:07:22  WARNING  scanner.backtester  No trades: mtf_momentum_binary / GC=F
+16:07:22  WARNING  scanner.backtester  No trades: mtf_momentum_binary / CL=F
+16:07:22  WARNING  scanner.backtester  No trades: mtf_momentum_binary / EURUSD=X
+16:07:22  WARNING  scanner.backtester  No trades: mtf_momentum_binary / GBPUSD=X
+16:07:22  INFO     scanner.backtester    mtf_ny_overlap_hunter/AAPL: trades=2 wr=100.0% avg_r=1.00 sharpe=0.00
+16:07:22  INFO     scanner.backtester    mtf_ny_overlap_hunter/MSFT: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:23  INFO     scanner.backtester    mtf_ny_overlap_hunter/NVDA: trades=4 wr=75.0% avg_r=0.50 sharpe=7.92
+16:07:23  WARNING  scanner.backtester  No trades: mtf_ny_overlap_hunter / TSLA
+16:07:23  INFO     scanner.backtester    mtf_ny_overlap_hunter/AMZN: trades=5 wr=40.0% avg_r=-0.20 sharpe=-2.91
+16:07:23  INFO     scanner.backtester    mtf_ny_overlap_hunter/META: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:23  INFO     scanner.backtester    mtf_ny_overlap_hunter/GOOGL: trades=2 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:07:23  INFO     scanner.backtester    mtf_ny_overlap_hunter/AMD: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:23  INFO     scanner.backtester    mtf_ny_overlap_hunter/COIN: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:23  INFO     scanner.backtester    mtf_ny_overlap_hunter/SPY: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:07:23  INFO     scanner.backtester    mtf_ny_overlap_hunter/QQQ: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+16:07:23  INFO     scanner.backtester    mtf_ny_overlap_hunter/GLD: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:23  INFO     scanner.backtester    mtf_ny_overlap_hunter/BTC-USD: trades=5 wr=20.0% avg_r=-0.60 sharpe=-10.67
+16:07:23  INFO     scanner.backtester    mtf_ny_overlap_hunter/ETH-USD: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+16:07:23  INFO     scanner.backtester    mtf_ny_overlap_hunter/GC=F: trades=3 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:23  INFO     scanner.backtester    mtf_ny_overlap_hunter/CL=F: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+16:07:24  INFO     scanner.backtester    mtf_ny_overlap_hunter/EURUSD=X: trades=4 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:07:24  INFO     scanner.backtester    mtf_ny_overlap_hunter/GBPUSD=X: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/AAPL: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/NVDA: trades=11 wr=54.5% avg_r=0.09 sharpe=1.37
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/TSLA: trades=8 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/AMZN: trades=8 wr=25.0% avg_r=-0.50 sharpe=-8.59
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/META: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/GOOGL: trades=9 wr=33.3% avg_r=-0.33 sharpe=-5.31
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/AMD: trades=11 wr=27.3% avg_r=-0.46 sharpe=-7.74
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/COIN: trades=6 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/SPY: trades=14 wr=35.7% avg_r=-0.29 sharpe=-4.58
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/QQQ: trades=13 wr=15.4% avg_r=-0.69 sharpe=-14.65
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/GLD: trades=24 wr=29.2% avg_r=-0.42 sharpe=-7.14
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/BTC-USD: trades=11 wr=18.2% avg_r=-0.64 sharpe=-12.51
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/ETH-USD: trades=12 wr=25.0% avg_r=-0.50 sharpe=-8.79
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/GC=F: trades=19 wr=26.3% avg_r=-0.47 sharpe=-8.33
+16:07:24  INFO     scanner.backtester    mtf_session_sniper/CL=F: trades=19 wr=21.1% avg_r=-0.58 sharpe=-10.99
+16:07:25  INFO     scanner.backtester    mtf_session_sniper/EURUSD=X: trades=25 wr=8.0% avg_r=-0.84 sharpe=-24.11
+16:07:25  INFO     scanner.backtester    mtf_session_sniper/GBPUSD=X: trades=19 wr=0.0% avg_r=-1.00 sharpe=-69655204960274176.00
+16:07:25  INFO     scanner.backtester    mtf_trend_continuation/AAPL: trades=10 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:25  INFO     scanner.backtester    mtf_trend_continuation/MSFT: trades=12 wr=0.0% avg_r=-1.00 sharpe=-68517237078833224.00
+16:07:25  INFO     scanner.backtester    mtf_trend_continuation/NVDA: trades=16 wr=18.8% avg_r=-0.63 sharpe=-12.33
+16:07:25  INFO     scanner.backtester    mtf_trend_continuation/TSLA: trades=2 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:25  INFO     scanner.backtester    mtf_trend_continuation/AMZN: trades=17 wr=17.6% avg_r=-0.65 sharpe=-13.09
+16:07:25  INFO     scanner.backtester    mtf_trend_continuation/META: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+16:07:25  INFO     scanner.backtester    mtf_trend_continuation/GOOGL: trades=17 wr=5.9% avg_r=-0.88 sharpe=-28.91
+16:07:25  INFO     scanner.backtester    mtf_trend_continuation/AMD: trades=15 wr=20.0% avg_r=-0.60 sharpe=-11.52
+16:07:25  INFO     scanner.backtester    mtf_trend_continuation/COIN: trades=15 wr=20.0% avg_r=-0.60 sharpe=-11.52
+16:07:25  INFO     scanner.backtester    mtf_trend_continuation/SPY: trades=9 wr=22.2% avg_r=-0.56 sharpe=-10.02
+16:07:25  INFO     scanner.backtester    mtf_trend_continuation/QQQ: trades=11 wr=27.3% avg_r=-0.46 sharpe=-7.74
+16:07:25  INFO     scanner.backtester    mtf_trend_continuation/GLD: trades=15 wr=13.3% avg_r=-0.73 sharpe=-16.56
+16:07:25  INFO     scanner.backtester    mtf_trend_continuation/BTC-USD: trades=21 wr=4.8% avg_r=-0.91 sharpe=-32.95
+16:07:26  INFO     scanner.backtester    mtf_trend_continuation/ETH-USD: trades=23 wr=4.3% avg_r=-0.91 sharpe=-34.79
+16:07:26  INFO     scanner.backtester    mtf_trend_continuation/GC=F: trades=17 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:26  INFO     scanner.backtester    mtf_trend_continuation/CL=F: trades=30 wr=3.3% avg_r=-0.93 sharpe=-40.62
+16:07:26  INFO     scanner.backtester    mtf_trend_continuation/EURUSD=X: trades=16 wr=25.0% avg_r=-0.50 sharpe=-8.89
+16:07:26  INFO     scanner.backtester    mtf_trend_continuation/GBPUSD=X: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+16:07:26  WARNING  scanner.backtester  No trades: mtf_volatility_coil / AAPL
+16:07:26  WARNING  scanner.backtester  No trades: mtf_volatility_coil / MSFT
+16:07:26  WARNING  scanner.backtester  No trades: mtf_volatility_coil / NVDA
+16:07:26  WARNING  scanner.backtester  No trades: mtf_volatility_coil / TSLA
+16:07:26  WARNING  scanner.backtester  No trades: mtf_volatility_coil / AMZN
+16:07:26  WARNING  scanner.backtester  No trades: mtf_volatility_coil / META
+16:07:26  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GOOGL
+16:07:26  WARNING  scanner.backtester  No trades: mtf_volatility_coil / AMD
+16:07:26  WARNING  scanner.backtester  No trades: mtf_volatility_coil / COIN
+16:07:26  WARNING  scanner.backtester  No trades: mtf_volatility_coil / SPY
+16:07:26  WARNING  scanner.backtester  No trades: mtf_volatility_coil / QQQ
+16:07:26  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GLD
+16:07:27  WARNING  scanner.backtester  No trades: mtf_volatility_coil / BTC-USD
+16:07:27  WARNING  scanner.backtester  No trades: mtf_volatility_coil / ETH-USD
+16:07:27  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GC=F
+16:07:27  WARNING  scanner.backtester  No trades: mtf_volatility_coil / CL=F
+16:07:27  WARNING  scanner.backtester  No trades: mtf_volatility_coil / EURUSD=X
+16:07:27  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GBPUSD=X
+16:07:27  INFO     scanner.backtester    mtf_fx_london_breakout/AAPL: trades=3 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:27  INFO     scanner.backtester    mtf_fx_london_breakout/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:27  INFO     scanner.backtester    mtf_fx_london_breakout/NVDA: trades=15 wr=13.3% avg_r=-0.67 sharpe=-12.08
+16:07:27  INFO     scanner.backtester    mtf_fx_london_breakout/TSLA: trades=8 wr=37.5% avg_r=0.04 sharpe=0.42
+16:07:27  INFO     scanner.backtester    mtf_fx_london_breakout/AMZN: trades=5 wr=60.0% avg_r=0.31 sharpe=4.04
+16:07:27  INFO     scanner.backtester    mtf_fx_london_breakout/META: trades=11 wr=36.4% avg_r=-0.23 sharpe=-3.45
+16:07:27  INFO     scanner.backtester    mtf_fx_london_breakout/GOOGL: trades=9 wr=33.3% avg_r=-0.28 sharpe=-4.05
+16:07:27  INFO     scanner.backtester    mtf_fx_london_breakout/AMD: trades=8 wr=25.0% avg_r=-0.50 sharpe=-8.59
+16:07:27  INFO     scanner.backtester    mtf_fx_london_breakout/COIN: trades=4 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:07:27  INFO     scanner.backtester    mtf_fx_london_breakout/SPY: trades=5 wr=80.0% avg_r=0.60 sharpe=10.63
+16:07:27  INFO     scanner.backtester    mtf_fx_london_breakout/QQQ: trades=12 wr=25.0% avg_r=-0.49 sharpe=-8.56
+16:07:28  INFO     scanner.backtester    mtf_fx_london_breakout/GLD: trades=15 wr=53.3% avg_r=0.19 sharpe=2.54
+16:07:28  INFO     scanner.backtester    mtf_fx_london_breakout/BTC-USD: trades=12 wr=25.0% avg_r=-0.24 sharpe=-2.81
+16:07:28  INFO     scanner.backtester    mtf_fx_london_breakout/ETH-USD: trades=7 wr=57.1% avg_r=0.26 sharpe=3.50
+16:07:28  INFO     scanner.backtester    mtf_fx_london_breakout/GC=F: trades=17 wr=23.5% avg_r=-0.48 sharpe=-7.94
+16:07:28  INFO     scanner.backtester    mtf_fx_london_breakout/CL=F: trades=10 wr=50.0% avg_r=0.11 sharpe=1.44
+16:07:28  INFO     scanner.backtester    mtf_fx_london_breakout/EURUSD=X: trades=19 wr=21.1% avg_r=-0.58 sharpe=-10.99
+16:07:28  INFO     scanner.backtester    mtf_fx_london_breakout/GBPUSD=X: trades=13 wr=38.5% avg_r=-0.23 sharpe=-3.63
+16:07:28  INFO     scanner.backtester    mtf_trend_continuation_v2/AAPL: trades=6 wr=33.3% avg_r=-0.33 sharpe=-5.14
+16:07:28  INFO     scanner.backtester    mtf_trend_continuation_v2/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:28  INFO     scanner.backtester    mtf_trend_continuation_v2/NVDA: trades=7 wr=28.6% avg_r=-0.43 sharpe=-6.99
+16:07:28  WARNING  scanner.backtester  No trades: mtf_trend_continuation_v2 / TSLA
+16:07:28  INFO     scanner.backtester    mtf_trend_continuation_v2/AMZN: trades=7 wr=28.6% avg_r=-0.43 sharpe=-6.99
+16:07:28  INFO     scanner.backtester    mtf_trend_continuation_v2/META: trades=2 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:07:28  INFO     scanner.backtester    mtf_trend_continuation_v2/GOOGL: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+16:07:28  INFO     scanner.backtester    mtf_trend_continuation_v2/AMD: trades=7 wr=28.6% avg_r=-0.43 sharpe=-6.99
+16:07:28  INFO     scanner.backtester    mtf_trend_continuation_v2/COIN: trades=8 wr=37.5% avg_r=-0.25 sharpe=-3.85
+16:07:29  INFO     scanner.backtester    mtf_trend_continuation_v2/SPY: trades=6 wr=33.3% avg_r=-0.33 sharpe=-5.14
+16:07:29  INFO     scanner.backtester    mtf_trend_continuation_v2/QQQ: trades=6 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:07:29  INFO     scanner.backtester    mtf_trend_continuation_v2/GLD: trades=10 wr=20.0% avg_r=-0.60 sharpe=-11.31
+16:07:29  INFO     scanner.backtester    mtf_trend_continuation_v2/BTC-USD: trades=11 wr=9.1% avg_r=-0.82 sharpe=-21.56
+16:07:29  INFO     scanner.backtester    mtf_trend_continuation_v2/ETH-USD: trades=9 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:29  INFO     scanner.backtester    mtf_trend_continuation_v2/GC=F: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+16:07:29  INFO     scanner.backtester    mtf_trend_continuation_v2/CL=F: trades=12 wr=8.3% avg_r=-0.83 sharpe=-22.94
+16:07:29  INFO     scanner.backtester    mtf_trend_continuation_v2/EURUSD=X: trades=8 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:07:29  INFO     scanner.backtester    mtf_trend_continuation_v2/GBPUSD=X: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+16:07:29  INFO     scanner.backtester    mtf_us_open_momentum/AAPL: trades=2 wr=100.0% avg_r=1.00 sharpe=0.00
+16:07:29  INFO     scanner.backtester    mtf_us_open_momentum/MSFT: trades=5 wr=60.0% avg_r=0.20 sharpe=2.88
+16:07:29  INFO     scanner.backtester    mtf_us_open_momentum/NVDA: trades=5 wr=60.0% avg_r=0.20 sharpe=2.88
+16:07:29  INFO     scanner.backtester    mtf_us_open_momentum/TSLA: trades=4 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:07:29  INFO     scanner.backtester    mtf_us_open_momentum/AMZN: trades=2 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:07:29  INFO     scanner.backtester    mtf_us_open_momentum/META: trades=3 wr=66.7% avg_r=0.33 sharpe=4.57
+16:07:29  INFO     scanner.backtester    mtf_us_open_momentum/GOOGL: trades=3 wr=33.3% avg_r=-0.33 sharpe=-4.60
+16:07:29  INFO     scanner.backtester    mtf_us_open_momentum/AMD: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:07:30  WARNING  scanner.backtester  No trades: mtf_us_open_momentum / COIN
+16:07:30  INFO     scanner.backtester    mtf_us_open_momentum/SPY: trades=7 wr=14.3% avg_r=-0.72 sharpe=-15.02
+16:07:30  INFO     scanner.backtester    mtf_us_open_momentum/QQQ: trades=5 wr=40.0% avg_r=-0.20 sharpe=-2.91
+16:07:30  INFO     scanner.backtester    mtf_us_open_momentum/GLD: trades=12 wr=8.3% avg_r=-0.83 sharpe=-22.94
+16:07:30  INFO     scanner.backtester    mtf_us_open_momentum/BTC-USD: trades=4 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:07:30  INFO     scanner.backtester    mtf_us_open_momentum/ETH-USD: trades=7 wr=28.6% avg_r=-0.29 sharpe=-3.63
+16:07:30  INFO     scanner.backtester    mtf_us_open_momentum/GC=F: trades=12 wr=0.0% avg_r=-1.00 sharpe=-68517237078833224.00
+16:07:30  INFO     scanner.backtester    mtf_us_open_momentum/CL=F: trades=9 wr=22.2% avg_r=-0.45 sharpe=-6.26
+16:07:30  INFO     scanner.backtester    mtf_us_open_momentum/EURUSD=X: trades=10 wr=20.0% avg_r=-0.60 sharpe=-11.31
+16:07:30  INFO     scanner.backtester    mtf_us_open_momentum/GBPUSD=X: trades=9 wr=22.2% avg_r=-0.56 sharpe=-10.02
+16:07:30  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / AAPL
+16:07:30  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / MSFT
+16:07:30  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / NVDA
+16:07:30  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / TSLA
+16:07:30  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / AMZN
+16:07:30  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / META
+16:07:31  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / GOOGL
+16:07:31  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / AMD
+16:07:31  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / COIN
+16:07:31  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / SPY
+16:07:31  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / QQQ
+16:07:31  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / GLD
+16:07:31  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / BTC-USD
+16:07:31  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / ETH-USD
+16:07:31  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / GC=F
+16:07:31  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / CL=F
+16:07:31  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / EURUSD=X
+16:07:31  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / GBPUSD=X
+16:07:31  INFO     scanner.engine  Backtests complete. Results in output/backtest/
+16:07:31  INFO     scanner.engine  Running allocator...
+16:07:32  INFO     scanner.allocator  
+                     strategy decision  score    weight  risk_per_trade_pct
+1                    macd_rsi   DEPLOY      8  0.333333                3.60
+2              mean_reversion   DEPLOY     10  0.333333                8.33
+4         mtf_momentum_binary   DEPLOY      8  0.333333                3.33
+0                   adx_trend   REJECT      0  0.000000                0.00
+3      mtf_fx_london_breakout   REJECT      0  0.000000                0.00
+5       mtf_ny_overlap_hunter   REJECT      0  0.000000                0.00
+6          mtf_session_sniper   REJECT      0  0.000000                0.00
+7      mtf_trend_continuation   REJECT      0  0.000000                0.00
+8   mtf_trend_continuation_v2   REJECT      0  0.000000                0.00
+9        mtf_us_open_momentum   REJECT      0  0.000000                0.00
+10                        orb   REJECT      0  0.000000                0.00
+16:07:32  INFO     scanner.engine  Allocation complete. Results in output/allocator/
+16:07:32  INFO     scanner.engine  Loading trade journal...
+16:07:32  INFO     scanner.journal  Journal is empty.
+16:29:31  INFO     scanner.engine  Scanner engine initialised
+16:29:31  INFO     scanner.engine  Running scanner...
+16:29:31  INFO     scanner.engine    SIGNAL  breakout | AMZN | short | 250.56
+16:29:31  INFO     scanner.engine    SIGNAL  breakout | AMD | short | 278.39
+16:29:31  INFO     scanner.engine    SIGNAL  breakout | BTC-USD | short | 77148.74
+16:29:31  INFO     scanner.engine    SIGNAL  orb | AAPL | short | 270.23
+16:29:31  INFO     scanner.engine    SIGNAL  orb | MSFT | short | 422.79
+16:29:31  INFO     scanner.engine    SIGNAL  orb | NVDA | short | 201.68
+16:29:31  INFO     scanner.engine    SIGNAL  orb | TSLA | short | 400.62
+16:29:31  INFO     scanner.engine    SIGNAL  orb | AMZN | short | 250.56
+16:29:31  INFO     scanner.engine    SIGNAL  orb | META | short | 688.55
+16:29:31  INFO     scanner.engine    SIGNAL  orb | GOOGL | short | 341.68
+16:29:31  INFO     scanner.engine    SIGNAL  orb | AMD | short | 278.39
+16:29:31  INFO     scanner.engine    SIGNAL  orb | COIN | short | 206.33
+16:29:31  INFO     scanner.engine    SIGNAL  orb | SPY | short | 710.14
+16:29:31  INFO     scanner.engine    SIGNAL  orb | QQQ | short | 648.85
+16:29:31  INFO     scanner.engine    SIGNAL  orb | GLD | short | 445.93
+16:29:31  INFO     scanner.engine    SIGNAL  orb | GC=F | short | 4857.60
+16:29:31  INFO     scanner.engine    SIGNAL  orb | CL=F | short | 83.85
+16:29:31  INFO     scanner.engine    SIGNAL  orb | EURUSD=X | short | 1.18
+16:29:31  INFO     scanner.engine    SIGNAL  orb | GBPUSD=X | short | 1.35
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | AAPL | short | 270.23
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | MSFT | short | 422.79
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | NVDA | short | 201.68
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | TSLA | short | 400.62
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | AMZN | short | 250.56
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | META | short | 688.55
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GOOGL | short | 341.68
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | AMD | short | 278.39
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | COIN | short | 206.33
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | SPY | short | 710.14
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | QQQ | short | 648.85
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GLD | short | 445.93
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GC=F | short | 4857.60
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | CL=F | short | 83.85
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | EURUSD=X | short | 1.18
+16:29:33  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GBPUSD=X | short | 1.35
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | AAPL | long | 270.23
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | MSFT | short | 422.79
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | NVDA | long | 201.68
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | TSLA | short | 400.62
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | AMZN | short | 250.56
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | COIN | short | 206.33
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | QQQ | short | 648.85
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | GLD | short | 445.93
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | GC=F | long | 4857.60
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | CL=F | short | 83.85
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | EURUSD=X | short | 1.18
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | GBPUSD=X | short | 1.35
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | NVDA | short | 201.68
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | GOOGL | short | 341.68
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | AMD | short | 278.39
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | SPY | short | 710.14
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | QQQ | short | 648.85
+16:29:34  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | EURUSD=X | short | 1.18
+16:29:35  INFO     scanner.engine  Scanner complete. 53 signal(s) found.
+16:29:35  INFO     scanner.engine  Running backtests...
+16:29:35  INFO     scanner.backtester    adx_trend/AAPL: trades=10 wr=10.0% avg_r=-0.97 sharpe=-17.52
+16:29:35  INFO     scanner.backtester    adx_trend/MSFT: trades=10 wr=20.0% avg_r=-0.52 sharpe=-11.36
+16:29:35  INFO     scanner.backtester    adx_trend/NVDA: trades=8 wr=37.5% avg_r=-0.26 sharpe=-5.77
+16:29:35  INFO     scanner.backtester    adx_trend/TSLA: trades=5 wr=20.0% avg_r=-0.50 sharpe=-14.35
+16:29:35  INFO     scanner.backtester    adx_trend/AMZN: trades=8 wr=12.5% avg_r=-0.66 sharpe=-16.95
+16:29:35  INFO     scanner.backtester    adx_trend/META: trades=5 wr=20.0% avg_r=-0.41 sharpe=-9.91
+16:29:35  INFO     scanner.backtester    adx_trend/GOOGL: trades=4 wr=50.0% avg_r=0.26 sharpe=3.21
+16:29:35  INFO     scanner.backtester    adx_trend/AMD: trades=4 wr=0.0% avg_r=-0.52 sharpe=-24.38
+16:29:35  INFO     scanner.backtester    adx_trend/COIN: trades=7 wr=14.3% avg_r=-0.45 sharpe=-14.77
+16:29:35  INFO     scanner.backtester    adx_trend/SPY: trades=6 wr=0.0% avg_r=-1.77 sharpe=-24.07
+16:29:35  INFO     scanner.backtester    adx_trend/QQQ: trades=8 wr=25.0% avg_r=-0.90 sharpe=-10.08
+16:29:35  INFO     scanner.backtester    adx_trend/GLD: trades=6 wr=50.0% avg_r=0.11 sharpe=1.48
+16:29:35  INFO     scanner.backtester    adx_trend/BTC-USD: trades=7 wr=71.4% avg_r=0.28 sharpe=10.36
+16:29:35  INFO     scanner.backtester    adx_trend/ETH-USD: trades=8 wr=62.5% avg_r=0.10 sharpe=2.83
+16:29:35  INFO     scanner.backtester    adx_trend/GC=F: trades=5 wr=80.0% avg_r=0.61 sharpe=8.37
+16:29:35  INFO     scanner.backtester    adx_trend/CL=F: trades=5 wr=40.0% avg_r=-0.41 sharpe=-10.00
+16:29:36  INFO     scanner.backtester    adx_trend/EURUSD=X: trades=5 wr=20.0% avg_r=-1.48 sharpe=-9.19
+16:29:36  INFO     scanner.backtester    adx_trend/GBPUSD=X: trades=3 wr=0.0% avg_r=-2.92 sharpe=-27.67
+16:29:36  WARNING  scanner.backtester  No trades: breakout / AAPL
+16:29:36  WARNING  scanner.backtester  No trades: breakout / MSFT
+16:29:36  WARNING  scanner.backtester  No trades: breakout / NVDA
+16:29:36  WARNING  scanner.backtester  No trades: breakout / TSLA
+16:29:36  WARNING  scanner.backtester  No trades: breakout / AMZN
+16:29:36  WARNING  scanner.backtester  No trades: breakout / META
+16:29:36  WARNING  scanner.backtester  No trades: breakout / GOOGL
+16:29:36  WARNING  scanner.backtester  No trades: breakout / AMD
+16:29:36  WARNING  scanner.backtester  No trades: breakout / COIN
+16:29:36  WARNING  scanner.backtester  No trades: breakout / SPY
+16:29:36  WARNING  scanner.backtester  No trades: breakout / QQQ
+16:29:36  WARNING  scanner.backtester  No trades: breakout / GLD
+16:29:36  WARNING  scanner.backtester  No trades: breakout / BTC-USD
+16:29:36  WARNING  scanner.backtester  No trades: breakout / ETH-USD
+16:29:36  WARNING  scanner.backtester  No trades: breakout / GC=F
+16:29:36  WARNING  scanner.backtester  No trades: breakout / CL=F
+16:29:36  WARNING  scanner.backtester  No trades: breakout / EURUSD=X
+16:29:36  WARNING  scanner.backtester  No trades: breakout / GBPUSD=X
+16:29:36  INFO     scanner.backtester    macd_rsi/AAPL: trades=3 wr=66.7% avg_r=0.35 sharpe=4.53
+16:29:36  INFO     scanner.backtester    macd_rsi/MSFT: trades=5 wr=80.0% avg_r=1.04 sharpe=12.30
+16:29:36  INFO     scanner.backtester    macd_rsi/NVDA: trades=8 wr=50.0% avg_r=-0.01 sharpe=-0.23
+16:29:36  INFO     scanner.backtester    macd_rsi/TSLA: trades=2 wr=100.0% avg_r=0.89 sharpe=63.47
+16:29:36  INFO     scanner.backtester    macd_rsi/AMZN: trades=2 wr=50.0% avg_r=-0.77 sharpe=-3.91
+16:29:36  INFO     scanner.backtester    macd_rsi/META: trades=1 wr=0.0% avg_r=-1.97 sharpe=0.00
+16:29:37  INFO     scanner.backtester    macd_rsi/GOOGL: trades=4 wr=25.0% avg_r=-1.14 sharpe=-12.35
+16:29:37  INFO     scanner.backtester    macd_rsi/AMD: trades=2 wr=50.0% avg_r=-0.12 sharpe=-1.53
+16:29:37  INFO     scanner.backtester    macd_rsi/COIN: trades=5 wr=40.0% avg_r=-0.17 sharpe=-3.96
+16:29:37  INFO     scanner.backtester    macd_rsi/SPY: trades=5 wr=100.0% avg_r=2.33 sharpe=31.48
+16:29:37  INFO     scanner.backtester    macd_rsi/QQQ: trades=4 wr=75.0% avg_r=1.77 sharpe=14.99
+16:29:37  INFO     scanner.backtester    macd_rsi/GLD: trades=1 wr=100.0% avg_r=1.40 sharpe=0.00
+16:29:37  INFO     scanner.backtester    macd_rsi/BTC-USD: trades=2 wr=100.0% avg_r=0.86 sharpe=69.16
+16:29:37  INFO     scanner.backtester    macd_rsi/ETH-USD: trades=2 wr=100.0% avg_r=0.76 sharpe=36.09
+16:29:37  INFO     scanner.backtester    macd_rsi/GC=F: trades=2 wr=50.0% avg_r=0.72 sharpe=6.86
+16:29:37  INFO     scanner.backtester    macd_rsi/CL=F: trades=4 wr=100.0% avg_r=0.98 sharpe=71.41
+16:29:37  INFO     scanner.backtester    macd_rsi/EURUSD=X: trades=2 wr=50.0% avg_r=-0.88 sharpe=-1.65
+16:29:37  INFO     scanner.backtester    macd_rsi/GBPUSD=X: trades=6 wr=50.0% avg_r=-0.68 sharpe=-2.06
+16:29:37  WARNING  scanner.backtester  No trades: mean_reversion / AAPL
+16:29:37  INFO     scanner.backtester    mean_reversion/MSFT: trades=1 wr=100.0% avg_r=1.80 sharpe=0.00
+16:29:37  WARNING  scanner.backtester  No trades: mean_reversion / NVDA
+16:29:37  INFO     scanner.backtester    mean_reversion/TSLA: trades=2 wr=100.0% avg_r=1.80 sharpe=0.00
+16:29:37  WARNING  scanner.backtester  No trades: mean_reversion / AMZN
+16:29:37  WARNING  scanner.backtester  No trades: mean_reversion / META
+16:29:37  WARNING  scanner.backtester  No trades: mean_reversion / GOOGL
+16:29:37  WARNING  scanner.backtester  No trades: mean_reversion / AMD
+16:29:37  INFO     scanner.backtester    mean_reversion/COIN: trades=2 wr=100.0% avg_r=1.80 sharpe=0.00
+16:29:37  INFO     scanner.backtester    mean_reversion/SPY: trades=1 wr=100.0% avg_r=1.80 sharpe=0.00
+16:29:37  WARNING  scanner.backtester  No trades: mean_reversion / QQQ
+16:29:37  WARNING  scanner.backtester  No trades: mean_reversion / GLD
+16:29:38  INFO     scanner.backtester    mean_reversion/BTC-USD: trades=2 wr=100.0% avg_r=1.80 sharpe=0.00
+16:29:38  INFO     scanner.backtester    mean_reversion/ETH-USD: trades=2 wr=50.0% avg_r=0.40 sharpe=3.20
+16:29:38  WARNING  scanner.backtester  No trades: mean_reversion / GC=F
+16:29:38  WARNING  scanner.backtester  No trades: mean_reversion / CL=F
+16:29:38  INFO     scanner.backtester    mean_reversion/EURUSD=X: trades=1 wr=100.0% avg_r=1.80 sharpe=0.00
+16:29:38  WARNING  scanner.backtester  No trades: mean_reversion / GBPUSD=X
+16:29:38  INFO     scanner.backtester    orb/AAPL: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+16:29:38  INFO     scanner.backtester    orb/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:38  INFO     scanner.backtester    orb/NVDA: trades=11 wr=54.5% avg_r=0.09 sharpe=1.37
+16:29:38  INFO     scanner.backtester    orb/TSLA: trades=8 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:38  INFO     scanner.backtester    orb/AMZN: trades=7 wr=28.6% avg_r=-0.43 sharpe=-6.99
+16:29:38  INFO     scanner.backtester    orb/META: trades=7 wr=14.3% avg_r=-0.72 sharpe=-15.02
+16:29:38  INFO     scanner.backtester    orb/GOOGL: trades=9 wr=33.3% avg_r=-0.33 sharpe=-5.31
+16:29:38  INFO     scanner.backtester    orb/AMD: trades=11 wr=27.3% avg_r=-0.46 sharpe=-7.74
+16:29:38  INFO     scanner.backtester    orb/COIN: trades=6 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:29:38  INFO     scanner.backtester    orb/SPY: trades=14 wr=35.7% avg_r=-0.29 sharpe=-4.58
+16:29:38  INFO     scanner.backtester    orb/QQQ: trades=13 wr=15.4% avg_r=-0.69 sharpe=-14.65
+16:29:38  INFO     scanner.backtester    orb/GLD: trades=24 wr=33.3% avg_r=-0.33 sharpe=-5.37
+16:29:38  INFO     scanner.backtester    orb/BTC-USD: trades=11 wr=18.2% avg_r=-0.64 sharpe=-12.51
+16:29:38  INFO     scanner.backtester    orb/ETH-USD: trades=12 wr=25.0% avg_r=-0.50 sharpe=-8.79
+16:29:38  INFO     scanner.backtester    orb/GC=F: trades=19 wr=26.3% avg_r=-0.47 sharpe=-8.33
+16:29:38  INFO     scanner.backtester    orb/CL=F: trades=18 wr=27.8% avg_r=-0.44 sharpe=-7.63
+16:29:39  INFO     scanner.backtester    orb/EURUSD=X: trades=25 wr=8.0% avg_r=-0.84 sharpe=-24.11
+16:29:39  INFO     scanner.backtester    orb/GBPUSD=X: trades=19 wr=0.0% avg_r=-1.00 sharpe=-69655204960274176.00
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / AAPL
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / MSFT
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / NVDA
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / TSLA
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / AMZN
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / META
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / GOOGL
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / AMD
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / COIN
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / SPY
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / QQQ
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / GLD
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / BTC-USD
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / ETH-USD
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / GC=F
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / CL=F
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / EURUSD=X
+16:29:39  WARNING  scanner.backtester  No trades: pullback_trend / GBPUSD=X
+16:29:39  WARNING  scanner.backtester  No trades: rsi2_adx / AAPL
+16:29:39  WARNING  scanner.backtester  No trades: rsi2_adx / MSFT
+16:29:39  WARNING  scanner.backtester  No trades: rsi2_adx / NVDA
+16:29:39  WARNING  scanner.backtester  No trades: rsi2_adx / TSLA
+16:29:39  WARNING  scanner.backtester  No trades: rsi2_adx / AMZN
+16:29:39  WARNING  scanner.backtester  No trades: rsi2_adx / META
+16:29:39  WARNING  scanner.backtester  No trades: rsi2_adx / GOOGL
+16:29:40  WARNING  scanner.backtester  No trades: rsi2_adx / AMD
+16:29:40  WARNING  scanner.backtester  No trades: rsi2_adx / COIN
+16:29:40  WARNING  scanner.backtester  No trades: rsi2_adx / SPY
+16:29:40  WARNING  scanner.backtester  No trades: rsi2_adx / QQQ
+16:29:40  WARNING  scanner.backtester  No trades: rsi2_adx / GLD
+16:29:40  WARNING  scanner.backtester  No trades: rsi2_adx / BTC-USD
+16:29:40  WARNING  scanner.backtester  No trades: rsi2_adx / ETH-USD
+16:29:40  WARNING  scanner.backtester  No trades: rsi2_adx / GC=F
+16:29:40  WARNING  scanner.backtester  No trades: rsi2_adx / CL=F
+16:29:40  WARNING  scanner.backtester  No trades: rsi2_adx / EURUSD=X
+16:29:40  WARNING  scanner.backtester  No trades: rsi2_adx / GBPUSD=X
+16:29:40  WARNING  scanner.backtester  No trades: mtf_asia_fade / AAPL
+16:29:40  WARNING  scanner.backtester  No trades: mtf_asia_fade / MSFT
+16:29:40  WARNING  scanner.backtester  No trades: mtf_asia_fade / NVDA
+16:29:40  WARNING  scanner.backtester  No trades: mtf_asia_fade / TSLA
+16:29:40  WARNING  scanner.backtester  No trades: mtf_asia_fade / AMZN
+16:29:40  WARNING  scanner.backtester  No trades: mtf_asia_fade / META
+16:29:40  WARNING  scanner.backtester  No trades: mtf_asia_fade / GOOGL
+16:29:41  WARNING  scanner.backtester  No trades: mtf_asia_fade / AMD
+16:29:41  WARNING  scanner.backtester  No trades: mtf_asia_fade / COIN
+16:29:41  WARNING  scanner.backtester  No trades: mtf_asia_fade / SPY
+16:29:41  WARNING  scanner.backtester  No trades: mtf_asia_fade / QQQ
+16:29:41  WARNING  scanner.backtester  No trades: mtf_asia_fade / GLD
+16:29:41  WARNING  scanner.backtester  No trades: mtf_asia_fade / BTC-USD
+16:29:41  WARNING  scanner.backtester  No trades: mtf_asia_fade / ETH-USD
+16:29:41  WARNING  scanner.backtester  No trades: mtf_asia_fade / GC=F
+16:29:41  WARNING  scanner.backtester  No trades: mtf_asia_fade / CL=F
+16:29:41  WARNING  scanner.backtester  No trades: mtf_asia_fade / EURUSD=X
+16:29:41  WARNING  scanner.backtester  No trades: mtf_asia_fade / GBPUSD=X
+16:29:41  INFO     scanner.backtester    mtf_momentum_binary/AAPL: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:29:41  WARNING  scanner.backtester  No trades: mtf_momentum_binary / MSFT
+16:29:41  INFO     scanner.backtester    mtf_momentum_binary/NVDA: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+16:29:41  WARNING  scanner.backtester  No trades: mtf_momentum_binary / TSLA
+16:29:41  WARNING  scanner.backtester  No trades: mtf_momentum_binary / AMZN
+16:29:42  INFO     scanner.backtester    mtf_momentum_binary/META: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:29:42  INFO     scanner.backtester    mtf_momentum_binary/GOOGL: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:29:42  INFO     scanner.backtester    mtf_momentum_binary/AMD: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:29:42  INFO     scanner.backtester    mtf_momentum_binary/COIN: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:29:42  INFO     scanner.backtester    mtf_momentum_binary/SPY: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:42  WARNING  scanner.backtester  No trades: mtf_momentum_binary / QQQ
+16:29:42  WARNING  scanner.backtester  No trades: mtf_momentum_binary / GLD
+16:29:42  WARNING  scanner.backtester  No trades: mtf_momentum_binary / BTC-USD
+16:29:42  WARNING  scanner.backtester  No trades: mtf_momentum_binary / ETH-USD
+16:29:42  WARNING  scanner.backtester  No trades: mtf_momentum_binary / GC=F
+16:29:42  WARNING  scanner.backtester  No trades: mtf_momentum_binary / CL=F
+16:29:42  WARNING  scanner.backtester  No trades: mtf_momentum_binary / EURUSD=X
+16:29:42  WARNING  scanner.backtester  No trades: mtf_momentum_binary / GBPUSD=X
+16:29:42  INFO     scanner.backtester    mtf_ny_overlap_hunter/AAPL: trades=2 wr=100.0% avg_r=1.00 sharpe=0.00
+16:29:42  INFO     scanner.backtester    mtf_ny_overlap_hunter/MSFT: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:42  INFO     scanner.backtester    mtf_ny_overlap_hunter/NVDA: trades=4 wr=75.0% avg_r=0.50 sharpe=7.92
+16:29:43  WARNING  scanner.backtester  No trades: mtf_ny_overlap_hunter / TSLA
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/AMZN: trades=5 wr=40.0% avg_r=-0.20 sharpe=-2.91
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/META: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/GOOGL: trades=2 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/AMD: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/COIN: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/SPY: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/QQQ: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/GLD: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/BTC-USD: trades=5 wr=20.0% avg_r=-0.60 sharpe=-10.67
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/ETH-USD: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/GC=F: trades=3 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/CL=F: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/EURUSD=X: trades=4 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:29:43  INFO     scanner.backtester    mtf_ny_overlap_hunter/GBPUSD=X: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/AAPL: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/NVDA: trades=11 wr=54.5% avg_r=0.09 sharpe=1.37
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/TSLA: trades=8 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/AMZN: trades=8 wr=25.0% avg_r=-0.50 sharpe=-8.59
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/META: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/GOOGL: trades=9 wr=33.3% avg_r=-0.33 sharpe=-5.31
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/AMD: trades=11 wr=27.3% avg_r=-0.46 sharpe=-7.74
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/COIN: trades=6 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/SPY: trades=14 wr=35.7% avg_r=-0.29 sharpe=-4.58
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/QQQ: trades=13 wr=15.4% avg_r=-0.69 sharpe=-14.65
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/GLD: trades=24 wr=29.2% avg_r=-0.42 sharpe=-7.14
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/BTC-USD: trades=11 wr=18.2% avg_r=-0.64 sharpe=-12.51
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/ETH-USD: trades=12 wr=25.0% avg_r=-0.50 sharpe=-8.79
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/GC=F: trades=19 wr=26.3% avg_r=-0.47 sharpe=-8.33
+16:29:44  INFO     scanner.backtester    mtf_session_sniper/CL=F: trades=19 wr=21.1% avg_r=-0.58 sharpe=-10.99
+16:29:45  INFO     scanner.backtester    mtf_session_sniper/EURUSD=X: trades=25 wr=8.0% avg_r=-0.84 sharpe=-24.11
+16:29:45  INFO     scanner.backtester    mtf_session_sniper/GBPUSD=X: trades=19 wr=0.0% avg_r=-1.00 sharpe=-69655204960274176.00
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/AAPL: trades=10 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/MSFT: trades=12 wr=0.0% avg_r=-1.00 sharpe=-68517237078833224.00
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/NVDA: trades=16 wr=18.8% avg_r=-0.63 sharpe=-12.33
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/TSLA: trades=2 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/AMZN: trades=17 wr=17.6% avg_r=-0.65 sharpe=-13.09
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/META: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/GOOGL: trades=17 wr=5.9% avg_r=-0.88 sharpe=-28.91
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/AMD: trades=15 wr=20.0% avg_r=-0.60 sharpe=-11.52
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/COIN: trades=15 wr=20.0% avg_r=-0.60 sharpe=-11.52
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/SPY: trades=9 wr=22.2% avg_r=-0.56 sharpe=-10.02
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/QQQ: trades=11 wr=27.3% avg_r=-0.46 sharpe=-7.74
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/GLD: trades=15 wr=13.3% avg_r=-0.73 sharpe=-16.56
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/BTC-USD: trades=21 wr=4.8% avg_r=-0.91 sharpe=-32.95
+16:29:45  INFO     scanner.backtester    mtf_trend_continuation/ETH-USD: trades=23 wr=4.3% avg_r=-0.91 sharpe=-34.79
+16:29:46  INFO     scanner.backtester    mtf_trend_continuation/GC=F: trades=17 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:46  INFO     scanner.backtester    mtf_trend_continuation/CL=F: trades=30 wr=3.3% avg_r=-0.93 sharpe=-40.62
+16:29:46  INFO     scanner.backtester    mtf_trend_continuation/EURUSD=X: trades=16 wr=25.0% avg_r=-0.50 sharpe=-8.89
+16:29:46  INFO     scanner.backtester    mtf_trend_continuation/GBPUSD=X: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+16:29:46  WARNING  scanner.backtester  No trades: mtf_volatility_coil / AAPL
+16:29:46  WARNING  scanner.backtester  No trades: mtf_volatility_coil / MSFT
+16:29:46  WARNING  scanner.backtester  No trades: mtf_volatility_coil / NVDA
+16:29:46  WARNING  scanner.backtester  No trades: mtf_volatility_coil / TSLA
+16:29:46  WARNING  scanner.backtester  No trades: mtf_volatility_coil / AMZN
+16:29:46  WARNING  scanner.backtester  No trades: mtf_volatility_coil / META
+16:29:46  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GOOGL
+16:29:46  WARNING  scanner.backtester  No trades: mtf_volatility_coil / AMD
+16:29:46  WARNING  scanner.backtester  No trades: mtf_volatility_coil / COIN
+16:29:46  WARNING  scanner.backtester  No trades: mtf_volatility_coil / SPY
+16:29:46  WARNING  scanner.backtester  No trades: mtf_volatility_coil / QQQ
+16:29:46  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GLD
+16:29:46  WARNING  scanner.backtester  No trades: mtf_volatility_coil / BTC-USD
+16:29:47  WARNING  scanner.backtester  No trades: mtf_volatility_coil / ETH-USD
+16:29:47  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GC=F
+16:29:47  WARNING  scanner.backtester  No trades: mtf_volatility_coil / CL=F
+16:29:47  WARNING  scanner.backtester  No trades: mtf_volatility_coil / EURUSD=X
+16:29:47  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GBPUSD=X
+16:29:47  INFO     scanner.backtester    mtf_fx_london_breakout/AAPL: trades=3 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:47  INFO     scanner.backtester    mtf_fx_london_breakout/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:47  INFO     scanner.backtester    mtf_fx_london_breakout/NVDA: trades=15 wr=13.3% avg_r=-0.67 sharpe=-12.08
+16:29:47  INFO     scanner.backtester    mtf_fx_london_breakout/TSLA: trades=8 wr=37.5% avg_r=0.04 sharpe=0.42
+16:29:47  INFO     scanner.backtester    mtf_fx_london_breakout/AMZN: trades=5 wr=60.0% avg_r=0.31 sharpe=4.04
+16:29:47  INFO     scanner.backtester    mtf_fx_london_breakout/META: trades=11 wr=36.4% avg_r=-0.23 sharpe=-3.45
+16:29:47  INFO     scanner.backtester    mtf_fx_london_breakout/GOOGL: trades=9 wr=33.3% avg_r=-0.28 sharpe=-4.05
+16:29:47  INFO     scanner.backtester    mtf_fx_london_breakout/AMD: trades=8 wr=25.0% avg_r=-0.50 sharpe=-8.59
+16:29:47  INFO     scanner.backtester    mtf_fx_london_breakout/COIN: trades=4 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:29:48  INFO     scanner.backtester    mtf_fx_london_breakout/SPY: trades=5 wr=80.0% avg_r=0.60 sharpe=10.63
+16:29:48  INFO     scanner.backtester    mtf_fx_london_breakout/QQQ: trades=12 wr=25.0% avg_r=-0.49 sharpe=-8.56
+16:29:48  INFO     scanner.backtester    mtf_fx_london_breakout/GLD: trades=15 wr=53.3% avg_r=0.19 sharpe=2.54
+16:29:48  INFO     scanner.backtester    mtf_fx_london_breakout/BTC-USD: trades=12 wr=25.0% avg_r=-0.24 sharpe=-2.81
+16:29:48  INFO     scanner.backtester    mtf_fx_london_breakout/ETH-USD: trades=7 wr=57.1% avg_r=0.26 sharpe=3.50
+16:29:48  INFO     scanner.backtester    mtf_fx_london_breakout/GC=F: trades=17 wr=23.5% avg_r=-0.48 sharpe=-7.94
+16:29:48  INFO     scanner.backtester    mtf_fx_london_breakout/CL=F: trades=10 wr=50.0% avg_r=0.11 sharpe=1.44
+16:29:48  INFO     scanner.backtester    mtf_fx_london_breakout/EURUSD=X: trades=19 wr=21.1% avg_r=-0.58 sharpe=-10.99
+16:29:48  INFO     scanner.backtester    mtf_fx_london_breakout/GBPUSD=X: trades=13 wr=38.5% avg_r=-0.23 sharpe=-3.63
+16:29:48  INFO     scanner.backtester    mtf_trend_continuation_v2/AAPL: trades=6 wr=33.3% avg_r=-0.33 sharpe=-5.14
+16:29:48  INFO     scanner.backtester    mtf_trend_continuation_v2/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:48  INFO     scanner.backtester    mtf_trend_continuation_v2/NVDA: trades=7 wr=28.6% avg_r=-0.43 sharpe=-6.99
+16:29:48  WARNING  scanner.backtester  No trades: mtf_trend_continuation_v2 / TSLA
+16:29:48  INFO     scanner.backtester    mtf_trend_continuation_v2/AMZN: trades=7 wr=28.6% avg_r=-0.43 sharpe=-6.99
+16:29:48  INFO     scanner.backtester    mtf_trend_continuation_v2/META: trades=2 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:29:48  INFO     scanner.backtester    mtf_trend_continuation_v2/GOOGL: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+16:29:49  INFO     scanner.backtester    mtf_trend_continuation_v2/AMD: trades=7 wr=28.6% avg_r=-0.43 sharpe=-6.99
+16:29:49  INFO     scanner.backtester    mtf_trend_continuation_v2/COIN: trades=8 wr=37.5% avg_r=-0.25 sharpe=-3.85
+16:29:49  INFO     scanner.backtester    mtf_trend_continuation_v2/SPY: trades=6 wr=33.3% avg_r=-0.33 sharpe=-5.14
+16:29:49  INFO     scanner.backtester    mtf_trend_continuation_v2/QQQ: trades=6 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:29:49  INFO     scanner.backtester    mtf_trend_continuation_v2/GLD: trades=10 wr=20.0% avg_r=-0.60 sharpe=-11.31
+16:29:49  INFO     scanner.backtester    mtf_trend_continuation_v2/BTC-USD: trades=11 wr=9.1% avg_r=-0.82 sharpe=-21.56
+16:29:49  INFO     scanner.backtester    mtf_trend_continuation_v2/ETH-USD: trades=9 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:49  INFO     scanner.backtester    mtf_trend_continuation_v2/GC=F: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+16:29:49  INFO     scanner.backtester    mtf_trend_continuation_v2/CL=F: trades=12 wr=8.3% avg_r=-0.83 sharpe=-22.94
+16:29:49  INFO     scanner.backtester    mtf_trend_continuation_v2/EURUSD=X: trades=8 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:29:49  INFO     scanner.backtester    mtf_trend_continuation_v2/GBPUSD=X: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+16:29:49  INFO     scanner.backtester    mtf_us_open_momentum/AAPL: trades=2 wr=100.0% avg_r=1.00 sharpe=0.00
+16:29:49  INFO     scanner.backtester    mtf_us_open_momentum/MSFT: trades=5 wr=60.0% avg_r=0.20 sharpe=2.88
+16:29:49  INFO     scanner.backtester    mtf_us_open_momentum/NVDA: trades=5 wr=60.0% avg_r=0.20 sharpe=2.88
+16:29:49  INFO     scanner.backtester    mtf_us_open_momentum/TSLA: trades=4 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:29:49  INFO     scanner.backtester    mtf_us_open_momentum/AMZN: trades=2 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:29:50  INFO     scanner.backtester    mtf_us_open_momentum/META: trades=3 wr=66.7% avg_r=0.33 sharpe=4.57
+16:29:50  INFO     scanner.backtester    mtf_us_open_momentum/GOOGL: trades=3 wr=33.3% avg_r=-0.33 sharpe=-4.60
+16:29:50  INFO     scanner.backtester    mtf_us_open_momentum/AMD: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+16:29:50  WARNING  scanner.backtester  No trades: mtf_us_open_momentum / COIN
+16:29:50  INFO     scanner.backtester    mtf_us_open_momentum/SPY: trades=7 wr=14.3% avg_r=-0.72 sharpe=-15.02
+16:29:50  INFO     scanner.backtester    mtf_us_open_momentum/QQQ: trades=5 wr=40.0% avg_r=-0.20 sharpe=-2.91
+16:29:50  INFO     scanner.backtester    mtf_us_open_momentum/GLD: trades=12 wr=8.3% avg_r=-0.83 sharpe=-22.94
+16:29:50  INFO     scanner.backtester    mtf_us_open_momentum/BTC-USD: trades=4 wr=50.0% avg_r=-0.00 sharpe=-0.01
+16:29:50  INFO     scanner.backtester    mtf_us_open_momentum/ETH-USD: trades=7 wr=28.6% avg_r=-0.29 sharpe=-3.63
+16:29:50  INFO     scanner.backtester    mtf_us_open_momentum/GC=F: trades=12 wr=0.0% avg_r=-1.00 sharpe=-68517237078833224.00
+16:29:50  INFO     scanner.backtester    mtf_us_open_momentum/CL=F: trades=9 wr=22.2% avg_r=-0.45 sharpe=-6.26
+16:29:50  INFO     scanner.backtester    mtf_us_open_momentum/EURUSD=X: trades=10 wr=20.0% avg_r=-0.60 sharpe=-11.31
+16:29:50  INFO     scanner.backtester    mtf_us_open_momentum/GBPUSD=X: trades=9 wr=22.2% avg_r=-0.56 sharpe=-10.02
+16:29:50  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / AAPL
+16:29:50  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / MSFT
+16:29:50  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / NVDA
+16:29:50  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / TSLA
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / AMZN
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / META
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / GOOGL
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / AMD
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / COIN
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / SPY
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / QQQ
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / GLD
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / BTC-USD
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / ETH-USD
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / GC=F
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / CL=F
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / EURUSD=X
+16:29:51  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / GBPUSD=X
+16:29:51  INFO     scanner.engine  Backtests complete. Results in output/backtest/
+16:29:51  INFO     scanner.engine  Running allocator...
+16:29:52  INFO     scanner.allocator  
+                     strategy decision  score    weight  risk_per_trade_pct
+1                    macd_rsi   DEPLOY      8  0.333333                3.60
+2              mean_reversion   DEPLOY     10  0.333333                8.33
+4         mtf_momentum_binary   DEPLOY      8  0.333333                3.33
+0                   adx_trend   REJECT      0  0.000000                0.00
+3      mtf_fx_london_breakout   REJECT      0  0.000000                0.00
+5       mtf_ny_overlap_hunter   REJECT      0  0.000000                0.00
+6          mtf_session_sniper   REJECT      0  0.000000                0.00
+7      mtf_trend_continuation   REJECT      0  0.000000                0.00
+8   mtf_trend_continuation_v2   REJECT      0  0.000000                0.00
+9        mtf_us_open_momentum   REJECT      0  0.000000                0.00
+10                        orb   REJECT      0  0.000000                0.00
+16:29:52  INFO     scanner.engine  Allocation complete. Results in output/allocator/
+16:29:52  INFO     scanner.engine  Loading trade journal...
+16:29:52  INFO     scanner.journal  Journal is empty.
+17:56:18  INFO     scanner.engine  Scanner engine initialised
+17:56:18  INFO     scanner.engine  Running scanner...
+17:56:18  INFO     scanner.engine    SIGNAL  breakout | AMZN | short | 250.56
+17:56:18  INFO     scanner.engine    SIGNAL  breakout | AMD | short | 278.39
+17:56:18  INFO     scanner.engine    SIGNAL  breakout | BTC-USD | short | 77148.74
+17:56:18  INFO     scanner.engine    SIGNAL  orb | AAPL | short | 270.23
+17:56:18  INFO     scanner.engine    SIGNAL  orb | MSFT | short | 422.79
+17:56:18  INFO     scanner.engine    SIGNAL  orb | NVDA | short | 201.68
+17:56:18  INFO     scanner.engine    SIGNAL  orb | TSLA | short | 400.62
+17:56:18  INFO     scanner.engine    SIGNAL  orb | AMZN | short | 250.56
+17:56:18  INFO     scanner.engine    SIGNAL  orb | META | short | 688.55
+17:56:18  INFO     scanner.engine    SIGNAL  orb | GOOGL | short | 341.68
+17:56:18  INFO     scanner.engine    SIGNAL  orb | AMD | short | 278.39
+17:56:18  INFO     scanner.engine    SIGNAL  orb | COIN | short | 206.33
+17:56:18  INFO     scanner.engine    SIGNAL  orb | SPY | short | 710.14
+17:56:18  INFO     scanner.engine    SIGNAL  orb | QQQ | short | 648.85
+17:56:18  INFO     scanner.engine    SIGNAL  orb | GLD | short | 445.93
+17:56:18  INFO     scanner.engine    SIGNAL  orb | GC=F | short | 4857.60
+17:56:18  INFO     scanner.engine    SIGNAL  orb | CL=F | short | 83.85
+17:56:18  INFO     scanner.engine    SIGNAL  orb | EURUSD=X | short | 1.18
+17:56:19  INFO     scanner.engine    SIGNAL  orb | GBPUSD=X | short | 1.35
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | AAPL | short | 270.23
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | MSFT | short | 422.79
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | NVDA | short | 201.68
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | TSLA | short | 400.62
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | AMZN | short | 250.56
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | META | short | 688.55
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GOOGL | short | 341.68
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | AMD | short | 278.39
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | COIN | short | 206.33
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | SPY | short | 710.14
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | QQQ | short | 648.85
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GLD | short | 445.93
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GC=F | short | 4857.60
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | CL=F | short | 83.85
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | EURUSD=X | short | 1.18
+17:56:20  INFO     scanner.engine    SIGNAL  mtf_session_sniper | GBPUSD=X | short | 1.35
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | AAPL | long | 270.23
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | MSFT | short | 422.79
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | NVDA | long | 201.68
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | TSLA | short | 400.62
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | AMZN | short | 250.56
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | COIN | short | 206.33
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | QQQ | short | 648.85
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | GLD | short | 445.93
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | GC=F | long | 4857.60
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | CL=F | short | 83.85
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | EURUSD=X | short | 1.18
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_fx_london_breakout | GBPUSD=X | short | 1.35
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | NVDA | short | 201.68
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | GOOGL | short | 341.68
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | AMD | short | 278.39
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | SPY | short | 710.14
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | QQQ | short | 648.85
+17:56:21  INFO     scanner.engine    SIGNAL  mtf_us_open_momentum | EURUSD=X | short | 1.18
+17:56:22  INFO     scanner.engine  Scanner complete. 53 signal(s) found.
+17:56:22  INFO     scanner.engine  Running backtests...
+17:56:22  INFO     scanner.backtester    adx_trend/AAPL: trades=10 wr=10.0% avg_r=-0.97 sharpe=-17.52
+17:56:22  INFO     scanner.backtester    adx_trend/MSFT: trades=10 wr=20.0% avg_r=-0.52 sharpe=-11.36
+17:56:22  INFO     scanner.backtester    adx_trend/NVDA: trades=8 wr=37.5% avg_r=-0.26 sharpe=-5.77
+17:56:22  INFO     scanner.backtester    adx_trend/TSLA: trades=5 wr=20.0% avg_r=-0.50 sharpe=-14.35
+17:56:22  INFO     scanner.backtester    adx_trend/AMZN: trades=8 wr=12.5% avg_r=-0.66 sharpe=-16.95
+17:56:22  INFO     scanner.backtester    adx_trend/META: trades=5 wr=20.0% avg_r=-0.41 sharpe=-9.91
+17:56:22  INFO     scanner.backtester    adx_trend/GOOGL: trades=4 wr=50.0% avg_r=0.26 sharpe=3.21
+17:56:22  INFO     scanner.backtester    adx_trend/AMD: trades=4 wr=0.0% avg_r=-0.52 sharpe=-24.38
+17:56:22  INFO     scanner.backtester    adx_trend/COIN: trades=7 wr=14.3% avg_r=-0.45 sharpe=-14.77
+17:56:22  INFO     scanner.backtester    adx_trend/SPY: trades=6 wr=0.0% avg_r=-1.77 sharpe=-24.07
+17:56:22  INFO     scanner.backtester    adx_trend/QQQ: trades=8 wr=25.0% avg_r=-0.90 sharpe=-10.08
+17:56:22  INFO     scanner.backtester    adx_trend/GLD: trades=6 wr=50.0% avg_r=0.11 sharpe=1.48
+17:56:22  INFO     scanner.backtester    adx_trend/BTC-USD: trades=7 wr=71.4% avg_r=0.28 sharpe=10.36
+17:56:22  INFO     scanner.backtester    adx_trend/ETH-USD: trades=8 wr=62.5% avg_r=0.10 sharpe=2.83
+17:56:22  INFO     scanner.backtester    adx_trend/GC=F: trades=5 wr=80.0% avg_r=0.61 sharpe=8.37
+17:56:22  INFO     scanner.backtester    adx_trend/CL=F: trades=5 wr=40.0% avg_r=-0.41 sharpe=-10.00
+17:56:22  INFO     scanner.backtester    adx_trend/EURUSD=X: trades=5 wr=20.0% avg_r=-1.48 sharpe=-9.19
+17:56:22  INFO     scanner.backtester    adx_trend/GBPUSD=X: trades=3 wr=0.0% avg_r=-2.92 sharpe=-27.67
+17:56:22  WARNING  scanner.backtester  No trades: breakout / AAPL
+17:56:22  WARNING  scanner.backtester  No trades: breakout / MSFT
+17:56:23  WARNING  scanner.backtester  No trades: breakout / NVDA
+17:56:23  WARNING  scanner.backtester  No trades: breakout / TSLA
+17:56:23  WARNING  scanner.backtester  No trades: breakout / AMZN
+17:56:23  WARNING  scanner.backtester  No trades: breakout / META
+17:56:23  WARNING  scanner.backtester  No trades: breakout / GOOGL
+17:56:23  WARNING  scanner.backtester  No trades: breakout / AMD
+17:56:23  WARNING  scanner.backtester  No trades: breakout / COIN
+17:56:23  WARNING  scanner.backtester  No trades: breakout / SPY
+17:56:23  WARNING  scanner.backtester  No trades: breakout / QQQ
+17:56:23  WARNING  scanner.backtester  No trades: breakout / GLD
+17:56:23  WARNING  scanner.backtester  No trades: breakout / BTC-USD
+17:56:23  WARNING  scanner.backtester  No trades: breakout / ETH-USD
+17:56:23  WARNING  scanner.backtester  No trades: breakout / GC=F
+17:56:23  WARNING  scanner.backtester  No trades: breakout / CL=F
+17:56:23  WARNING  scanner.backtester  No trades: breakout / EURUSD=X
+17:56:23  WARNING  scanner.backtester  No trades: breakout / GBPUSD=X
+17:56:23  INFO     scanner.backtester    macd_rsi/AAPL: trades=3 wr=66.7% avg_r=0.35 sharpe=4.53
+17:56:23  INFO     scanner.backtester    macd_rsi/MSFT: trades=5 wr=80.0% avg_r=1.04 sharpe=12.30
+17:56:23  INFO     scanner.backtester    macd_rsi/NVDA: trades=8 wr=50.0% avg_r=-0.01 sharpe=-0.23
+17:56:23  INFO     scanner.backtester    macd_rsi/TSLA: trades=2 wr=100.0% avg_r=0.89 sharpe=63.47
+17:56:23  INFO     scanner.backtester    macd_rsi/AMZN: trades=2 wr=50.0% avg_r=-0.77 sharpe=-3.91
+17:56:23  INFO     scanner.backtester    macd_rsi/META: trades=1 wr=0.0% avg_r=-1.97 sharpe=0.00
+17:56:23  INFO     scanner.backtester    macd_rsi/GOOGL: trades=4 wr=25.0% avg_r=-1.14 sharpe=-12.35
+17:56:23  INFO     scanner.backtester    macd_rsi/AMD: trades=2 wr=50.0% avg_r=-0.12 sharpe=-1.53
+17:56:23  INFO     scanner.backtester    macd_rsi/COIN: trades=5 wr=40.0% avg_r=-0.17 sharpe=-3.96
+17:56:24  INFO     scanner.backtester    macd_rsi/SPY: trades=5 wr=100.0% avg_r=2.33 sharpe=31.48
+17:56:24  INFO     scanner.backtester    macd_rsi/QQQ: trades=4 wr=75.0% avg_r=1.77 sharpe=14.99
+17:56:24  INFO     scanner.backtester    macd_rsi/GLD: trades=1 wr=100.0% avg_r=1.40 sharpe=0.00
+17:56:24  INFO     scanner.backtester    macd_rsi/BTC-USD: trades=2 wr=100.0% avg_r=0.86 sharpe=69.16
+17:56:24  INFO     scanner.backtester    macd_rsi/ETH-USD: trades=2 wr=100.0% avg_r=0.76 sharpe=36.09
+17:56:24  INFO     scanner.backtester    macd_rsi/GC=F: trades=2 wr=50.0% avg_r=0.72 sharpe=6.86
+17:56:24  INFO     scanner.backtester    macd_rsi/CL=F: trades=4 wr=100.0% avg_r=0.98 sharpe=71.41
+17:56:24  INFO     scanner.backtester    macd_rsi/EURUSD=X: trades=2 wr=50.0% avg_r=-0.88 sharpe=-1.65
+17:56:24  INFO     scanner.backtester    macd_rsi/GBPUSD=X: trades=6 wr=50.0% avg_r=-0.68 sharpe=-2.06
+17:56:24  WARNING  scanner.backtester  No trades: mean_reversion / AAPL
+17:56:24  INFO     scanner.backtester    mean_reversion/MSFT: trades=1 wr=100.0% avg_r=1.80 sharpe=0.00
+17:56:24  WARNING  scanner.backtester  No trades: mean_reversion / NVDA
+17:56:24  INFO     scanner.backtester    mean_reversion/TSLA: trades=2 wr=100.0% avg_r=1.80 sharpe=0.00
+17:56:24  WARNING  scanner.backtester  No trades: mean_reversion / AMZN
+17:56:24  WARNING  scanner.backtester  No trades: mean_reversion / META
+17:56:24  WARNING  scanner.backtester  No trades: mean_reversion / GOOGL
+17:56:24  WARNING  scanner.backtester  No trades: mean_reversion / AMD
+17:56:24  INFO     scanner.backtester    mean_reversion/COIN: trades=2 wr=100.0% avg_r=1.80 sharpe=0.00
+17:56:24  INFO     scanner.backtester    mean_reversion/SPY: trades=1 wr=100.0% avg_r=1.80 sharpe=0.00
+17:56:24  WARNING  scanner.backtester  No trades: mean_reversion / QQQ
+17:56:24  WARNING  scanner.backtester  No trades: mean_reversion / GLD
+17:56:24  INFO     scanner.backtester    mean_reversion/BTC-USD: trades=2 wr=100.0% avg_r=1.80 sharpe=0.00
+17:56:24  INFO     scanner.backtester    mean_reversion/ETH-USD: trades=2 wr=50.0% avg_r=0.40 sharpe=3.20
+17:56:24  WARNING  scanner.backtester  No trades: mean_reversion / GC=F
+17:56:24  WARNING  scanner.backtester  No trades: mean_reversion / CL=F
+17:56:25  INFO     scanner.backtester    mean_reversion/EURUSD=X: trades=1 wr=100.0% avg_r=1.80 sharpe=0.00
+17:56:25  WARNING  scanner.backtester  No trades: mean_reversion / GBPUSD=X
+17:56:25  INFO     scanner.backtester    orb/AAPL: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+17:56:25  INFO     scanner.backtester    orb/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:25  INFO     scanner.backtester    orb/NVDA: trades=11 wr=54.5% avg_r=0.09 sharpe=1.37
+17:56:25  INFO     scanner.backtester    orb/TSLA: trades=8 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:25  INFO     scanner.backtester    orb/AMZN: trades=7 wr=28.6% avg_r=-0.43 sharpe=-6.99
+17:56:25  INFO     scanner.backtester    orb/META: trades=7 wr=14.3% avg_r=-0.72 sharpe=-15.02
+17:56:25  INFO     scanner.backtester    orb/GOOGL: trades=9 wr=33.3% avg_r=-0.33 sharpe=-5.31
+17:56:25  INFO     scanner.backtester    orb/AMD: trades=11 wr=27.3% avg_r=-0.46 sharpe=-7.74
+17:56:25  INFO     scanner.backtester    orb/COIN: trades=6 wr=50.0% avg_r=-0.00 sharpe=-0.01
+17:56:25  INFO     scanner.backtester    orb/SPY: trades=14 wr=35.7% avg_r=-0.29 sharpe=-4.58
+17:56:25  INFO     scanner.backtester    orb/QQQ: trades=13 wr=15.4% avg_r=-0.69 sharpe=-14.65
+17:56:25  INFO     scanner.backtester    orb/GLD: trades=24 wr=33.3% avg_r=-0.33 sharpe=-5.37
+17:56:25  INFO     scanner.backtester    orb/BTC-USD: trades=11 wr=18.2% avg_r=-0.64 sharpe=-12.51
+17:56:25  INFO     scanner.backtester    orb/ETH-USD: trades=12 wr=25.0% avg_r=-0.50 sharpe=-8.79
+17:56:25  INFO     scanner.backtester    orb/GC=F: trades=19 wr=26.3% avg_r=-0.47 sharpe=-8.33
+17:56:25  INFO     scanner.backtester    orb/CL=F: trades=18 wr=27.8% avg_r=-0.44 sharpe=-7.63
+17:56:25  INFO     scanner.backtester    orb/EURUSD=X: trades=25 wr=8.0% avg_r=-0.84 sharpe=-24.11
+17:56:25  INFO     scanner.backtester    orb/GBPUSD=X: trades=19 wr=0.0% avg_r=-1.00 sharpe=-69655204960274176.00
+17:56:25  WARNING  scanner.backtester  No trades: pullback_trend / AAPL
+17:56:25  WARNING  scanner.backtester  No trades: pullback_trend / MSFT
+17:56:25  WARNING  scanner.backtester  No trades: pullback_trend / NVDA
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / TSLA
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / AMZN
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / META
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / GOOGL
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / AMD
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / COIN
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / SPY
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / QQQ
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / GLD
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / BTC-USD
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / ETH-USD
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / GC=F
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / CL=F
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / EURUSD=X
+17:56:26  WARNING  scanner.backtester  No trades: pullback_trend / GBPUSD=X
+17:56:26  WARNING  scanner.backtester  No trades: rsi2_adx / AAPL
+17:56:26  WARNING  scanner.backtester  No trades: rsi2_adx / MSFT
+17:56:26  WARNING  scanner.backtester  No trades: rsi2_adx / NVDA
+17:56:26  WARNING  scanner.backtester  No trades: rsi2_adx / TSLA
+17:56:26  WARNING  scanner.backtester  No trades: rsi2_adx / AMZN
+17:56:26  WARNING  scanner.backtester  No trades: rsi2_adx / META
+17:56:26  WARNING  scanner.backtester  No trades: rsi2_adx / GOOGL
+17:56:26  WARNING  scanner.backtester  No trades: rsi2_adx / AMD
+17:56:26  WARNING  scanner.backtester  No trades: rsi2_adx / COIN
+17:56:26  WARNING  scanner.backtester  No trades: rsi2_adx / SPY
+17:56:26  WARNING  scanner.backtester  No trades: rsi2_adx / QQQ
+17:56:27  WARNING  scanner.backtester  No trades: rsi2_adx / GLD
+17:56:27  WARNING  scanner.backtester  No trades: rsi2_adx / BTC-USD
+17:56:27  WARNING  scanner.backtester  No trades: rsi2_adx / ETH-USD
+17:56:27  WARNING  scanner.backtester  No trades: rsi2_adx / GC=F
+17:56:27  WARNING  scanner.backtester  No trades: rsi2_adx / CL=F
+17:56:27  WARNING  scanner.backtester  No trades: rsi2_adx / EURUSD=X
+17:56:27  WARNING  scanner.backtester  No trades: rsi2_adx / GBPUSD=X
+17:56:27  WARNING  scanner.backtester  No trades: mtf_asia_fade / AAPL
+17:56:27  WARNING  scanner.backtester  No trades: mtf_asia_fade / MSFT
+17:56:27  WARNING  scanner.backtester  No trades: mtf_asia_fade / NVDA
+17:56:27  WARNING  scanner.backtester  No trades: mtf_asia_fade / TSLA
+17:56:27  WARNING  scanner.backtester  No trades: mtf_asia_fade / AMZN
+17:56:27  WARNING  scanner.backtester  No trades: mtf_asia_fade / META
+17:56:27  WARNING  scanner.backtester  No trades: mtf_asia_fade / GOOGL
+17:56:27  WARNING  scanner.backtester  No trades: mtf_asia_fade / AMD
+17:56:27  WARNING  scanner.backtester  No trades: mtf_asia_fade / COIN
+17:56:27  WARNING  scanner.backtester  No trades: mtf_asia_fade / SPY
+17:56:28  WARNING  scanner.backtester  No trades: mtf_asia_fade / QQQ
+17:56:28  WARNING  scanner.backtester  No trades: mtf_asia_fade / GLD
+17:56:28  WARNING  scanner.backtester  No trades: mtf_asia_fade / BTC-USD
+17:56:28  WARNING  scanner.backtester  No trades: mtf_asia_fade / ETH-USD
+17:56:28  WARNING  scanner.backtester  No trades: mtf_asia_fade / GC=F
+17:56:28  WARNING  scanner.backtester  No trades: mtf_asia_fade / CL=F
+17:56:28  WARNING  scanner.backtester  No trades: mtf_asia_fade / EURUSD=X
+17:56:28  WARNING  scanner.backtester  No trades: mtf_asia_fade / GBPUSD=X
+17:56:28  INFO     scanner.backtester    mtf_momentum_binary/AAPL: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+17:56:28  WARNING  scanner.backtester  No trades: mtf_momentum_binary / MSFT
+17:56:28  INFO     scanner.backtester    mtf_momentum_binary/NVDA: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+17:56:28  WARNING  scanner.backtester  No trades: mtf_momentum_binary / TSLA
+17:56:28  WARNING  scanner.backtester  No trades: mtf_momentum_binary / AMZN
+17:56:28  INFO     scanner.backtester    mtf_momentum_binary/META: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+17:56:28  INFO     scanner.backtester    mtf_momentum_binary/GOOGL: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+17:56:28  INFO     scanner.backtester    mtf_momentum_binary/AMD: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+17:56:29  INFO     scanner.backtester    mtf_momentum_binary/COIN: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+17:56:29  INFO     scanner.backtester    mtf_momentum_binary/SPY: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:29  WARNING  scanner.backtester  No trades: mtf_momentum_binary / QQQ
+17:56:29  WARNING  scanner.backtester  No trades: mtf_momentum_binary / GLD
+17:56:29  WARNING  scanner.backtester  No trades: mtf_momentum_binary / BTC-USD
+17:56:29  WARNING  scanner.backtester  No trades: mtf_momentum_binary / ETH-USD
+17:56:29  WARNING  scanner.backtester  No trades: mtf_momentum_binary / GC=F
+17:56:29  WARNING  scanner.backtester  No trades: mtf_momentum_binary / CL=F
+17:56:29  WARNING  scanner.backtester  No trades: mtf_momentum_binary / EURUSD=X
+17:56:29  WARNING  scanner.backtester  No trades: mtf_momentum_binary / GBPUSD=X
+17:56:29  INFO     scanner.backtester    mtf_ny_overlap_hunter/AAPL: trades=2 wr=100.0% avg_r=1.00 sharpe=0.00
+17:56:29  INFO     scanner.backtester    mtf_ny_overlap_hunter/MSFT: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:29  INFO     scanner.backtester    mtf_ny_overlap_hunter/NVDA: trades=4 wr=75.0% avg_r=0.50 sharpe=7.92
+17:56:29  WARNING  scanner.backtester  No trades: mtf_ny_overlap_hunter / TSLA
+17:56:29  INFO     scanner.backtester    mtf_ny_overlap_hunter/AMZN: trades=5 wr=40.0% avg_r=-0.20 sharpe=-2.91
+17:56:29  INFO     scanner.backtester    mtf_ny_overlap_hunter/META: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:30  INFO     scanner.backtester    mtf_ny_overlap_hunter/GOOGL: trades=2 wr=50.0% avg_r=-0.00 sharpe=-0.01
+17:56:30  INFO     scanner.backtester    mtf_ny_overlap_hunter/AMD: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:30  INFO     scanner.backtester    mtf_ny_overlap_hunter/COIN: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:30  INFO     scanner.backtester    mtf_ny_overlap_hunter/SPY: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+17:56:30  INFO     scanner.backtester    mtf_ny_overlap_hunter/QQQ: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+17:56:30  INFO     scanner.backtester    mtf_ny_overlap_hunter/GLD: trades=1 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:30  INFO     scanner.backtester    mtf_ny_overlap_hunter/BTC-USD: trades=5 wr=20.0% avg_r=-0.60 sharpe=-10.67
+17:56:30  INFO     scanner.backtester    mtf_ny_overlap_hunter/ETH-USD: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+17:56:30  INFO     scanner.backtester    mtf_ny_overlap_hunter/GC=F: trades=3 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:30  INFO     scanner.backtester    mtf_ny_overlap_hunter/CL=F: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+17:56:30  INFO     scanner.backtester    mtf_ny_overlap_hunter/EURUSD=X: trades=4 wr=50.0% avg_r=-0.00 sharpe=-0.01
+17:56:30  INFO     scanner.backtester    mtf_ny_overlap_hunter/GBPUSD=X: trades=1 wr=100.0% avg_r=1.00 sharpe=0.00
+17:56:30  INFO     scanner.backtester    mtf_session_sniper/AAPL: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+17:56:30  INFO     scanner.backtester    mtf_session_sniper/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:30  INFO     scanner.backtester    mtf_session_sniper/NVDA: trades=11 wr=54.5% avg_r=0.09 sharpe=1.37
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/TSLA: trades=8 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/AMZN: trades=8 wr=25.0% avg_r=-0.50 sharpe=-8.59
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/META: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/GOOGL: trades=9 wr=33.3% avg_r=-0.33 sharpe=-5.31
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/AMD: trades=11 wr=27.3% avg_r=-0.46 sharpe=-7.74
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/COIN: trades=6 wr=50.0% avg_r=-0.00 sharpe=-0.01
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/SPY: trades=14 wr=35.7% avg_r=-0.29 sharpe=-4.58
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/QQQ: trades=13 wr=15.4% avg_r=-0.69 sharpe=-14.65
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/GLD: trades=24 wr=29.2% avg_r=-0.42 sharpe=-7.14
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/BTC-USD: trades=11 wr=18.2% avg_r=-0.64 sharpe=-12.51
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/ETH-USD: trades=12 wr=25.0% avg_r=-0.50 sharpe=-8.79
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/GC=F: trades=19 wr=26.3% avg_r=-0.47 sharpe=-8.33
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/CL=F: trades=19 wr=21.1% avg_r=-0.58 sharpe=-10.99
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/EURUSD=X: trades=25 wr=8.0% avg_r=-0.84 sharpe=-24.11
+17:56:31  INFO     scanner.backtester    mtf_session_sniper/GBPUSD=X: trades=19 wr=0.0% avg_r=-1.00 sharpe=-69655204960274176.00
+17:56:31  INFO     scanner.backtester    mtf_trend_continuation/AAPL: trades=10 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/MSFT: trades=12 wr=0.0% avg_r=-1.00 sharpe=-68517237078833224.00
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/NVDA: trades=16 wr=18.8% avg_r=-0.63 sharpe=-12.33
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/TSLA: trades=2 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/AMZN: trades=17 wr=17.6% avg_r=-0.65 sharpe=-13.09
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/META: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/GOOGL: trades=17 wr=5.9% avg_r=-0.88 sharpe=-28.91
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/AMD: trades=15 wr=20.0% avg_r=-0.60 sharpe=-11.52
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/COIN: trades=15 wr=20.0% avg_r=-0.60 sharpe=-11.52
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/SPY: trades=9 wr=22.2% avg_r=-0.56 sharpe=-10.02
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/QQQ: trades=11 wr=27.3% avg_r=-0.46 sharpe=-7.74
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/GLD: trades=15 wr=13.3% avg_r=-0.73 sharpe=-16.56
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/BTC-USD: trades=21 wr=4.8% avg_r=-0.91 sharpe=-32.95
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/ETH-USD: trades=23 wr=4.3% avg_r=-0.91 sharpe=-34.79
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/GC=F: trades=17 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:32  INFO     scanner.backtester    mtf_trend_continuation/CL=F: trades=30 wr=3.3% avg_r=-0.93 sharpe=-40.62
+17:56:33  INFO     scanner.backtester    mtf_trend_continuation/EURUSD=X: trades=16 wr=25.0% avg_r=-0.50 sharpe=-8.89
+17:56:33  INFO     scanner.backtester    mtf_trend_continuation/GBPUSD=X: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / AAPL
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / MSFT
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / NVDA
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / TSLA
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / AMZN
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / META
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GOOGL
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / AMD
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / COIN
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / SPY
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / QQQ
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GLD
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / BTC-USD
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / ETH-USD
+17:56:33  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GC=F
+17:56:34  WARNING  scanner.backtester  No trades: mtf_volatility_coil / CL=F
+17:56:34  WARNING  scanner.backtester  No trades: mtf_volatility_coil / EURUSD=X
+17:56:34  WARNING  scanner.backtester  No trades: mtf_volatility_coil / GBPUSD=X
+17:56:34  INFO     scanner.backtester    mtf_fx_london_breakout/AAPL: trades=3 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:34  INFO     scanner.backtester    mtf_fx_london_breakout/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:34  INFO     scanner.backtester    mtf_fx_london_breakout/NVDA: trades=15 wr=13.3% avg_r=-0.67 sharpe=-12.08
+17:56:34  INFO     scanner.backtester    mtf_fx_london_breakout/TSLA: trades=8 wr=37.5% avg_r=0.04 sharpe=0.42
+17:56:34  INFO     scanner.backtester    mtf_fx_london_breakout/AMZN: trades=5 wr=60.0% avg_r=0.31 sharpe=4.04
+17:56:34  INFO     scanner.backtester    mtf_fx_london_breakout/META: trades=11 wr=36.4% avg_r=-0.23 sharpe=-3.45
+17:56:34  INFO     scanner.backtester    mtf_fx_london_breakout/GOOGL: trades=9 wr=33.3% avg_r=-0.28 sharpe=-4.05
+17:56:34  INFO     scanner.backtester    mtf_fx_london_breakout/AMD: trades=8 wr=25.0% avg_r=-0.50 sharpe=-8.59
+17:56:34  INFO     scanner.backtester    mtf_fx_london_breakout/COIN: trades=4 wr=50.0% avg_r=-0.00 sharpe=-0.01
+17:56:34  INFO     scanner.backtester    mtf_fx_london_breakout/SPY: trades=5 wr=80.0% avg_r=0.60 sharpe=10.63
+17:56:34  INFO     scanner.backtester    mtf_fx_london_breakout/QQQ: trades=12 wr=25.0% avg_r=-0.49 sharpe=-8.56
+17:56:34  INFO     scanner.backtester    mtf_fx_london_breakout/GLD: trades=15 wr=53.3% avg_r=0.19 sharpe=2.54
+17:56:34  INFO     scanner.backtester    mtf_fx_london_breakout/BTC-USD: trades=12 wr=25.0% avg_r=-0.24 sharpe=-2.81
+17:56:35  INFO     scanner.backtester    mtf_fx_london_breakout/ETH-USD: trades=7 wr=57.1% avg_r=0.26 sharpe=3.50
+17:56:35  INFO     scanner.backtester    mtf_fx_london_breakout/GC=F: trades=17 wr=23.5% avg_r=-0.48 sharpe=-7.94
+17:56:35  INFO     scanner.backtester    mtf_fx_london_breakout/CL=F: trades=10 wr=50.0% avg_r=0.11 sharpe=1.44
+17:56:35  INFO     scanner.backtester    mtf_fx_london_breakout/EURUSD=X: trades=19 wr=21.1% avg_r=-0.58 sharpe=-10.99
+17:56:35  INFO     scanner.backtester    mtf_fx_london_breakout/GBPUSD=X: trades=13 wr=38.5% avg_r=-0.23 sharpe=-3.63
+17:56:35  INFO     scanner.backtester    mtf_trend_continuation_v2/AAPL: trades=6 wr=33.3% avg_r=-0.33 sharpe=-5.14
+17:56:35  INFO     scanner.backtester    mtf_trend_continuation_v2/MSFT: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:35  INFO     scanner.backtester    mtf_trend_continuation_v2/NVDA: trades=7 wr=28.6% avg_r=-0.43 sharpe=-6.99
+17:56:35  WARNING  scanner.backtester  No trades: mtf_trend_continuation_v2 / TSLA
+17:56:35  INFO     scanner.backtester    mtf_trend_continuation_v2/AMZN: trades=7 wr=28.6% avg_r=-0.43 sharpe=-6.99
+17:56:35  INFO     scanner.backtester    mtf_trend_continuation_v2/META: trades=2 wr=50.0% avg_r=-0.00 sharpe=-0.01
+17:56:35  INFO     scanner.backtester    mtf_trend_continuation_v2/GOOGL: trades=8 wr=12.5% avg_r=-0.75 sharpe=-16.86
+17:56:35  INFO     scanner.backtester    mtf_trend_continuation_v2/AMD: trades=7 wr=28.6% avg_r=-0.43 sharpe=-6.99
+17:56:35  INFO     scanner.backtester    mtf_trend_continuation_v2/COIN: trades=8 wr=37.5% avg_r=-0.25 sharpe=-3.85
+17:56:35  INFO     scanner.backtester    mtf_trend_continuation_v2/SPY: trades=6 wr=33.3% avg_r=-0.33 sharpe=-5.14
+17:56:35  INFO     scanner.backtester    mtf_trend_continuation_v2/QQQ: trades=6 wr=50.0% avg_r=-0.00 sharpe=-0.01
+17:56:36  INFO     scanner.backtester    mtf_trend_continuation_v2/GLD: trades=10 wr=20.0% avg_r=-0.60 sharpe=-11.31
+17:56:36  INFO     scanner.backtester    mtf_trend_continuation_v2/BTC-USD: trades=11 wr=9.1% avg_r=-0.82 sharpe=-21.56
+17:56:36  INFO     scanner.backtester    mtf_trend_continuation_v2/ETH-USD: trades=9 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:36  INFO     scanner.backtester    mtf_trend_continuation_v2/GC=F: trades=6 wr=0.0% avg_r=-1.00 sharpe=-65328622273138440.00
+17:56:36  INFO     scanner.backtester    mtf_trend_continuation_v2/CL=F: trades=12 wr=8.3% avg_r=-0.83 sharpe=-22.94
+17:56:36  INFO     scanner.backtester    mtf_trend_continuation_v2/EURUSD=X: trades=8 wr=50.0% avg_r=-0.00 sharpe=-0.01
+17:56:36  INFO     scanner.backtester    mtf_trend_continuation_v2/GBPUSD=X: trades=4 wr=25.0% avg_r=-0.50 sharpe=-7.95
+17:56:36  INFO     scanner.backtester    mtf_us_open_momentum/AAPL: trades=2 wr=100.0% avg_r=1.00 sharpe=0.00
+17:56:36  INFO     scanner.backtester    mtf_us_open_momentum/MSFT: trades=5 wr=60.0% avg_r=0.20 sharpe=2.88
+17:56:36  INFO     scanner.backtester    mtf_us_open_momentum/NVDA: trades=5 wr=60.0% avg_r=0.20 sharpe=2.88
+17:56:36  INFO     scanner.backtester    mtf_us_open_momentum/TSLA: trades=4 wr=50.0% avg_r=-0.00 sharpe=-0.01
+17:56:36  INFO     scanner.backtester    mtf_us_open_momentum/AMZN: trades=2 wr=50.0% avg_r=-0.00 sharpe=-0.01
+17:56:36  INFO     scanner.backtester    mtf_us_open_momentum/META: trades=3 wr=66.7% avg_r=0.33 sharpe=4.57
+17:56:36  INFO     scanner.backtester    mtf_us_open_momentum/GOOGL: trades=3 wr=33.3% avg_r=-0.33 sharpe=-4.60
+17:56:36  INFO     scanner.backtester    mtf_us_open_momentum/AMD: trades=5 wr=0.0% avg_r=-1.00 sharpe=0.00
+17:56:36  WARNING  scanner.backtester  No trades: mtf_us_open_momentum / COIN
+17:56:36  INFO     scanner.backtester    mtf_us_open_momentum/SPY: trades=7 wr=14.3% avg_r=-0.72 sharpe=-15.02
+17:56:37  INFO     scanner.backtester    mtf_us_open_momentum/QQQ: trades=5 wr=40.0% avg_r=-0.20 sharpe=-2.91
+17:56:37  INFO     scanner.backtester    mtf_us_open_momentum/GLD: trades=12 wr=8.3% avg_r=-0.83 sharpe=-22.94
+17:56:37  INFO     scanner.backtester    mtf_us_open_momentum/BTC-USD: trades=4 wr=50.0% avg_r=-0.00 sharpe=-0.01
+17:56:37  INFO     scanner.backtester    mtf_us_open_momentum/ETH-USD: trades=7 wr=28.6% avg_r=-0.29 sharpe=-3.63
+17:56:37  INFO     scanner.backtester    mtf_us_open_momentum/GC=F: trades=12 wr=0.0% avg_r=-1.00 sharpe=-68517237078833224.00
+17:56:37  INFO     scanner.backtester    mtf_us_open_momentum/CL=F: trades=9 wr=22.2% avg_r=-0.45 sharpe=-6.26
+17:56:37  INFO     scanner.backtester    mtf_us_open_momentum/EURUSD=X: trades=10 wr=20.0% avg_r=-0.60 sharpe=-11.31
+17:56:37  INFO     scanner.backtester    mtf_us_open_momentum/GBPUSD=X: trades=9 wr=22.2% avg_r=-0.56 sharpe=-10.02
+17:56:37  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / AAPL
+17:56:37  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / MSFT
+17:56:37  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / NVDA
+17:56:37  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / TSLA
+17:56:37  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / AMZN
+17:56:37  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / META
+17:56:37  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / GOOGL
+17:56:37  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / AMD
+17:56:37  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / COIN
+17:56:38  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / SPY
+17:56:38  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / QQQ
+17:56:38  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / GLD
+17:56:38  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / BTC-USD
+17:56:38  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / ETH-USD
+17:56:38  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / GC=F
+17:56:38  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / CL=F
+17:56:38  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / EURUSD=X
+17:56:38  WARNING  scanner.backtester  No trades: mtf_volatility_coil_v2 / GBPUSD=X
+17:56:38  INFO     scanner.engine  Backtests complete. Results in output/backtest/
+17:56:38  INFO     scanner.engine  Running allocator...
+17:56:39  INFO     scanner.allocator  
+                     strategy decision  score    weight  risk_per_trade_pct
+1                    macd_rsi   DEPLOY      8  0.333333                3.60
+2              mean_reversion   DEPLOY     10  0.333333                8.33
+4         mtf_momentum_binary   DEPLOY      8  0.333333                3.33
+0                   adx_trend   REJECT      0  0.000000                0.00
+3      mtf_fx_london_breakout   REJECT      0  0.000000                0.00
+5       mtf_ny_overlap_hunter   REJECT      0  0.000000                0.00
+6          mtf_session_sniper   REJECT      0  0.000000                0.00
+7      mtf_trend_continuation   REJECT      0  0.000000                0.00
+8   mtf_trend_continuation_v2   REJECT      0  0.000000                0.00
+9        mtf_us_open_momentum   REJECT      0  0.000000                0.00
+10                        orb   REJECT      0  0.000000                0.00
+17:56:39  INFO     scanner.engine  Allocation complete. Results in output/allocator/
+17:56:39  INFO     scanner.engine  Loading trade journal...
+17:56:39  INFO     scanner.journal  Journal is empty.

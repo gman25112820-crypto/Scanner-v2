@@ -1,0 +1,12 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+BTC-USD,mtf_trend_continuation_v2,short,2025-11-24,2025-11-25,88270.5625,83469.88536931817,-1.001,loss
+BTC-USD,mtf_trend_continuation_v2,short,2025-11-26,2025-11-27,90518.3671875,83854.60687041907,-1.001,loss
+BTC-USD,mtf_trend_continuation_v2,short,2025-12-02,2025-12-03,91350.203125,84921.49819124553,-1.001,loss
+BTC-USD,mtf_trend_continuation_v2,short,2025-12-05,2025-12-06,89387.7578125,85669.52427815374,-1.001,loss
+BTC-USD,mtf_trend_continuation_v2,short,2025-12-07,2025-12-08,90405.640625,85991.32073252596,-1.001,loss
+BTC-USD,mtf_trend_continuation_v2,short,2025-12-09,2025-12-10,92691.7109375,86267.64853322392,-1.001,loss
+BTC-USD,mtf_trend_continuation_v2,short,2025-12-11,2025-12-12,92511.3359375,86684.81924605124,-1.001,loss
+BTC-USD,mtf_trend_continuation_v2,short,2025-12-13,2025-12-14,90298.7109375,87090.96338015319,-1.001,loss
+BTC-USD,mtf_trend_continuation_v2,short,2026-01-08,2026-01-09,91027.125,86852.21667369945,-1.001,loss
+BTC-USD,mtf_trend_continuation_v2,short,2026-03-14,2026-03-15,71214.625,68170.9368887741,-1.001,loss
+BTC-USD,mtf_trend_continuation_v2,short,2026-04-01,2026-04-07,68078.5546875,71380.59215024691,0.999,win

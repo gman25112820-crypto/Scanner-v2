@@ -1,0 +1,651 @@
+import os
+from typing import Dict, List, Optional, Tuple
+
+import numpy as np
+import pandas as pd
+import yfinance as yf
+
+
+# ============================================================
+# CONFIG
+# ============================================================
+
+SYMBOLS = [
+    "AAPL",
+    "TSLA",
+    "NVDA",
+    "MSFT",
+    "AMZN",
+    "BTC-USD",
+    "ETH-USD",
+    "GBPUSD=X",
+    "EURUSD=X",
+    "GC=F",
+    "CL=F",
+]
+
+OUTPUT_DIR = "output"
+
+# Multi-timeframe setup
+BIAS_INTERVAL = "60m"   # 1H
+SETUP_INTERVAL = "15m"  # 15m
+TRIGGER_INTERVAL = "5m" # 5m
+
+# Yahoo limits:
+# 5m and 15m are limited historically, so use shorter periods
+BIAS_PERIOD = "60d"
+SETUP_PERIOD = "60d"
+TRIGGER_PERIOD = "30d"
+
+
+# ============================================================
+# UTILS
+# ============================================================
+
+def ensure_output_dir() -> None:
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+
+def flatten_columns(df: pd.DataFrame) -> pd.DataFrame:
+    if isinstance(df.columns, pd.MultiIndex):
+        df.columns = [col[0] for col in df.columns]
+    return df
+
+
+def safe_download(symbol: str, period: str, interval: str) -> pd.DataFrame:
+    df = yf.download(
+        symbol,
+        period=period,
+        interval=interval,
+        auto_adjust=False,
+        progress=False,
+        prepost=False,
+        threads=False,
+    )
+
+    if df is None or df.empty:
+        return pd.DataFrame()
+
+    df = flatten_columns(df)
+
+    required = {"Open", "High", "Low", "Close", "Volume"}
+    if not required.issubset(df.columns):
+        return pd.DataFrame()
+
+    df = df[["Open", "High", "Low", "Close", "Volume"]].copy()
+    df.dropna(inplace=True)
+    df.sort_index(inplace=True)
+    return df
+
+
+def calculate_atr(df: pd.DataFrame, period: int = 14) -> pd.Series:
+    prev_close = df["Close"].shift(1)
+    tr1 = df["High"] - df["Low"]
+    tr2 = (df["High"] - prev_close).abs()
+    tr3 = (df["Low"] - prev_close).abs()
+    tr = pd.concat([tr1, tr2, tr3], axis=1).max(axis=1)
+    return tr.rolling(period).mean()
+
+
+def align_last_row_before(ts: pd.Timestamp, df: pd.DataFrame) -> Optional[pd.Series]:
+    eligible = df[df.index <= ts]
+    if eligible.empty:
+        return None
+    return eligible.iloc[-1]
+
+
+def compute_profit_factor(trades_df: pd.DataFrame) -> float:
+    if trades_df.empty:
+        return 0.0
+
+    wins_df = trades_df[trades_df["pnl_pct"] > 0]
+    losses_df = trades_df[trades_df["pnl_pct"] < 0]
+
+    gross_profit = float(wins_df["pnl_pct"].sum()) if not wins_df.empty else 0.0
+    gross_loss = float(abs(losses_df["pnl_pct"].sum())) if not losses_df.empty else 0.0
+
+    if gross_loss == 0:
+        return 999.0 if gross_profit > 0 else 0.0
+
+    return gross_profit / gross_loss
+
+
+def build_summary(symbol: str, trades_df: pd.DataFrame) -> dict:
+    if trades_df.empty:
+        return {
+            "symbol": symbol,
+            "trades": 0,
+            "wins": 0,
+            "win_rate": 0.0,
+            "total_pnl": 0.0,
+            "avg_pnl": 0.0,
+            "profit_factor": 0.0,
+        }
+
+    wins = int((trades_df["pnl_pct"] > 0).sum())
+
+    return {
+        "symbol": symbol,
+        "trades": int(len(trades_df)),
+        "wins": wins,
+        "win_rate": float((wins / len(trades_df)) * 100.0),
+        "total_pnl": float(trades_df["pnl_pct"].sum()),
+        "avg_pnl": float(trades_df["pnl_pct"].mean()),
+        "profit_factor": float(compute_profit_factor(trades_df)),
+    }
+
+
+# ============================================================
+# DATA LOADING
+# ============================================================
+
+def load_symbol_mtf_data(symbol: str) -> Optional[Dict[str, pd.DataFrame]]:
+    df_1h = safe_download(symbol, period=BIAS_PERIOD, interval=BIAS_INTERVAL)
+    df_15m = safe_download(symbol, period=SETUP_PERIOD, interval=SETUP_INTERVAL)
+    df_5m = safe_download(symbol, period=TRIGGER_PERIOD, interval=TRIGGER_INTERVAL)
+
+    if df_1h.empty or df_15m.empty or df_5m.empty:
+        return None
+
+    if len(df_1h) < 100 or len(df_15m) < 100 or len(df_5m) < 100:
+        return None
+
+    return {
+        "1h": df_1h,
+        "15m": df_15m,
+        "5m": df_5m,
+    }
+
+
+def load_all_mtf_data(symbols: List[str]) -> Dict[str, Dict[str, pd.DataFrame]]:
+    data = {}
+
+    print("\n" + "=" * 70)
+    print("RAGE ENGINE — Loading MTF data")
+    print("=" * 70)
+
+    for symbol in symbols:
+        try:
+            mtf = load_symbol_mtf_data(symbol)
+            if mtf is None:
+                print(f"{symbol}: insufficient MTF data")
+                continue
+
+            data[symbol] = mtf
+            print(
+                f"{symbol}: loaded "
+                f"1H={len(mtf['1h'])} "
+                f"15m={len(mtf['15m'])} "
+                f"5m={len(mtf['5m'])}"
+            )
+
+        except Exception as e:
+            print(f"{symbol}: load error - {e}")
+
+    return data
+
+
+# ============================================================
+# FEATURE BUILDERS
+# ============================================================
+
+def prepare_bias_df(df: pd.DataFrame) -> pd.DataFrame:
+    out = df.copy()
+    out["ema_fast"] = out["Close"].ewm(span=20, adjust=False).mean()
+    out["ema_slow"] = out["Close"].ewm(span=50, adjust=False).mean()
+    out["atr"] = calculate_atr(out, 14)
+    out["range"] = out["High"] - out["Low"]
+    out["trend_strength"] = (out["ema_fast"] - out["ema_slow"]).abs()
+    return out
+
+
+def prepare_setup_df(df: pd.DataFrame) -> pd.DataFrame:
+    out = df.copy()
+    out["ema_fast"] = out["Close"].ewm(span=20, adjust=False).mean()
+    out["ema_slow"] = out["Close"].ewm(span=50, adjust=False).mean()
+    out["atr"] = calculate_atr(out, 14)
+    out["vol_avg"] = out["Volume"].rolling(20).mean()
+    out["prior_high"] = out["High"].rolling(20).max().shift(1)
+    out["prior_low"] = out["Low"].rolling(20).min().shift(1)
+    out["range"] = out["High"] - out["Low"]
+    out["body"] = (out["Close"] - out["Open"]).abs()
+    out["body_ratio"] = np.where(out["range"] > 0, out["body"] / out["range"], 0.0)
+    return out
+
+
+def prepare_trigger_df(df: pd.DataFrame) -> pd.DataFrame:
+    out = df.copy()
+    out["ema_fast"] = out["Close"].ewm(span=9, adjust=False).mean()
+    out["ema_slow"] = out["Close"].ewm(span=21, adjust=False).mean()
+    out["atr"] = calculate_atr(out, 14)
+    out["vol_avg"] = out["Volume"].rolling(20).mean()
+    out["recent_high"] = out["High"].rolling(12).max().shift(1)
+    out["recent_low"] = out["Low"].rolling(12).min().shift(1)
+    out["range"] = out["High"] - out["Low"]
+    out["body"] = (out["Close"] - out["Open"]).abs()
+    out["body_ratio"] = np.where(out["range"] > 0, out["body"] / out["range"], 0.0)
+    out["momentum_up"] = out["Close"] - out["Close"].shift(5)
+    out["momentum_down"] = out["Close"].shift(5) - out["Close"]
+    return out
+
+
+# ============================================================
+# ENGINE LOGIC
+# ============================================================
+
+def get_hour_bias(row_1h: pd.Series) -> str:
+    if row_1h is None:
+        return "neutral"
+
+    if pd.isna(row_1h["ema_fast"]) or pd.isna(row_1h["ema_slow"]) or pd.isna(row_1h["atr"]):
+        return "neutral"
+
+    bullish = row_1h["ema_fast"] > row_1h["ema_slow"] and row_1h["Close"] > row_1h["ema_fast"]
+    bearish = row_1h["ema_fast"] < row_1h["ema_slow"] and row_1h["Close"] < row_1h["ema_fast"]
+
+    if bullish:
+        return "long"
+    if bearish:
+        return "short"
+    return "neutral"
+
+
+def get_15m_setup(row_15m: pd.Series, bias: str) -> Optional[dict]:
+    if row_15m is None:
+        return None
+
+    needed = ["atr", "vol_avg", "prior_high", "prior_low", "body_ratio", "range"]
+    if any(pd.isna(row_15m[col]) for col in needed):
+        return None
+
+    atr = row_15m["atr"]
+    if atr <= 0:
+        return None
+
+    volume_ok = row_15m["Volume"] > (row_15m["vol_avg"] * 1.4)
+    range_ok = row_15m["range"] > (atr * 0.9)
+    body_ok = row_15m["body_ratio"] >= 0.55
+
+    long_setup = (
+        bias == "long"
+        and row_15m["Close"] > row_15m["prior_high"]
+        and row_15m["Close"] > row_15m["Open"]
+        and volume_ok
+        and range_ok
+        and body_ok
+    )
+
+    short_setup = (
+        bias == "short"
+        and row_15m["Close"] < row_15m["prior_low"]
+        and row_15m["Close"] < row_15m["Open"]
+        and volume_ok
+        and range_ok
+        and body_ok
+    )
+
+    if long_setup:
+        return {
+            "direction": "long",
+            "setup_level": float(row_15m["prior_high"]),
+            "setup_atr": float(atr),
+            "setup_volume_multiple": float(row_15m["Volume"] / row_15m["vol_avg"]) if row_15m["vol_avg"] > 0 else np.nan,
+        }
+
+    if short_setup:
+        return {
+            "direction": "short",
+            "setup_level": float(row_15m["prior_low"]),
+            "setup_atr": float(atr),
+            "setup_volume_multiple": float(row_15m["Volume"] / row_15m["vol_avg"]) if row_15m["vol_avg"] > 0 else np.nan,
+        }
+
+    return None
+
+
+def get_5m_trigger(row_5m: pd.Series, setup: dict) -> Optional[dict]:
+    if row_5m is None or setup is None:
+        return None
+
+    needed = ["atr", "vol_avg", "recent_high", "recent_low", "body_ratio", "range"]
+    if any(pd.isna(row_5m[col]) for col in needed):
+        return None
+
+    atr = row_5m["atr"]
+    if atr <= 0:
+        return None
+
+    direction = setup["direction"]
+
+    volume_ok = row_5m["Volume"] > (row_5m["vol_avg"] * 1.3)
+    body_ok = row_5m["body_ratio"] >= 0.60
+    range_ok = row_5m["range"] > (atr * 0.8)
+
+    long_trigger = (
+        direction == "long"
+        and row_5m["ema_fast"] > row_5m["ema_slow"]
+        and row_5m["Close"] > row_5m["Open"]
+        and row_5m["Close"] > row_5m["recent_high"]
+        and row_5m["momentum_up"] > (atr * 0.4)
+        and volume_ok
+        and body_ok
+        and range_ok
+    )
+
+    short_trigger = (
+        direction == "short"
+        and row_5m["ema_fast"] < row_5m["ema_slow"]
+        and row_5m["Close"] < row_5m["Open"]
+        and row_5m["Close"] < row_5m["recent_low"]
+        and row_5m["momentum_down"] > (atr * 0.4)
+        and volume_ok
+        and body_ok
+        and range_ok
+    )
+
+    if long_trigger:
+        return {
+            "direction": "long",
+            "trigger_atr": float(atr),
+            "trigger_volume_multiple": float(row_5m["Volume"] / row_5m["vol_avg"]) if row_5m["vol_avg"] > 0 else np.nan,
+            "signal_strength_atr": float(row_5m["range"] / atr) if atr > 0 else np.nan,
+        }
+
+    if short_trigger:
+        return {
+            "direction": "short",
+            "trigger_atr": float(atr),
+            "trigger_volume_multiple": float(row_5m["Volume"] / row_5m["vol_avg"]) if row_5m["vol_avg"] > 0 else np.nan,
+            "signal_strength_atr": float(row_5m["range"] / atr) if atr > 0 else np.nan,
+        }
+
+    return None
+
+
+# ============================================================
+# MTF STRATEGY
+# ============================================================
+
+def mtf_rage_strategy(
+    symbol: str,
+    df_1h: pd.DataFrame,
+    df_15m: pd.DataFrame,
+    df_5m: pd.DataFrame,
+) -> Tuple[pd.DataFrame, dict]:
+    bias_df = prepare_bias_df(df_1h)
+    setup_df = prepare_setup_df(df_15m)
+    trigger_df = prepare_trigger_df(df_5m)
+
+    trades = []
+
+    in_position = False
+    direction = None
+    entry_time = None
+    entry_price = None
+    stop_price = None
+    target_price = None
+    highest_since_entry = None
+    lowest_since_entry = None
+
+    last_setup_direction = None
+    last_setup_time = None
+    last_setup_level = None
+    last_setup_volume_multiple = None
+
+    # use 5m chart as execution timeline
+    start_idx = 80
+
+    for i in range(start_idx, len(trigger_df) - 1):
+        ts = trigger_df.index[i]
+        row_5m = trigger_df.iloc[i]
+
+        if pd.isna(row_5m["atr"]) or pd.isna(row_5m["recent_high"]) or pd.isna(row_5m["recent_low"]):
+            continue
+
+        row_1h = align_last_row_before(ts, bias_df)
+        row_15m = align_last_row_before(ts, setup_df)
+
+        bias = get_hour_bias(row_1h)
+        setup = get_15m_setup(row_15m, bias)
+        trigger = get_5m_trigger(row_5m, setup)
+
+        next_row = trigger_df.iloc[i + 1]
+        next_open = float(next_row["Open"])
+        next_high = float(next_row["High"])
+        next_low = float(next_row["Low"])
+        next_close = float(next_row["Close"])
+
+        if not in_position and setup is not None:
+            last_setup_direction = setup["direction"]
+            last_setup_time = ts
+            last_setup_level = setup["setup_level"]
+            last_setup_volume_multiple = setup["setup_volume_multiple"]
+
+        if not in_position and trigger is not None:
+            atr = trigger["trigger_atr"]
+            direction = trigger["direction"]
+
+            # next-bar entry to avoid same-bar fake fills
+            entry_time = trigger_df.index[i + 1]
+            entry_price = next_open
+
+            if direction == "long":
+                stop_price = entry_price - (atr * 1.2)
+                risk = entry_price - stop_price
+                target_price = entry_price + (risk * 1.8)
+                highest_since_entry = next_high
+                lowest_since_entry = next_low
+
+            else:
+                stop_price = entry_price + (atr * 1.2)
+                risk = stop_price - entry_price
+                target_price = entry_price - (risk * 1.8)
+                highest_since_entry = next_high
+                lowest_since_entry = next_low
+
+            if risk > 0:
+                in_position = True
+            else:
+                direction = None
+                entry_time = None
+                entry_price = None
+                stop_price = None
+                target_price = None
+                highest_since_entry = None
+                lowest_since_entry = None
+
+            continue
+
+        if in_position:
+            highest_since_entry = max(highest_since_entry, float(row_5m["High"]))
+            lowest_since_entry = min(lowest_since_entry, float(row_5m["Low"]))
+
+            bars_held = int((ts - entry_time) / pd.Timedelta(minutes=5)) if entry_time is not None else 0
+
+            exit_reason = None
+            exit_price = None
+
+            # no exits on the entry bar
+            if ts <= entry_time:
+                continue
+
+            atr = float(row_5m["atr"]) if not pd.isna(row_5m["atr"]) else 0.0
+            if atr <= 0:
+                continue
+
+            if direction == "long":
+                # break-even after 1 ATR
+                if (highest_since_entry - entry_price) >= (atr * 1.0):
+                    stop_price = max(stop_price, entry_price)
+
+                # trailing logic
+                trail = highest_since_entry - (atr * 1.0)
+                stop_price = max(stop_price, trail)
+
+                stop_hit = float(row_5m["Low"]) <= stop_price
+                target_hit = float(row_5m["High"]) >= target_price
+
+                if stop_hit and target_hit:
+                    exit_price = stop_price
+                    exit_reason = "stop"
+                elif stop_hit:
+                    exit_price = stop_price
+                    exit_reason = "stop"
+                elif target_hit:
+                    exit_price = target_price
+                    exit_reason = "target"
+                elif bars_held >= 36:
+                    exit_price = float(row_5m["Close"])
+                    exit_reason = "time"
+
+            else:
+                if (entry_price - lowest_since_entry) >= (atr * 1.0):
+                    stop_price = min(stop_price, entry_price)
+
+                trail = lowest_since_entry + (atr * 1.0)
+                stop_price = min(stop_price, trail)
+
+                stop_hit = float(row_5m["High"]) >= stop_price
+                target_hit = float(row_5m["Low"]) <= target_price
+
+                if stop_hit and target_hit:
+                    exit_price = stop_price
+                    exit_reason = "stop"
+                elif stop_hit:
+                    exit_price = stop_price
+                    exit_reason = "stop"
+                elif target_hit:
+                    exit_price = target_price
+                    exit_reason = "target"
+                elif bars_held >= 36:
+                    exit_price = float(row_5m["Close"])
+                    exit_reason = "time"
+
+            if exit_reason is not None:
+                if direction == "long":
+                    pnl_pct = ((exit_price - entry_price) / entry_price) * 100.0
+                else:
+                    pnl_pct = ((entry_price - exit_price) / entry_price) * 100.0
+
+                trades.append(
+                    {
+                        "symbol": symbol,
+                        "entry_time": entry_time,
+                        "exit_time": ts,
+                        "direction": direction,
+                        "entry": float(entry_price),
+                        "exit": float(exit_price),
+                        "pnl_pct": float(pnl_pct),
+                        "result": "WIN" if pnl_pct > 0 else "LOSS",
+                        "exit_reason": exit_reason,
+                        "bars_held_5m": bars_held,
+                        "hour_bias": direction,
+                        "setup_level": float(last_setup_level) if last_setup_level is not None else np.nan,
+                        "setup_volume_multiple": float(last_setup_volume_multiple) if last_setup_volume_multiple is not None else np.nan,
+                        "trigger_volume_multiple": float(trigger["trigger_volume_multiple"]) if trigger is not None else np.nan,
+                        "signal_strength_atr": float(trigger["signal_strength_atr"]) if trigger is not None else np.nan,
+                    }
+                )
+
+                in_position = False
+                direction = None
+                entry_time = None
+                entry_price = None
+                stop_price = None
+                target_price = None
+                highest_since_entry = None
+                lowest_since_entry = None
+
+    trades_df = pd.DataFrame(trades)
+    summary = build_summary(symbol, trades_df)
+    return trades_df, summary
+
+
+# ============================================================
+# RUNNER
+# ============================================================
+
+def run_mtf_rage_backtest(all_data: Dict[str, Dict[str, pd.DataFrame]]) -> None:
+    all_summaries = []
+    all_trades = []
+
+    print("\n" + "=" * 70)
+    print("RAGE ENGINE — MTF 1H / 15M / 5M")
+    print("=" * 70)
+
+    for symbol, mtf in all_data.items():
+        try:
+            trades_df, summary = mtf_rage_strategy(
+                symbol=symbol,
+                df_1h=mtf["1h"],
+                df_15m=mtf["15m"],
+                df_5m=mtf["5m"],
+            )
+
+            print(f"\n{'=' * 70}")
+            print(f"RAGE ENGINE — MTF — {symbol}")
+            print(f"{'=' * 70}")
+
+            if trades_df.empty:
+                print("No trades generated")
+            else:
+                print(f"Total Trades:  {summary['trades']}")
+                print(f"Win Rate:      {summary['win_rate']:.1f}%")
+                print(f"Total P&L:     {summary['total_pnl']:.2f}%")
+                print(f"Avg P&L:       {summary['avg_pnl']:.2f}%")
+                print(f"Profit Factor: {summary['profit_factor']:.2f}")
+                print("\n--- ALL TRADES ---")
+                print(trades_df.to_string(index=False))
+
+                all_trades.append(trades_df)
+
+            all_summaries.append(summary)
+
+        except Exception as e:
+            print(f"{symbol}: MTF ERROR - {e}")
+
+    summary_df = pd.DataFrame(all_summaries)
+
+    print(f"\n{'=' * 70}")
+    print("RAGE ENGINE — MTF SUMMARY")
+    print(f"{'=' * 70}")
+
+    if not summary_df.empty:
+        print(
+            summary_df[
+                ["symbol", "trades", "wins", "win_rate", "total_pnl", "avg_pnl", "profit_factor"]
+            ].to_string(index=False)
+        )
+
+        ensure_output_dir()
+        summary_path = os.path.join(OUTPUT_DIR, "mtf_rage_summary.csv")
+        summary_df.to_csv(summary_path, index=False)
+        print(f"\nSaved to {summary_path}")
+
+    if all_trades:
+        trades_out = pd.concat(all_trades, ignore_index=True)
+        trades_path = os.path.join(OUTPUT_DIR, "mtf_rage_trades.csv")
+        trades_out.to_csv(trades_path, index=False)
+        print(f"Saved to {trades_path}")
+
+
+# ============================================================
+# MAIN
+# ============================================================
+
+if __name__ == "__main__":
+    # -- Windows UTF-8 fix (auto-added by fix_unicode.py) --
+    import io as _io
+    if hasattr(sys.stdout, "buffer"):
+    sys.stdout = _io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "buffer"):
+    sys.stderr = _io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+
+    ensure_output_dir()
+    all_data = load_all_mtf_data(SYMBOLS)
+
+    if not all_data:
+        print("No MTF data loaded. Exiting.")
+        raise SystemExit(1)
+
+    run_mtf_rage_backtest(all_data)

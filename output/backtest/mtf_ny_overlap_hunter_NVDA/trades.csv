@@ -1,0 +1,5 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+NVDA,mtf_ny_overlap_hunter,short,2025-12-18,2025-12-23,174.1305694580078,187.98982714518385,0.999,win
+NVDA,mtf_ny_overlap_hunter,short,2026-01-22,2026-01-28,184.8299865722656,190.4296883714215,0.999,win
+NVDA,mtf_ny_overlap_hunter,short,2026-01-30,2026-02-02,191.11965942382807,177.60038196777572,-1.001,loss
+NVDA,mtf_ny_overlap_hunter,short,2026-03-23,2026-04-13,175.63999938964844,188.8800048828125,0.999,win

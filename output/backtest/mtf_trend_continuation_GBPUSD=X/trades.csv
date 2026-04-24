@@ -1,0 +1,9 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+GBPUSD=X,mtf_trend_continuation,short,2025-11-24,2025-11-25,1.3096375465393066,1.3026820038304183,-1.001,loss
+GBPUSD=X,mtf_trend_continuation,short,2025-11-26,2025-11-27,1.315870761871338,1.3021057041563193,-1.001,loss
+GBPUSD=X,mtf_trend_continuation,short,2025-12-02,2025-12-03,1.320934176445007,1.3066840016399144,-1.001,loss
+GBPUSD=X,mtf_trend_continuation,short,2025-12-18,2025-12-19,1.3374598026275637,1.320497006385196,-1.001,loss
+GBPUSD=X,mtf_trend_continuation,short,2025-12-22,2025-12-23,1.3377031087875366,1.3226813964877882,-1.001,loss
+GBPUSD=X,mtf_trend_continuation,short,2025-12-30,2025-12-31,1.3510993719100952,1.3451464118379535,-1.001,loss
+GBPUSD=X,mtf_trend_continuation,short,2026-01-02,2026-01-26,1.347363829612732,1.3550310714385292,0.999,win
+GBPUSD=X,mtf_trend_continuation,short,2026-02-04,2026-02-05,1.3697504997253418,1.3616143327770809,-1.001,loss

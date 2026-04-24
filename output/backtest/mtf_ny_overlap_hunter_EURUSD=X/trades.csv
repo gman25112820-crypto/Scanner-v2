@@ -1,0 +1,5 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+EURUSD=X,mtf_ny_overlap_hunter,short,2025-12-19,2025-12-22,1.1725666522979736,1.1616965532302856,-1.001,loss
+EURUSD=X,mtf_ny_overlap_hunter,short,2026-01-21,2026-01-23,1.1727865934371948,1.174701690673828,0.999,win
+EURUSD=X,mtf_ny_overlap_hunter,short,2026-02-20,2026-02-23,1.1769136190414429,1.1743016242980957,-1.001,loss
+EURUSD=X,mtf_ny_overlap_hunter,short,2026-03-20,2026-04-08,1.157755732536316,1.1663848161697388,0.999,win

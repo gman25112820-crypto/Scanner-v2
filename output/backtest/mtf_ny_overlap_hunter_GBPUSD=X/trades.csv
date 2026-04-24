@@ -1,0 +1,2 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+GBPUSD=X,mtf_ny_overlap_hunter,short,2026-01-09,2026-01-26,1.3438005447387695,1.356815218925476,0.999,win

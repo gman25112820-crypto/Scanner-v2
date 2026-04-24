@@ -1,0 +1,6 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+AMD,mtf_us_open_momentum,short,2026-01-21,2026-01-22,249.8000030517578,236.13716228534594,-1.001,loss
+AMD,mtf_us_open_momentum,short,2026-01-23,2026-01-26,259.67999267578125,245.99048438944368,-1.001,loss
+AMD,mtf_us_open_momentum,short,2026-03-25,2026-04-02,220.2700042724609,210.61227412873848,-1.001,loss
+AMD,mtf_us_open_momentum,short,2026-04-08,2026-04-09,231.82000732421875,219.51435723088903,-1.001,loss
+AMD,mtf_us_open_momentum,short,2026-04-10,2026-04-13,245.0399932861328,232.86833537575404,-1.001,loss

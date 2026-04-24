@@ -1,0 +1,8 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+AMD,mtf_trend_continuation_v2,short,2025-11-25,2025-11-26,206.1300048828125,190.22517169262315,-1.001,loss
+AMD,mtf_trend_continuation_v2,short,2025-12-11,2025-12-12,221.42999267578125,205.34642869306828,-1.001,loss
+AMD,mtf_trend_continuation_v2,short,2025-12-30,2026-01-02,215.33999633789065,221.81945338393703,0.999,win
+AMD,mtf_trend_continuation_v2,short,2026-01-30,2026-02-02,236.72999572753903,223.269044524428,-1.001,loss
+AMD,mtf_trend_continuation_v2,short,2026-03-12,2026-03-25,197.7400054931641,207.93953891498433,0.999,win
+AMD,mtf_trend_continuation_v2,short,2026-03-26,2026-03-27,203.7700042724609,194.17092961322373,-1.001,loss
+AMD,mtf_trend_continuation_v2,short,2026-04-02,2026-04-06,217.5,194.0609754002857,-1.001,loss

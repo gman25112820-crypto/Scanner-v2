@@ -1,0 +1,482 @@
+"""
+RAGE Engine — GUI Control Panel Launcher
+=========================================
+Double-click this file (or run: python rage_launcher.py)
+to get a control panel with one-click buttons for every
+RAGE operation.
+
+Requires: Python 3.8+ (tkinter is built in)
+Optional: ngrok in PATH for public sharing
+"""
+
+from __future__ import annotations
+
+import subprocess
+import sys
+import threading
+import time
+import urllib.request
+import webbrowser
+from pathlib import Path
+import tkinter as tk
+from tkinter import messagebox, scrolledtext
+
+# ── Paths ─────────────────────────────────────────────────────
+BASE_DIR = Path(__file__).resolve().parent
+
+# ── Colours (RAGE theme) ──────────────────────────────────────
+BG         = "#050912"
+BG2        = "#0a1628"
+BG3        = "#0f1e35"
+BORDER     = "#1e2d3d"
+CYAN       = "#00e5ff"
+ORANGE     = "#ff4500"
+GREEN      = "#00e676"
+RED        = "#ff3d57"
+AMBER      = "#ffb300"
+WELSH_RED  = "#c8102e"
+TEXT       = "#e5e7eb"
+MUTED      = "#4d6880"
+MONO       = ("Consolas", 10)
+MONO_SM    = ("Consolas", 9)
+SYNE       = ("Segoe UI", 11, "bold")
+SYNE_LG    = ("Segoe UI", 14, "bold")
+SYNE_XL    = ("Segoe UI", 18, "bold")
+
+
+class RAGELauncher(tk.Tk):
+    def __init__(self):
+        super().__init__()
+        self.title("RAGE Engine — Control Panel")
+        self.configure(bg=BG)
+        self.resizable(False, False)
+
+        self._streamlit_proc: subprocess.Popen | None = None
+        self._ngrok_proc:     subprocess.Popen | None = None
+        self._public_url:     str = ""
+        self._status_var      = tk.StringVar(value="Ready")
+
+        self._build_ui()
+        self._check_status_loop()
+        self.protocol("WM_DELETE_WINDOW", self._on_close)
+
+    # ── UI construction ───────────────────────────────────────
+
+    def _build_ui(self):
+        # ── Header ──────────────────────────────────────────
+        hdr = tk.Frame(self, bg=BG, pady=12, padx=20)
+        hdr.pack(fill="x")
+
+        tk.Label(hdr, text="RAGE", font=SYNE_XL,
+                 fg=ORANGE, bg=BG).pack(side="left")
+        tk.Label(hdr, text=" ENGINE", font=SYNE_XL,
+                 fg=TEXT, bg=BG).pack(side="left")
+        tk.Label(hdr, text="   Cymru am byth", font=("Segoe UI", 9),
+                 fg=WELSH_RED, bg=BG).pack(side="left", padx=8)
+
+        tk.Label(hdr, text="V4 Control Panel", font=MONO_SM,
+                 fg=CYAN, bg=BG).pack(side="right")
+
+        self._sep(self)
+
+        # ── Main columns ────────────────────────────────────
+        body = tk.Frame(self, bg=BG, padx=16, pady=8)
+        body.pack(fill="both")
+
+        left  = tk.Frame(body, bg=BG)
+        right = tk.Frame(body, bg=BG)
+        left.pack(side="left", fill="y", padx=(0, 12))
+        right.pack(side="left", fill="both", expand=True)
+
+        # ── Left: action buttons ─────────────────────────────
+        self._section(left, "LAUNCH")
+
+        self._btn(left, "⚡  Launch Dashboard (Local)",
+                  CYAN, BG2, self._launch_local,
+                  tip="Start Streamlit at http://localhost:8501")
+
+        self._btn(left, "🌍  Launch Dashboard (Public)",
+                  GREEN, BG2, self._launch_public,
+                  tip="Start Streamlit + ngrok public link")
+
+        self._btn(left, "🌐  Open in Browser",
+                  MUTED, BG2, self._open_browser,
+                  tip="Open local dashboard in your browser")
+
+        self._btn(left, "📋  Copy Public URL",
+                  MUTED, BG2, self._copy_url,
+                  tip="Copy the ngrok public link to clipboard")
+
+        self._sep(left)
+        self._section(left, "BUILD")
+
+        self._btn(left, "📊  Rebuild Master Tables",
+                  ORANGE, BG2, self._rebuild_master,
+                  tip="Run build_master_performance.py")
+
+        self._btn(left, "📡  Fetch Market Intel",
+                  "#00b4d8", BG2, self._fetch_intel,
+                  tip="Run market_intel.py report")
+
+        self._sep(left)
+        self._section(left, "CONTROL")
+
+        self._btn(left, "🔄  Restart Dashboard",
+                  AMBER, BG2, self._restart,
+                  tip="Kill and relaunch Streamlit")
+
+        self._btn(left, "🛑  Stop Everything",
+                  RED, BG2, self._stop_all,
+                  tip="Kill Streamlit and ngrok")
+
+        # ── Right: status + log ──────────────────────────────
+        self._section(right, "STATUS")
+
+        status_row = tk.Frame(right, bg=BG)
+        status_row.pack(fill="x", pady=(0, 6))
+
+        self._streamlit_dot = tk.Label(status_row, text="●", fg=MUTED, bg=BG,
+                                        font=("Segoe UI", 12))
+        self._streamlit_dot.pack(side="left")
+        tk.Label(status_row, text=" Streamlit", fg=TEXT, bg=BG,
+                 font=MONO_SM).pack(side="left")
+
+        self._ngrok_dot = tk.Label(status_row, text="  ●", fg=MUTED, bg=BG,
+                                    font=("Segoe UI", 12))
+        self._ngrok_dot.pack(side="left", padx=(12, 0))
+        tk.Label(status_row, text=" ngrok", fg=TEXT, bg=BG,
+                 font=MONO_SM).pack(side="left")
+
+        # URL display
+        url_frame = tk.Frame(right, bg=BG3, bd=0, pady=6, padx=8)
+        url_frame.pack(fill="x", pady=(0, 8))
+
+        tk.Label(url_frame, text="LOCAL", fg=MUTED, bg=BG3,
+                 font=("Consolas", 8)).pack(anchor="w")
+        self._local_lbl = tk.Label(url_frame, text="http://localhost:8501",
+                                    fg=CYAN, bg=BG3, font=MONO, cursor="hand2")
+        self._local_lbl.pack(anchor="w")
+        self._local_lbl.bind("<Button-1>", lambda e: self._open_browser())
+
+        tk.Label(url_frame, text="PUBLIC", fg=MUTED, bg=BG3,
+                 font=("Consolas", 8)).pack(anchor="w", pady=(4, 0))
+        self._public_lbl = tk.Label(url_frame, text="— not running —",
+                                     fg=MUTED, bg=BG3, font=MONO, cursor="hand2")
+        self._public_lbl.pack(anchor="w")
+        self._public_lbl.bind("<Button-1>", lambda e: self._open_public())
+
+        # ── Log ──────────────────────────────────────────────
+        self._section(right, "LOG")
+        self._log = scrolledtext.ScrolledText(
+            right, width=52, height=18,
+            bg=BG3, fg=TEXT, font=MONO_SM,
+            insertbackground=CYAN,
+            borderwidth=0, highlightthickness=1,
+            highlightbackground=BORDER,
+        )
+        self._log.pack(fill="both", expand=True)
+        self._log.configure(state="disabled")
+
+        # ── Footer ───────────────────────────────────────────
+        self._sep(self)
+        foot = tk.Frame(self, bg=BG, padx=16, pady=6)
+        foot.pack(fill="x")
+        tk.Label(foot, textvariable=self._status_var,
+                 fg=MUTED, bg=BG, font=MONO_SM).pack(side="left")
+        tk.Label(foot, text="Built by Rob & Gareth  󠁧󠁢󠁷󠁬󠁳󠁥",
+                 fg=MUTED, bg=BG, font=MONO_SM).pack(side="right")
+
+    def _sep(self, parent):
+        tk.Frame(parent, bg=BORDER, height=1).pack(fill="x", pady=4)
+
+    def _section(self, parent, label: str):
+        tk.Label(parent, text=label, fg=MUTED, bg=BG,
+                 font=("Consolas", 8)).pack(anchor="w", pady=(6, 2))
+
+    def _btn(self, parent, text: str, fg: str, bg: str, cmd, tip: str = ""):
+        b = tk.Button(
+            parent, text=text, fg=fg, bg=bg,
+            activeforeground=fg, activebackground=BG3,
+            font=MONO, relief="flat", bd=0,
+            padx=12, pady=7, anchor="w", width=28,
+            cursor="hand2", command=cmd,
+        )
+        b.pack(fill="x", pady=2)
+        b.bind("<Enter>", lambda e: b.configure(bg=BG3))
+        b.bind("<Leave>", lambda e: b.configure(bg=bg))
+        return b
+
+    # ── Log helpers ───────────────────────────────────────────
+
+    def _log_write(self, msg: str, colour: str = TEXT):
+        self._log.configure(state="normal")
+        self._log.insert("end", msg + "\n")
+        self._log.see("end")
+        self._log.configure(state="disabled")
+
+    def _log_info(self,  msg): self._log_write(f"  {msg}", TEXT)
+    def _log_ok(self,    msg): self._log_write(f"[OK] {msg}", GREEN)
+    def _log_warn(self,  msg): self._log_write(f"[WARN]  {msg}", AMBER)
+    def _log_err(self,   msg): self._log_write(f"[ERROR] {msg}", RED)
+    def _log_sep(self):        self._log_write("─" * 46, BORDER)
+
+    def _set_status(self, msg: str):
+        self._status_var.set(msg)
+
+    # ── Actions ───────────────────────────────────────────────
+
+    def _launch_local(self):
+        if self._streamlit_proc and self._streamlit_proc.poll() is None:
+            self._log_warn("Streamlit already running — open browser or restart.")
+            return
+        self._log_sep()
+        self._log_info("Starting Streamlit (local)...")
+        self._set_status("Starting Streamlit...")
+        threading.Thread(target=self._run_streamlit, daemon=True).start()
+
+    def _launch_public(self):
+        self._launch_local()
+        threading.Thread(target=self._wait_then_ngrok, daemon=True).start()
+
+    def _run_streamlit(self):
+        app_py = BASE_DIR / "app.py"
+        if not app_py.exists():
+            self.after(0, lambda: self._log_err(f"app.py not found in {BASE_DIR}"))
+            return
+        try:
+            self._streamlit_proc = subprocess.Popen(
+                [sys.executable, "-m", "streamlit", "run", str(app_py),
+                 "--server.headless", "true"],
+                cwd=str(BASE_DIR),
+                stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                text=True, bufsize=1,
+            )
+            self.after(0, lambda: self._log_ok("Streamlit started (PID %d)" % self._streamlit_proc.pid))
+            for line in self._streamlit_proc.stdout:
+                line = line.rstrip()
+                if line:
+                    self.after(0, lambda l=line: self._log_info(l))
+        except Exception as e:
+            self.after(0, lambda: self._log_err(f"Streamlit failed: {e}"))
+
+    def _wait_then_ngrok(self):
+        """Poll until Streamlit is up, then fire ngrok."""
+        self.after(0, lambda: self._log_info("Waiting for Streamlit..."))
+        for _ in range(25):
+            try:
+                urllib.request.urlopen("http://127.0.0.1:8501", timeout=2)
+                break
+            except Exception:
+                time.sleep(2)
+        self._run_ngrok()
+
+    def _run_ngrok(self):
+        self.after(0, lambda: self._log_info("Starting ngrok tunnel..."))
+        try:
+            # Kill stale ngrok
+            subprocess.run(["taskkill", "/F", "/IM", "ngrok.exe"],
+                           capture_output=True)
+            time.sleep(1)
+            self._ngrok_proc = subprocess.Popen(
+                ["ngrok", "http", "8501"],
+                cwd=str(BASE_DIR),
+                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            )
+            # Poll ngrok API for public URL
+            for _ in range(30):
+                time.sleep(2)
+                try:
+                    with urllib.request.urlopen(
+                        "http://127.0.0.1:4040/api/tunnels", timeout=2
+                    ) as r:
+                        import json
+                        data = json.loads(r.read())
+                    for tunnel in data.get("tunnels", []):
+                        url = tunnel.get("public_url", "")
+                        if url.startswith("https://"):
+                            self._public_url = url
+                            self.after(0, lambda u=url: self._on_public_url(u))
+                            return
+                except Exception:
+                    pass
+            self.after(0, lambda: self._log_warn(
+                "ngrok started but URL not captured. Check ngrok window."))
+        except FileNotFoundError:
+            self.after(0, lambda: self._log_err(
+                "ngrok not found in PATH. Install from ngrok.com"))
+        except Exception as e:
+            self.after(0, lambda: self._log_err(f"ngrok error: {e}"))
+
+    def _on_public_url(self, url: str):
+        self._log_ok(f"Public URL: {url}")
+        self._public_lbl.configure(text=url, fg=GREEN)
+
+    def _open_browser(self):
+        webbrowser.open("http://localhost:8501")
+        self._log_info("Opened browser -> http://localhost:8501")
+
+    def _open_public(self):
+        if self._public_url:
+            webbrowser.open(self._public_url)
+        else:
+            self._log_warn("No public URL yet. Click Launch Dashboard (Public) first.")
+
+    def _copy_url(self):
+        if self._public_url:
+            self.clipboard_clear()
+            self.clipboard_append(self._public_url)
+            self._log_ok(f"Copied: {self._public_url}")
+            self._set_status("URL copied to clipboard")
+        else:
+            self._log_warn("No public URL yet.")
+
+    def _rebuild_master(self):
+        script = BASE_DIR / "build_master_performance.py"
+        if not script.exists():
+            self._log_err("build_master_performance.py not found.")
+            return
+        self._log_sep()
+        self._log_info("Rebuilding master performance tables...")
+        self._set_status("Rebuilding master tables...")
+
+        def _run():
+            try:
+                proc = subprocess.Popen(
+                    [sys.executable, str(script)],
+                    cwd=str(BASE_DIR),
+                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                    text=True, bufsize=1,
+                )
+                for line in proc.stdout:
+                    line = line.rstrip()
+                    if line:
+                        self.after(0, lambda l=line: self._log_info(l))
+                proc.wait()
+                if proc.returncode == 0:
+                    self.after(0, lambda: self._log_ok("Master tables rebuilt."))
+                    self.after(0, lambda: self._set_status("Master tables rebuilt [OK]"))
+                else:
+                    self.after(0, lambda: self._log_err("Build returned non-zero exit."))
+            except Exception as e:
+                self.after(0, lambda: self._log_err(f"Build failed: {e}"))
+
+        threading.Thread(target=_run, daemon=True).start()
+
+    def _fetch_intel(self):
+        script = BASE_DIR / "market_intel.py"
+        if not script.exists():
+            self._log_err("market_intel.py not found. Drop it in scanner root.")
+            return
+        self._log_sep()
+        self._log_info("Fetching live market intel (yfinance)...")
+        self._set_status("Fetching market intel...")
+
+        def _run():
+            try:
+                proc = subprocess.Popen(
+                    [sys.executable, str(script), "report"],
+                    cwd=str(BASE_DIR),
+                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                    text=True, bufsize=1,
+                )
+                for line in proc.stdout:
+                    line = line.rstrip()
+                    if line:
+                        self.after(0, lambda l=line: self._log_info(l))
+                proc.wait()
+                rc = proc.returncode
+                if rc == 0:
+                    self.after(0, lambda: self._log_ok("Market intel updated."))
+                    self.after(0, lambda: self._set_status("Market intel updated [OK]"))
+                else:
+                    self.after(0, lambda: self._log_warn(f"market_intel.py exited {rc}"))
+            except Exception as e:
+                self.after(0, lambda: self._log_err(f"Intel fetch failed: {e}"))
+
+        threading.Thread(target=_run, daemon=True).start()
+
+    def _restart(self):
+        self._log_sep()
+        self._log_info("Restarting Streamlit...")
+        self._stop_streamlit()
+        time.sleep(1)
+        threading.Thread(target=self._run_streamlit, daemon=True).start()
+
+    def _stop_streamlit(self):
+        if self._streamlit_proc:
+            try:
+                self._streamlit_proc.terminate()
+                self._streamlit_proc.wait(timeout=5)
+            except Exception:
+                pass
+            self._streamlit_proc = None
+        subprocess.run(["taskkill", "/F", "/FI", "WINDOWTITLE eq RAGE_STREAMLIT*"],
+                       capture_output=True)
+
+    def _stop_ngrok(self):
+        if self._ngrok_proc:
+            try:
+                self._ngrok_proc.terminate()
+            except Exception:
+                pass
+            self._ngrok_proc = None
+        subprocess.run(["taskkill", "/F", "/IM", "ngrok.exe"], capture_output=True)
+        self._public_url = ""
+        self.after(0, lambda: self._public_lbl.configure(
+            text="— not running —", fg=MUTED))
+
+    def _stop_all(self):
+        self._log_sep()
+        self._log_info("Stopping Streamlit and ngrok...")
+        self._stop_streamlit()
+        self._stop_ngrok()
+        self._log_ok("All processes stopped.")
+        self._set_status("Stopped.")
+
+    # ── Status polling ────────────────────────────────────────
+
+    def _check_status_loop(self):
+        """Update the coloured dots every 3s."""
+        # Streamlit dot
+        streamlit_alive = (
+            self._streamlit_proc is not None
+            and self._streamlit_proc.poll() is None
+        )
+        if streamlit_alive:
+            # Verify it's actually responding
+            try:
+                urllib.request.urlopen("http://127.0.0.1:8501", timeout=1)
+                self._streamlit_dot.configure(fg=GREEN)
+                self._set_status("Streamlit running [OK]")
+            except Exception:
+                self._streamlit_dot.configure(fg=AMBER)
+        else:
+            self._streamlit_dot.configure(fg=MUTED)
+
+        # ngrok dot
+        ngrok_alive = (
+            self._ngrok_proc is not None
+            and self._ngrok_proc.poll() is None
+        )
+        self._ngrok_dot.configure(fg=GREEN if ngrok_alive else MUTED)
+
+        self.after(3000, self._check_status_loop)
+
+    # ── Close ─────────────────────────────────────────────────
+
+    def _on_close(self):
+        if self._streamlit_proc and self._streamlit_proc.poll() is None:
+            if not messagebox.askyesno(
+                "RAGE Engine",
+                "Streamlit is still running.\nStop it and close the launcher?"
+            ):
+                return
+        self._stop_all()
+        self.destroy()
+
+
+# ── Entry point ───────────────────────────────────────────────
+
+if __name__ == "__main__":
+    app = RAGELauncher()
+    app.mainloop()

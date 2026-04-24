@@ -1,0 +1,8 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+ETH-USD,mtf_fx_london_breakout,long,2025-11-24,2025-12-03,2952.71337890625,3165.4527669270833,1.147,win
+ETH-USD,mtf_fx_london_breakout,short,2025-12-05,2025-12-09,3024.432861328125,3238.555419921875,0.999,win
+ETH-USD,mtf_fx_london_breakout,long,2026-01-02,2026-01-20,3124.422607421875,2966.84521484375,-1.001,loss
+ETH-USD,mtf_fx_london_breakout,short,2026-01-25,2026-01-27,2815.90234375,2965.46875,-1.001,loss
+ETH-USD,mtf_fx_london_breakout,short,2026-01-29,2026-01-31,2818.232666015625,2545.670919978589,1.224,win
+ETH-USD,mtf_fx_london_breakout,short,2026-03-13,2026-03-14,2092.5634765625,2019.27783203125,-1.001,loss
+ETH-USD,mtf_fx_london_breakout,long,2026-03-15,2026-03-16,2177.476318359375,2346.067834953704,1.467,win

@@ -1,0 +1,6 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+AMZN,mtf_ny_overlap_hunter,short,2026-01-14,2026-01-15,236.6499938964844,224.6999969482422,-1.001,loss
+AMZN,mtf_ny_overlap_hunter,short,2026-01-20,2026-01-23,231.0,236.22000122070312,0.999,win
+AMZN,mtf_ny_overlap_hunter,short,2026-01-26,2026-01-27,238.4199981689453,226.8800048828125,-1.001,loss
+AMZN,mtf_ny_overlap_hunter,short,2026-01-30,2026-02-02,239.3000030517578,226.8800048828125,-1.001,loss
+AMZN,mtf_ny_overlap_hunter,short,2026-04-01,2026-04-07,210.57000732421875,213.07000732421875,0.999,win

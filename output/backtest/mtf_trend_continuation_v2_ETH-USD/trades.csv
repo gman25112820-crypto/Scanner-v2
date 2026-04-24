@@ -1,0 +1,10 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+ETH-USD,mtf_trend_continuation_v2,short,2025-11-24,2025-11-25,2952.71337890625,2709.036999881628,-1.001,loss
+ETH-USD,mtf_trend_continuation_v2,short,2025-12-02,2025-12-03,2997.939697265625,2757.1896335677898,-1.001,loss
+ETH-USD,mtf_trend_continuation_v2,short,2025-12-07,2025-12-08,3061.3017578125,2812.683201676945,-1.001,loss
+ETH-USD,mtf_trend_continuation_v2,short,2025-12-12,2025-12-13,3084.172607421875,2884.329627089114,-1.001,loss
+ETH-USD,mtf_trend_continuation_v2,short,2026-01-08,2026-01-09,3104.382568359375,2938.138191899812,-1.001,loss
+ETH-USD,mtf_trend_continuation_v2,short,2026-01-13,2026-01-14,3322.095458984375,2972.7206388039576,-1.001,loss
+ETH-USD,mtf_trend_continuation_v2,short,2026-03-12,2026-03-13,2073.13623046875,1976.5791437322441,-1.001,loss
+ETH-USD,mtf_trend_continuation_v2,short,2026-03-19,2026-03-20,2137.423828125,2011.5229120980975,-1.001,loss
+ETH-USD,mtf_trend_continuation_v2,short,2026-03-23,2026-03-24,2152.14599609375,2006.4711138185512,-1.001,loss

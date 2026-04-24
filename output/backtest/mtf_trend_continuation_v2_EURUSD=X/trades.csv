@@ -1,0 +1,9 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+EURUSD=X,mtf_trend_continuation_v2,short,2025-11-25,2025-11-27,1.1520073413848877,1.1591702946311733,0.999,win
+EURUSD=X,mtf_trend_continuation_v2,short,2025-12-30,2025-12-31,1.1772878170013428,1.1738163355625033,-1.001,loss
+EURUSD=X,mtf_trend_continuation_v2,short,2026-01-20,2026-01-23,1.1639139652252195,1.1746388466823854,0.999,win
+EURUSD=X,mtf_trend_continuation_v2,short,2026-02-04,2026-02-05,1.1816140413284302,1.1756229133316964,-1.001,loss
+EURUSD=X,mtf_trend_continuation_v2,short,2026-02-06,2026-02-10,1.177786946296692,1.1843957192010186,0.999,win
+EURUSD=X,mtf_trend_continuation_v2,short,2026-02-17,2026-02-18,1.184988498687744,1.1776720101322027,-1.001,loss
+EURUSD=X,mtf_trend_continuation_v2,short,2026-02-23,2026-02-24,1.1834739446640017,1.176363294024778,-1.001,loss
+EURUSD=X,mtf_trend_continuation_v2,short,2026-03-11,2026-04-08,1.1611299514770508,1.167496223883195,0.999,win

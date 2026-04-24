@@ -1,0 +1,6 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+SPY,mtf_fx_london_breakout,short,2025-12-30,2026-01-06,685.138916015625,687.322922191004,0.999,win
+SPY,mtf_fx_london_breakout,short,2026-01-07,2026-01-09,687.701904296875,690.4344019511112,0.999,win
+SPY,mtf_fx_london_breakout,short,2026-01-12,2026-01-13,693.2666625976562,687.3029303433501,-1.001,loss
+SPY,mtf_fx_london_breakout,short,2026-02-05,2026-02-09,675.7744750976562,689.5667896413613,0.999,win
+SPY,mtf_fx_london_breakout,short,2026-03-11,2026-04-13,674.4879760742188,681.4987932365287,0.999,win

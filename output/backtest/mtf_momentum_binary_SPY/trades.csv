@@ -1,0 +1,2 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+SPY,mtf_momentum_binary,short,2026-02-11,2026-02-12,690.075439453125,677.452881501947,-1.001,loss

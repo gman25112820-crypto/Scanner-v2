@@ -1,0 +1,6 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+QQQ,mtf_us_open_momentum,short,2025-12-10,2025-12-11,626.0130615234375,615.6181606399423,-1.001,loss
+QQQ,mtf_us_open_momentum,short,2026-01-13,2026-01-14,625.4513549804688,618.0961037117538,-1.001,loss
+QQQ,mtf_us_open_momentum,short,2026-01-20,2026-01-22,607.2942504882812,617.1810001741898,0.999,win
+QQQ,mtf_us_open_momentum,short,2026-01-27,2026-01-28,630.335205078125,621.1039703419309,-1.001,loss
+QQQ,mtf_us_open_momentum,short,2026-03-26,2026-04-06,573.7899780273438,585.5293469615564,0.999,win

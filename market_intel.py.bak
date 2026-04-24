@@ -1,0 +1,333 @@
+"""
+Scanner V2 — Market Intel Layer (V4)
+Live market data via yfinance: price snapshots, movers, watchlist enrichment,
+macro indicators, sector performance.
+"""
+
+import yfinance as yf
+import pandas as pd
+import json
+import logging
+from datetime import datetime, timedelta
+from typing import Optional
+import os
+
+logger = logging.getLogger(__name__)
+
+# ── Default watchlist ────────────────────────────────────────────────────────
+DEFAULT_WATCHLIST = [
+    "AAPL", "MSFT", "GOOGL", "AMZN", "NVDA",
+    "TSLA", "META", "BRK-B", "JPM", "V",
+]
+
+# ── Macro / benchmark symbols ────────────────────────────────────────────────
+MACRO_SYMBOLS = {
+    "S&P 500":   "^GSPC",
+    "NASDAQ":    "^IXIC",
+    "DOW":       "^DJI",
+    "VIX":       "^VIX",
+    "10Y Yield": "^TNX",
+    "Gold":      "GC=F",
+    "Oil (WTI)": "CL=F",
+    "BTC/USD":   "BTC-USD",
+    "EUR/USD":   "EURUSD=X",
+    "DXY":       "DX-Y.NYB",
+}
+
+# ── Sector ETFs ──────────────────────────────────────────────────────────────
+SECTOR_ETFS = {
+    "Technology":    "XLK",
+    "Financials":    "XLF",
+    "Healthcare":    "XLV",
+    "Energy":        "XLE",
+    "Consumer Disc": "XLY",
+    "Industrials":   "XLI",
+    "Materials":     "XLB",
+    "Utilities":     "XLU",
+    "Real Estate":   "XLRE",
+    "Comm Services": "XLC",
+}
+
+# ── Top movers universe (S&P 100 subset) ────────────────────────────────────
+MOVER_UNIVERSE = [
+    "AAPL","MSFT","AMZN","GOOGL","META","NVDA","TSLA","BRK-B","JPM","V",
+    "UNH","XOM","LLY","JNJ","MA","PG","HD","MRK","ABBV","CVX",
+    "PEP","KO","AVGO","COST","WMT","DIS","BAC","CSCO","TMO","ABT",
+    "ADBE","CRM","ACN","VZ","NFLX","INTC","TXN","NEE","PM","DHR",
+]
+
+
+def _safe_round(val, digits=2):
+    try:
+        return round(float(val), digits)
+    except (TypeError, ValueError):
+        return None
+
+
+def get_price_snapshot(symbols: list[str]) -> list[dict]:
+    """
+    Fetch current price, change, % change, volume for a list of symbols.
+    Returns list of dicts ready for JSON serialisation.
+    """
+    results = []
+    if not symbols:
+        return results
+
+    try:
+        tickers = yf.Tickers(" ".join(symbols))
+        for sym in symbols:
+            try:
+                t = tickers.tickers[sym]
+                info = t.fast_info
+                prev_close = getattr(info, "previous_close", None)
+                last_price = getattr(info, "last_price", None)
+
+                if last_price is None or prev_close is None:
+                    # Fallback to history
+                    hist = t.history(period="2d")
+                    if len(hist) >= 2:
+                        last_price = float(hist["Close"].iloc[-1])
+                        prev_close = float(hist["Close"].iloc[-2])
+                    elif len(hist) == 1:
+                        last_price = float(hist["Close"].iloc[-1])
+                        prev_close = last_price
+
+                change = _safe_round(last_price - prev_close) if (last_price and prev_close) else None
+                pct    = _safe_round((change / prev_close) * 100) if (change is not None and prev_close) else None
+                volume = getattr(info, "three_month_average_volume", None)
+
+                results.append({
+                    "symbol":     sym,
+                    "price":      _safe_round(last_price),
+                    "prev_close": _safe_round(prev_close),
+                    "change":     change,
+                    "pct_change": pct,
+                    "volume":     int(volume) if volume else None,
+                    "timestamp":  datetime.utcnow().isoformat(),
+                })
+            except Exception as e:
+                logger.warning(f"Snapshot failed for {sym}: {e}")
+                results.append({"symbol": sym, "error": str(e)})
+    except Exception as e:
+        logger.error(f"get_price_snapshot batch error: {e}")
+
+    return results
+
+
+def get_market_overview() -> dict:
+    """
+    Fetch macro benchmarks: indices, VIX, yields, commodities, crypto, FX.
+    """
+    symbols = list(MACRO_SYMBOLS.values())
+    raw = get_price_snapshot(symbols)
+    sym_map = {r["symbol"]: r for r in raw}
+
+    overview = {}
+    for label, sym in MACRO_SYMBOLS.items():
+        data = sym_map.get(sym, {})
+        overview[label] = {
+            "symbol":     sym,
+            "price":      data.get("price"),
+            "change":     data.get("change"),
+            "pct_change": data.get("pct_change"),
+        }
+    return overview
+
+
+def get_sector_performance() -> list[dict]:
+    """
+    Returns daily % change for each sector ETF.
+    """
+    symbols = list(SECTOR_ETFS.values())
+    raw = get_price_snapshot(symbols)
+    sym_map = {r["symbol"]: r for r in raw}
+
+    sectors = []
+    for name, sym in SECTOR_ETFS.items():
+        data = sym_map.get(sym, {})
+        sectors.append({
+            "sector":     name,
+            "etf":        sym,
+            "pct_change": data.get("pct_change"),
+            "price":      data.get("price"),
+        })
+
+    # Sort by performance descending
+    sectors.sort(key=lambda x: (x["pct_change"] or -999), reverse=True)
+    return sectors
+
+
+def get_top_movers(n: int = 5) -> dict:
+    """
+    Scan MOVER_UNIVERSE and return top N gainers and losers by % change.
+    """
+    raw = get_price_snapshot(MOVER_UNIVERSE)
+    valid = [r for r in raw if r.get("pct_change") is not None]
+    valid.sort(key=lambda x: x["pct_change"], reverse=True)
+
+    return {
+        "gainers": valid[:n],
+        "losers":  valid[-n:][::-1],
+        "as_of":   datetime.utcnow().isoformat(),
+    }
+
+
+def enrich_watchlist(symbols: list[str]) -> list[dict]:
+    """
+    Watchlist enrichment — adds 52w high/low, market cap, P/E, beta.
+    """
+    enriched = []
+    for sym in symbols:
+        try:
+            t = yf.Ticker(sym)
+            info = t.info
+            fi   = t.fast_info
+
+            last_price = getattr(fi, "last_price", None)
+            prev_close = getattr(fi, "previous_close", None)
+            change     = _safe_round(last_price - prev_close) if (last_price and prev_close) else None
+            pct        = _safe_round((change / prev_close) * 100) if (change and prev_close) else None
+
+            enriched.append({
+                "symbol":       sym,
+                "name":         info.get("shortName", sym),
+                "price":        _safe_round(last_price),
+                "change":       change,
+                "pct_change":   pct,
+                "market_cap":   info.get("marketCap"),
+                "pe_ratio":     _safe_round(info.get("trailingPE")),
+                "beta":         _safe_round(info.get("beta")),
+                "week52_high":  _safe_round(info.get("fiftyTwoWeekHigh")),
+                "week52_low":   _safe_round(info.get("fiftyTwoWeekLow")),
+                "avg_volume":   info.get("averageVolume"),
+                "sector":       info.get("sector", ""),
+                "industry":     info.get("industry", ""),
+                "timestamp":    datetime.utcnow().isoformat(),
+            })
+        except Exception as e:
+            logger.warning(f"Enrichment failed for {sym}: {e}")
+            enriched.append({"symbol": sym, "error": str(e)})
+
+    return enriched
+
+
+def get_symbol_detail(symbol: str) -> dict:
+    """
+    Full detail card for a single symbol: financials, description, 30d OHLCV.
+    """
+    try:
+        t    = yf.Ticker(symbol)
+        info = t.info
+        fi   = t.fast_info
+        hist = t.history(period="30d")
+
+        last_price = getattr(fi, "last_price", None)
+        prev_close = getattr(fi, "previous_close", None)
+        change     = _safe_round(last_price - prev_close) if (last_price and prev_close) else None
+        pct        = _safe_round((change / prev_close) * 100) if (change and prev_close) else None
+
+        # OHLCV as list of dicts
+        ohlcv = []
+        for dt, row in hist.iterrows():
+            ohlcv.append({
+                "date":   dt.strftime("%Y-%m-%d"),
+                "open":   _safe_round(row["Open"]),
+                "high":   _safe_round(row["High"]),
+                "low":    _safe_round(row["Low"]),
+                "close":  _safe_round(row["Close"]),
+                "volume": int(row["Volume"]),
+            })
+
+        return {
+            "symbol":          symbol,
+            "name":            info.get("shortName", symbol),
+            "exchange":        info.get("exchange", ""),
+            "sector":          info.get("sector", ""),
+            "industry":        info.get("industry", ""),
+            "description":     info.get("longBusinessSummary", "")[:500] if info.get("longBusinessSummary") else "",
+            "price":           _safe_round(last_price),
+            "change":          change,
+            "pct_change":      pct,
+            "market_cap":      info.get("marketCap"),
+            "pe_ratio":        _safe_round(info.get("trailingPE")),
+            "fwd_pe":          _safe_round(info.get("forwardPE")),
+            "eps":             _safe_round(info.get("trailingEps")),
+            "dividend_yield":  _safe_round(info.get("dividendYield", 0) * 100) if info.get("dividendYield") else None,
+            "beta":            _safe_round(info.get("beta")),
+            "week52_high":     _safe_round(info.get("fiftyTwoWeekHigh")),
+            "week52_low":      _safe_round(info.get("fiftyTwoWeekLow")),
+            "avg_volume":      info.get("averageVolume"),
+            "target_price":    _safe_round(info.get("targetMeanPrice")),
+            "recommendation":  info.get("recommendationKey", ""),
+            "ohlcv_30d":       ohlcv,
+            "timestamp":       datetime.utcnow().isoformat(),
+        }
+    except Exception as e:
+        logger.error(f"Symbol detail failed for {symbol}: {e}")
+        return {"symbol": symbol, "error": str(e)}
+
+
+def get_full_market_report(watchlist: Optional[list[str]] = None) -> dict:
+    """
+    Master function — assembles the full market intel payload.
+    Saves to output/market_intel/report.json
+    """
+    watchlist = watchlist or DEFAULT_WATCHLIST
+    logger.info("Building full market intel report...")
+
+    report = {
+        "generated_at":      datetime.utcnow().isoformat(),
+        "market_overview":   get_market_overview(),
+        "sector_performance": get_sector_performance(),
+        "top_movers":        get_top_movers(5),
+        "watchlist":         enrich_watchlist(watchlist),
+    }
+
+    # Persist to disk
+    out_dir = os.path.join("output", "market_intel")
+    os.makedirs(out_dir, exist_ok=True)
+    out_path = os.path.join(out_dir, "report.json")
+    with open(out_path, "w") as f:
+        json.dump(report, f, indent=2, default=str)
+
+    logger.info(f"Market intel report saved → {out_path}")
+    return report
+
+
+# ── CLI entry ────────────────────────────────────────────────────────────────
+if __name__ == "__main__":
+    import sys
+    import io
+
+    # Force UTF-8 stdout so emoji/unicode prints don't crash on Windows cp1252
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s | %(message)s")
+
+    if len(sys.argv) > 1:
+        cmd = sys.argv[1]
+        if cmd == "overview":
+            print(json.dumps(get_market_overview(), indent=2))
+        elif cmd == "movers":
+            print(json.dumps(get_top_movers(), indent=2))
+        elif cmd == "sectors":
+            print(json.dumps(get_sector_performance(), indent=2))
+        elif cmd == "detail" and len(sys.argv) > 2:
+            print(json.dumps(get_symbol_detail(sys.argv[2]), indent=2))
+        elif cmd == "watchlist":
+            syms = sys.argv[2:] if len(sys.argv) > 2 else DEFAULT_WATCHLIST
+            print(json.dumps(enrich_watchlist(syms), indent=2))
+        elif cmd == "report":
+            report = get_full_market_report()
+            print(f"\n[OK] Report generated at output/market_intel/report.json")
+            print(f"     Symbols covered  : {len(report['watchlist'])}")
+            print(f"     Macro benchmarks : {len(report['market_overview'])}")
+            print(f"     Sectors          : {len(report['sector_performance'])}")
+            print(f"     Top gainers      : {[g['symbol'] for g in report['top_movers']['gainers']]}")
+            print(f"     Top losers       : {[l['symbol'] for l in report['top_movers']['losers']]}")
+        else:
+            print("Usage: python market_intel.py [overview|movers|sectors|report|detail SYM|watchlist [SYMS...]]")
+    else:
+        report = get_full_market_report()
+        print("[OK] Market intel report saved -> output/market_intel/report.json")

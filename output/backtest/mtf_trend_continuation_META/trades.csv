@@ -1,0 +1,9 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+META,mtf_trend_continuation,short,2025-11-24,2025-11-25,612.0264282226562,577.9072310384853,-1.001,loss
+META,mtf_trend_continuation,short,2025-12-10,2025-12-11,649.0444946289062,616.4575634294652,-1.001,loss
+META,mtf_trend_continuation,short,2025-12-12,2025-12-15,643.1543579101562,611.6402915678873,-1.001,loss
+META,mtf_trend_continuation,short,2025-12-16,2025-12-17,656.587890625,616.1377298265255,-1.001,loss
+META,mtf_trend_continuation,short,2025-12-18,2025-12-19,663.881591796875,620.6053176955771,-1.001,loss
+META,mtf_trend_continuation,short,2025-12-22,2025-12-23,660.9341430664062,625.1691941327512,-1.001,loss
+META,mtf_trend_continuation,short,2025-12-30,2025-12-31,665.3803100585938,651.7959657428927,-1.001,loss
+META,mtf_trend_continuation,short,2026-01-02,2026-01-26,649.8535766601562,666.8198714493378,0.999,win

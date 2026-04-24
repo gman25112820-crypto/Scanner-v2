@@ -1,0 +1,6 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+AMZN,mtf_fx_london_breakout,short,2025-12-30,2025-12-31,232.52999877929688,230.7700042724609,-1.001,loss
+AMZN,mtf_fx_london_breakout,short,2026-01-02,2026-01-05,226.5,232.9900054931641,0.999,win
+AMZN,mtf_fx_london_breakout,short,2026-02-04,2026-02-06,232.9900054931641,212.21932474772143,1.554,win
+AMZN,mtf_fx_london_breakout,short,2026-02-17,2026-02-18,201.1499938964844,197.27999877929688,-1.001,loss
+AMZN,mtf_fx_london_breakout,short,2026-03-11,2026-04-08,212.6499938964844,215.6499938964844,0.999,win

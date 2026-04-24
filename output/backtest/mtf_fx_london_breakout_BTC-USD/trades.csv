@@ -1,0 +1,13 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+BTC-USD,mtf_fx_london_breakout,short,2025-11-24,2025-11-25,88270.5625,84641.7734375,-1.001,loss
+BTC-USD,mtf_fx_london_breakout,long,2025-11-26,2025-12-18,90518.3671875,86131.4296875,-1.001,loss
+BTC-USD,mtf_fx_london_breakout,short,2025-12-21,2025-12-22,88621.75,87924.875,-1.001,loss
+BTC-USD,mtf_fx_london_breakout,short,2026-01-02,2026-01-03,89944.6953125,87399.40625,-1.001,loss
+BTC-USD,mtf_fx_london_breakout,long,2026-01-04,2026-01-14,91413.4921875,96448.00629296913,2.413,win
+BTC-USD,mtf_fx_london_breakout,short,2026-01-18,2026-01-20,93634.4296875,89326.46851493411,2.192,win
+BTC-USD,mtf_fx_london_breakout,short,2026-01-25,2026-01-31,86572.21875,81814.0669396525,1.468,win
+BTC-USD,mtf_fx_london_breakout,short,2026-03-13,2026-03-14,70968.265625,69230.15625,-1.001,loss
+BTC-USD,mtf_fx_london_breakout,long,2026-03-15,2026-03-19,72789.9140625,70339.5859375,-1.001,loss
+BTC-USD,mtf_fx_london_breakout,short,2026-03-21,2026-04-07,68711.5234375,71346.796875,-1.001,loss
+BTC-USD,mtf_fx_london_breakout,short,2026-04-10,2026-04-11,72979.046875,70486.359375,-1.001,loss
+BTC-USD,mtf_fx_london_breakout,short,2026-04-12,2026-04-13,70753.40625,73784.234375,-1.001,loss

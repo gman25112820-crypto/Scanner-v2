@@ -1,0 +1,6 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+MSFT,mtf_fx_london_breakout,short,2025-11-25,2025-11-26,475.90374755859375,466.9542001322548,-1.001,loss
+MSFT,mtf_fx_london_breakout,long,2025-11-28,2025-12-03,490.88958740234375,480.1041831621511,-1.001,loss
+MSFT,mtf_fx_london_breakout,short,2025-12-05,2025-12-08,482.0597229003906,475.40489514051177,-1.001,loss
+MSFT,mtf_fx_london_breakout,short,2025-12-09,2025-12-19,490.8995361328125,483.2769615726175,-1.001,loss
+MSFT,mtf_fx_london_breakout,short,2025-12-24,2025-12-26,486.90863037109375,483.6361221459561,-1.001,loss

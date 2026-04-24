@@ -1,0 +1,4 @@
+symbol,setup_type,direction,entry_date,exit_date,entry,exit,r_multiple,result
+AAPL,mtf_fx_london_breakout,long,2026-02-04,2026-02-12,276.23150634765625,267.3598109321867,-1.001,loss
+AAPL,mtf_fx_london_breakout,short,2026-03-13,2026-04-09,250.1199951171875,258.95001220703125,-1.001,loss
+AAPL,mtf_fx_london_breakout,short,2026-04-10,2026-04-13,260.4800109863281,256.07000732421875,-1.001,loss
