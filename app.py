@@ -1256,7 +1256,7 @@ page = st.sidebar.radio(
         "Monte Carlo",
         "Uploads",
         "Strategy Builder",
-        "Notes",
+        "Governance Notes",
         "Daily Planner",
         "Calendar",
         "Platform Vision",
@@ -2729,11 +2729,11 @@ elif page == "Strategy Builder":
 
 
 # ============================================================
-# PAGE: Notes
+# PAGE: Governance Notes
 # ============================================================
 
-elif page == "Notes":
-    st.subheader("Notes Workspace")
+elif page == "Governance Notes":
+    st.subheader("Governance Notes")
     note_category = st.selectbox("Note Category", ["strategy_notes", "market_notes", "psychology_notes", "weekly_reviews"])
     note_title = st.text_input("Note Title")
     note_symbol = st.text_input("Symbol / Asset")
@@ -2752,7 +2752,7 @@ elif page == "Notes":
     notes_store = load_notes_store()
     if notes_store:
         notes_df = pd.DataFrame(notes_store)
-        st.markdown("### 📝 Saved Notes")
+        st.markdown("### 📝 Saved Governance Notes")
         st.dataframe(notes_df, use_container_width=True, hide_index=True)
         titles = notes_df["title"].fillna("").astype(str).tolist() if "title" in notes_df.columns else []
         selected = st.selectbox("Open note", [""] + titles)
@@ -2762,7 +2762,7 @@ elif page == "Notes":
             st.caption(f"{row.get('category', '')} · {row.get('symbol', '')} · {row.get('timestamp', '')}")
             st.write(row.get("body", ""))
     else:
-        st.info("No notes saved yet.")
+        st.info("No governance notes saved yet.")
 
 
 # ============================================================
